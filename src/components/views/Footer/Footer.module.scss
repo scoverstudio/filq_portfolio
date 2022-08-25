@@ -1,0 +1,14 @@
+@import "../../../styles/settings.scss";
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba($color: black, $alpha: 0.7);
+  padding: 20px;
+
+  p {
+    color: $colorText;
+    margin: 0;
+  }
+}

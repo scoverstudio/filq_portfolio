@@ -1,0 +1,442 @@
+@import "../../../styles/settings.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  height: 500px;
+  background-color: $bgc;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 200px;
+
+  h1 {
+    color: white;
+    font-size: 150px;
+    margin-bottom: 0;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    animation-delay: 1.6s;
+  }
+
+  .box {
+    width: fit-content;
+    height: 250px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    z-index: 1;
+
+    .title {
+      width: 100%;
+      position: relative;
+      height: 150px;
+
+      .block {
+        position: absolute;
+        width: 0%;
+        height: inherit;
+        background-color: $redLight;
+        animation: mainBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+      }
+
+      h2 {
+        font-family: "poppins";
+        color: #fff;
+        font-size: 125px;
+        animation: mainFadeIn 2s forwards;
+        text-transform: uppercase;
+        animation-delay: 1.6s;
+        opacity: 0;
+        margin: 0;
+      }
+    }
+    .role {
+      position: relative;
+      height: 100px;
+      text-align: left;
+
+      .block {
+        position: absolute;
+        width: 0%;
+        height: inherit;
+        background-color: #fff;
+        animation: secBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+        // animation-delay: 2s;
+      }
+
+      .content {
+        display: flex;
+        justify-content: flex-end;
+        animation: secFadeIn 2s forwards;
+        animation-delay: 1.6s;
+        opacity: 0;
+
+        i {
+          display: flex;
+          align-items: flex-end;
+          color: $redLight;
+          transform: rotate(-45deg);
+          font-size: 100px;
+        }
+
+        span {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          color: #fff;
+          p {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .imageContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    height: 100%;
+    // overflow: hidden;
+
+    img {
+      position: absolute;
+      background-color: $secondColor;
+      top: -100px;
+      width: 100%;
+      border-bottom-left-radius: 50px;
+      border-bottom-right-radius: 50px;
+      transform: translateY(-1000px);
+      animation: scaleImage 1s forwards;
+      animation-delay: 1.6s;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: -300px;
+      left: 0;
+      height: 500px;
+      width: 100%;
+      transform: translateY(-1000px);
+      background-color: $secondColor;
+      z-index: -1;
+      animation: scaleImageAfter 1s forwards;
+      animation-delay: 1.6s;
+    }
+  }
+}
+
+.scrollContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $colorText;
+  margin-top: 400px;
+  opacity: 0;
+  transform: translateY(-100px);
+  animation: shoveUp 1s ease-in forwards;
+  animation-delay: 2s;
+  overflow: hidden;
+
+  img {
+    width: 70px;
+  }
+
+  i {
+    animation: bounce 1s ease-in-out infinite;
+  }
+}
+
+@media (max-width: 1199px) {
+  .container {
+    .imageContainer {
+      position: relative;
+
+      img {
+        top: -80px;
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .container {
+    justify-content: space-between;
+    .box {
+      .title {
+        height: 20px;
+        .block {
+          position: absolute;
+          width: 0%;
+          height: 85px;
+          background-color: $redLight;
+          animation: mainBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+        }
+
+        h2 {
+          font-family: "poppins";
+          color: #fff;
+          font-size: 70px;
+          animation: mainFadeIn 2s forwards;
+          text-transform: uppercase;
+          animation-delay: 1.6s;
+          opacity: 0;
+          margin: 0;
+        }
+      }
+      .role {
+        position: relative;
+        height: 100px;
+        text-align: left;
+
+        .block {
+          position: absolute;
+          width: 0%;
+          height: inherit;
+          background-color: #fff;
+          animation: secBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+          // animation-delay: 2s;
+        }
+      }
+    }
+
+    .imageContainer {
+      width: 45%;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    position: relative;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 0px;
+    height: calc(100vh - 100px);
+
+    .box {
+      height: 40%;
+      justify-content: center;
+      .title {
+        height: 80px;
+        .block {
+          position: absolute;
+          width: 0%;
+          height: inherit;
+          background-color: $redLight;
+          animation: mainBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+        }
+
+        h2 {
+          font-family: "poppins";
+          color: #fff;
+          font-size: 65px;
+          animation: mainFadeIn 2s forwards;
+          text-transform: uppercase;
+          animation-delay: 1.6s;
+          opacity: 0;
+          margin: 0;
+        }
+      }
+      .role {
+        position: relative;
+        height: 100px;
+        text-align: left;
+
+        .block {
+          position: absolute;
+          width: 0%;
+          height: inherit;
+          background-color: #fff;
+          animation: secBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+          // animation-delay: 2s;
+        }
+      }
+    }
+
+    .imageContainer {
+      position: absolute;
+      background-image: url("../../../../public/images/filqImage2.png");
+      background-position-x: center;
+      background-position-y: bottom;
+      background-size: 90%;
+      background-repeat: no-repeat;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      bottom: 0;
+      width: 100%;
+      height: 80%;
+      animation: fadeIn 1s forwards;
+      animation-delay: 1.6s;
+      // overflow: hidden;
+
+      img {
+        display: none;
+        position: absolute;
+        background-color: transparent;
+        bottom: 15px;
+        width: inherit;
+        border-radius: 0;
+        opacity: 0;
+        transform: none;
+        animation: fadeIn 1s forwards;
+        animation-delay: 1.6s;
+      }
+
+      &::after {
+        content: none;
+      }
+    }
+  }
+
+  .scrollContainer {
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: space-between;
+    left: 5px;
+    bottom: 15px;
+    color: $colorText;
+    margin-top: 0;
+    opacity: 0;
+    height: 170px;
+    // z-index: 2;
+
+    img {
+      display: none;
+      height: 50px;
+    }
+    h3 {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+    }
+
+    i {
+      height: 20px;
+      animation: bounce 1s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes mainBlock {
+  0% {
+    width: 0%;
+    top: -500px;
+    left: 0;
+  }
+  30% {
+    width: 1%;
+    top: 0;
+    left: 0;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+
+@keyframes mainFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes secBlock {
+  0% {
+    width: 0%;
+    top: -500px;
+    right: 0;
+  }
+  30% {
+    width: 1%;
+    top: 0;
+    right: 0;
+  }
+  50% {
+    width: 100%;
+    right: 0;
+  }
+  100% {
+    width: 0;
+    right: 100%;
+  }
+}
+
+@keyframes secFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes scaleImage {
+  0% {
+    transform: translateY(-1000px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleImageAfter {
+  0% {
+    transform: translateY(-1000px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes shoveUp {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
