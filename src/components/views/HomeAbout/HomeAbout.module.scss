@@ -31,7 +31,10 @@
     }
   }
   .imageContainer {
-    width: 30%;
+    width: 40%;
+    img {
+      width: 100%;
+    }
   }
   .findMe {
     display: flex;

@@ -12,7 +12,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 200px;
+  margin-top: 100px;
 
   h1 {
     color: white;
@@ -280,19 +280,9 @@
       height: 80%;
       animation: fadeIn 1s forwards;
       animation-delay: 1.6s;
-      // overflow: hidden;
 
       img {
         display: none;
-        position: absolute;
-        background-color: transparent;
-        bottom: 15px;
-        width: inherit;
-        border-radius: 0;
-        opacity: 0;
-        transform: none;
-        animation: fadeIn 1s forwards;
-        animation-delay: 1.6s;
       }
 
       &::after {

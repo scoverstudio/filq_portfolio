@@ -1,0 +1,119 @@
+@import "../../../styles/settings.scss";
+
+.container {
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 150px;
+
+  .contentAbout {
+    display: flex;
+    order: 1;
+    width: 100%;
+    margin-bottom: 120px;
+    span {
+      color: $secondColor;
+    }
+    h2 {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 45px;
+      margin-bottom: 30px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    .image {
+        width: 100%;
+
+        img {
+            width: 100%;
+        }
+    }
+  }
+  .cloudContainer {
+    position: relative;
+    width: 100%;
+    margin-bottom: 100px;
+
+    .cloud {
+      height: 600px;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    h2 {
+      font-family: "roboto";
+      position: absolute;
+      text-transform: uppercase;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      color: rgba($color: $redDarker, $alpha: 0.1);
+      font-size: 170px;
+      width: 100%;
+      text-align: center;
+      pointer-events: none;
+    }
+  }
+  .work {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    .contentAbout {
+      flex-wrap: wrap;
+      justify-content: center;
+      .text {
+        width: 100%;
+      }
+    }
+    .cloudContainer {
+      display: none;
+    }
+    .work {
+      display: block;
+
+      h2 {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 45px;
+        margin-bottom: 30px;
+        span {
+          color: $secondColor;
+        }
+      }
+    }
+  }
+}
+
+@-webkit-keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}

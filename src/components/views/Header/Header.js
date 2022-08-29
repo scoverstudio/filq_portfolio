@@ -15,7 +15,7 @@ const Header = () => {
           <div className={styles.role}>
             <div className={styles.block}></div>
             <div className={styles.content}>
-              <i class="fa fa-arrow-down" aria-hidden="true"></i>
+              <i className="fa fa-arrow-down" aria-hidden="true"></i>
               <span>
                 <p>Profesional</p>
                 <p>Fragmovie</p>
@@ -37,7 +37,7 @@ const Header = () => {
           alt="filq"
           src={`${process.env.PUBLIC_URL}/images/mouse-scroll-icon-2.jpg`}
         />
-        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+        <i className="fa fa-arrow-down" aria-hidden="true"></i>
       </div>
     </>
   );

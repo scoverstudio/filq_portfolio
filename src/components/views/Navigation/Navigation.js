@@ -31,17 +31,17 @@ const Navigation = () => {
             <Nav.Link href="/" className={styles.link}>
               Home
             </Nav.Link>
-            <Nav.Link href="/" className={styles.link}>
+            <Nav.Link href="/portfolio" className={styles.link}>
               Portfolio
             </Nav.Link>
-            <Nav.Link href="/" className={styles.link}>
+            <Nav.Link href="/about" className={styles.link}>
               About
             </Nav.Link>
-            <Nav.Link href="/" className={styles.link}>
+            <Nav.Link href="/contact" className={styles.link}>
               Contact
             </Nav.Link>
             <Nav.Link href="#link" className={styles.link}>
-              <i class="fa fa-youtube" aria-hidden="true"></i>
+              <i className="fa fa-youtube" aria-hidden="true"></i>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
