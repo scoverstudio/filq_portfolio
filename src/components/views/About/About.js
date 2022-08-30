@@ -74,6 +74,32 @@ const About = () => {
         <h2>worked for</h2>
         <div className={clsx("content", styles.cloud)}></div>
       </div>
+      {/* <div className={styles.logos}>
+        <h1>
+          Biggest <span>Industries</span> I worked for
+        </h1>
+        <div className={styles.singleImg}>
+          <img alt="filq" src={`${process.env.PUBLIC_URL}/images/esl.png`} />
+        </div>
+        <div className={styles.singleImg}>
+          <img alt="filq" src={`${process.env.PUBLIC_URL}/images/iem.png`} />
+        </div>
+        <div className={styles.singleImg}>
+          <img
+            alt="filq"
+            src={`${process.env.PUBLIC_URL}/images/nadekingLogo.svg`}
+          />
+        </div>
+        <div className={styles.singleImg}>
+          <img
+            alt="filq"
+            src={`${process.env.PUBLIC_URL}/images/DreamHack-logo.png`}
+          />
+        </div>
+        <div className={styles.singleImg}>
+          <img alt="filq" src={`${process.env.PUBLIC_URL}/images/HLTV.png`} />
+        </div>
+      </div> */}
       <div className={styles.work}>
         <h2>
           I <span>worked</span> with

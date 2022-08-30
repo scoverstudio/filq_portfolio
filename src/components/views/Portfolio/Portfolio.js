@@ -39,12 +39,21 @@ const Portfolio = (props) => {
     setFade(true);
   };
 
+  const sortByRecent = (videos) => {
+    const sortByLikesArr = [...videos];
+    sortByLikesArr.sort((a, b) => {
+      return new Date(b.snippet.publishedAt) - new Date(a.snippet.publishedAt);
+    });
+    setVideos(sortByLikesArr);
+    setFade(true);
+  };
+
   return (
     <div className={styles.portfolioContainer}>
       <h1>Here's my Portfolio!</h1>
       <div className={styles.control}>
         <p>sort by:</p>
-        <button onClick={() => sortByViews(videos)}>Recent</button>
+        <button onClick={() => sortByRecent(videos)}>Recent</button>
         <button onClick={() => sortByViews(videos)}>Most Views</button>
         <button onClick={() => sortByLikes(videos)}>Most Likes</button>
       </div>
@@ -82,7 +91,7 @@ const Portfolio = (props) => {
       <div className={styles.restPortfolio}>
         <h3>For the rest of my work go here!</h3>
         <a href="https://www.youtube.com/playlist?list=PLEmxBs67yX1zyfrwEqikC-ZZ4T0DY672r">
-          <i class="fa fa-youtube" aria-hidden="true"></i>
+          <i className="fa fa-youtube" aria-hidden="true"></i>
         </a>
       </div>
     </div>
