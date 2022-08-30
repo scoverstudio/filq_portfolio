@@ -22,18 +22,15 @@
       transition: 0.2s ease-in-out;
       background-color: $redDarker;
 
-      &:nth-child(2) {
-        background-color: #0b1a32;
-      }
-      &:nth-child(3) {
-        background-color: $redDarker;
-        margin: 0;
-      }
-
       &:hover {
         transform: scale(110%);
         background-color: $redLight;
       }
+    }
+    &:last-child {
+        i {
+            margin: 0;
+        }
     }
   }
 }

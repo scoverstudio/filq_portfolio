@@ -44,8 +44,9 @@ const Portfolio = (props) => {
       <h1>Here's my Portfolio!</h1>
       <div className={styles.control}>
         <p>sort by:</p>
-        <button onClick={() => sortByViews(videos)}>Most popular</button>
-        <button onClick={() => sortByLikes(videos)}>Most Liked</button>
+        <button onClick={() => sortByViews(videos)}>Recent</button>
+        <button onClick={() => sortByViews(videos)}>Most Views</button>
+        <button onClick={() => sortByLikes(videos)}>Most Likes</button>
       </div>
       <div className={clsx(styles.moviesPanel, fade && styles.fadeIn)}>
         {props.isLoading ? (
