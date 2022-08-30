@@ -30,9 +30,9 @@ function App() {
     };
     (async () => await getServerSideProps())();
   }, []);
-  fetch(`./netlify/functions/fetch-playlist`).then((res) => {
-    console.log(res.json());
-  });
+  // fetch(`./netlify/functions/fetch-playlist`).then((res) => {
+  //   console.log(res.json());
+  // });
   data && data.forEach((item) => ids.push(item.snippet.resourceId.videoId));
   return (
     <Router>
