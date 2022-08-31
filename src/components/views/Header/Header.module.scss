@@ -30,6 +30,7 @@
     justify-content: space-around;
     flex-direction: column;
     z-index: 1;
+    margin-bottom: 100px;
 
     .title {
       width: 100%;
@@ -47,7 +48,7 @@
       h2 {
         font-family: "poppins";
         color: #fff;
-        font-size: 125px;
+        font-size: 150px;
         animation: mainFadeIn 2s forwards;
         text-transform: uppercase;
         animation-delay: 1.6s;
@@ -81,7 +82,7 @@
           align-items: flex-end;
           color: $redLight;
           transform: rotate(-45deg);
-          font-size: 100px;
+          font-size: 150px;
         }
 
         span {
@@ -90,6 +91,7 @@
           justify-content: center;
           color: #fff;
           p {
+            font-size: 23px;
             margin: 0;
           }
         }
@@ -145,9 +147,13 @@
   animation: shoveUp 1s ease-in forwards;
   animation-delay: 2s;
   overflow: hidden;
+  h3 {
+    font-size: 20px;
+    margin: 0;
+  }
 
   img {
-    width: 70px;
+    width: 50px;
   }
 
   i {
