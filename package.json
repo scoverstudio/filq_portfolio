@@ -12,6 +12,7 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "atropos": "^1.0.2",
+    "axios": "^0.27.2",
     "bootstrap": "^5.2.0",
     "clsx": "^1.2.1",
     "hover-hand": "^1.0.0",

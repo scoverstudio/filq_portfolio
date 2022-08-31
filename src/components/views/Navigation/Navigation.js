@@ -15,7 +15,7 @@ const Navigation = () => {
       )}
     >
       <Container className="container-fluid">
-        <Navbar.Brand href="#home" className={styles.brandContainer}>
+        <Navbar.Brand href="/" className={styles.brandContainer}>
           <img
             alt="logo"
             src={`${process.env.PUBLIC_URL}/images/filqLogo.png`}

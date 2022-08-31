@@ -2,24 +2,47 @@ import { useEffect, useState } from "react";
 import styles from "./Portfolio.module.scss";
 import Spinner from "react-bootstrap/Spinner";
 import clsx from "clsx";
+import axios from "axios";
 
-const Portfolio = (props) => {
+const Portfolio = ({
+  playlistOneIds,
+  playlistTwoIds,
+  playlistThreeIds,
+  isLoading,
+}) => {
   const YOUTUBE_VIDEO_API = "https://www.googleapis.com/youtube/v3/videos";
   const [videos, setVideos] = useState(null);
   const [fade, setFade] = useState(null);
 
   useEffect(() => {
     const getVideosFromPlaylist = async () => {
-      const res = await fetch(
-        `${YOUTUBE_VIDEO_API}?part=snippet&part=statistics&id=${props.ids.toString()}&key=${
+      const getPlaylistOne = axios.get(
+        `${YOUTUBE_VIDEO_API}?part=snippet&part=statistics&id=${playlistOneIds.toString()}&key=${
           process.env.REACT_APP_YOUTUBE_API_KEY
         }`
       );
-      const data = await res.json();
-      setVideos(data.items);
+      const getPlaylistTwo = axios.get(
+        `${YOUTUBE_VIDEO_API}?part=snippet&part=statistics&id=${playlistTwoIds.toString()}&key=${
+          process.env.REACT_APP_YOUTUBE_API_KEY
+        }`
+      );
+      const getPlaylistThree = axios.get(
+        `${YOUTUBE_VIDEO_API}?part=snippet&part=statistics&id=${playlistThreeIds.toString()}&key=${
+          process.env.REACT_APP_YOUTUBE_API_KEY
+        }`
+      );
+      axios.all([getPlaylistOne, getPlaylistTwo, getPlaylistThree]).then(
+        axios.spread((...allData) => {
+          const playlistOne = allData[0].data.items;
+          const playlistTwo = allData[1].data.items;
+          const playlistThree = allData[2].data.items;
+          setVideos([...playlistOne, ...playlistTwo, ...playlistThree]);
+        })
+      );
     };
+
     (async () => await getVideosFromPlaylist())();
-  }, [props.ids]);
+  }, [playlistOneIds, playlistThreeIds, playlistTwoIds]);
 
   const sortByViews = (videos) => {
     const sortByViewsArr = [...videos];
@@ -58,7 +81,7 @@ const Portfolio = (props) => {
         <button onClick={() => sortByLikes(videos)}>Most Likes</button>
       </div>
       <div className={clsx(styles.moviesPanel, fade && styles.fadeIn)}>
-        {props.isLoading ? (
+        {isLoading ? (
           <Spinner className="m-auto" animation="border" role="status">
             <span className="visually-hidden">Loading...</span>
           </Spinner>
@@ -88,6 +111,7 @@ const Portfolio = (props) => {
           ))
         )}
       </div>
+
       <div className={styles.restPortfolio}>
         <h3>For the rest of my work go here!</h3>
         <a href="https://www.youtube.com/playlist?list=PLEmxBs67yX1zyfrwEqikC-ZZ4T0DY672r">
