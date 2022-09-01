@@ -6,7 +6,6 @@ import Portfolio from "./components/views/Portfolio/Portfolio";
 import { useEffect, useState } from "react";
 import About from "./components/views/About/About";
 import Contact from "./components/views/Contact/Contact";
-import axios from "axios";
 
 function App() {
   const YOUTUBE_PLAYLIST_ITEMS_API =
