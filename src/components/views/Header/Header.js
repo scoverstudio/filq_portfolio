@@ -31,9 +31,9 @@ const Header = () => {
           {/* <h1>Hi,  </h1> */}
           <div className={styles.title}>
             <div className={styles.block}></div>
-            <h2>
+            <h1>
               I am FILQ<span>.</span>
-            </h2>
+            </h1>
           </div>
           <div className={styles.role}>
             <div className={styles.block}></div>

@@ -618,7 +618,8 @@ const ParticleBackground = () => {
                 default: "bounce",
               },
               random: false,
-              speed: 2.5,
+              speed: 1.5,
+              // 2.5
               straight: false,
             },
             number: {

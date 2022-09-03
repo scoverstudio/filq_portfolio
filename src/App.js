@@ -6,6 +6,8 @@ import Portfolio from "./components/views/Portfolio/Portfolio";
 import { useEffect, useState } from "react";
 import About from "./components/views/About/About";
 import Contact from "./components/views/Contact/Contact";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
 
 function App() {
   const YOUTUBE_PLAYLIST_ITEMS_API =
@@ -79,26 +81,28 @@ function App() {
     );
 
   return (
-    <Router>
-      <MainLayout>
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route
-            path="/portfolio"
-            element={
-              <Portfolio
-                playlistOneIds={playlistOneIds}
-                playlistTwoIds={playlistTwoIds}
-                playlistThreeIds={playlistThreeIds}
-                isLoading={isLoading}
-              />
-            }
-          />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </MainLayout>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <MainLayout>
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route
+              path="/portfolio"
+              element={
+                <Portfolio
+                  playlistOneIds={playlistOneIds}
+                  playlistTwoIds={playlistTwoIds}
+                  playlistThreeIds={playlistThreeIds}
+                  isLoading={isLoading}
+                />
+              }
+            />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </MainLayout>
+      </Router>
+    </Provider>
   );
 }
 

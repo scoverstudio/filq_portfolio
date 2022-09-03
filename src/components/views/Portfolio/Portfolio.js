@@ -53,15 +53,6 @@ const Portfolio = ({
     setFade(true);
   };
 
-  const sortByLikes = (videos) => {
-    const sortByLikesArr = [...videos];
-    sortByLikesArr.sort((a, b) => {
-      return b.statistics.likeCount - a.statistics.likeCount;
-    });
-    setVideos(sortByLikesArr);
-    setFade(true);
-  };
-
   const sortByRecent = (videos) => {
     const sortByLikesArr = [...videos];
     sortByLikesArr.sort((a, b) => {
@@ -78,7 +69,6 @@ const Portfolio = ({
         <p>sort by:</p>
         <button onClick={() => sortByRecent(videos)}>Recent</button>
         <button onClick={() => sortByViews(videos)}>Most Views</button>
-        <button onClick={() => sortByLikes(videos)}>Most Likes</button>
       </div>
       <div className={clsx(styles.moviesPanel, fade && styles.fadeIn)}>
         {isLoading ? (

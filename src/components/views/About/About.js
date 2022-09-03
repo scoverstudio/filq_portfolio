@@ -4,9 +4,12 @@ import styles from "./About.module.scss";
 import "./About.css";
 import { Container } from "react-bootstrap";
 import Atropos from "atropos/react";
-import SimpleCloud from "./TagCloudMobile";
+import { useSelector } from "react-redux";
+import { getClients } from "../../../redux/clients";
 
 const About = () => {
+  const clients = useSelector(getClients);
+  console.log(clients);
   const myTags = [
     "HLTV.org",
     "Dust2.dk",
@@ -33,6 +36,38 @@ const About = () => {
 
   return (
     <Container className={clsx(styles.container)}>
+      <section className={styles.clients}>
+        <h2>Clients!</h2>
+        {clients.map((element) => (
+          <div className={styles.client}>
+            <div className={styles.clientImage}>
+              <div className={styles.img}>
+                <img
+                  style={element.style}
+                  alt="client"
+                  src={element.image}
+                ></img>
+              </div>
+            </div>
+            <div className={styles.clientContent}>
+              <div className={styles.clientText}>
+                <h4>{element.name}</h4>
+                <p>{element.description}</p>
+              </div>
+              <div className={styles.clientExamples}>
+                <div className={styles.exampleVideo}>
+                  Example video
+                  <i class="fa fa-arrow-right" aria-hidden="true" />
+                </div>
+                <a href={element.videos[0]}>
+                  <i class="fa fa-link" aria-hidden="true" />
+                </a>
+                {/* <a href={element.videos[1]}>Example 2</a> */}
+              </div>
+            </div>
+          </div>
+        ))}
+      </section>
       <div className={styles.contentAbout}>
         <div className={styles.text}>
           <h2>
@@ -70,10 +105,10 @@ const About = () => {
           ></img>
         </Atropos>
       </div>
-      <div className={styles.cloudContainer}>
+      {/* <div className={styles.cloudContainer}>
         <h2>worked for</h2>
         <div className={clsx("content", styles.cloud)}></div>
-      </div>
+      </div> */}
       {/* <div className={styles.logos}>
         <h1>
           Biggest <span>Industries</span> I worked for
@@ -100,12 +135,12 @@ const About = () => {
           <img alt="filq" src={`${process.env.PUBLIC_URL}/images/HLTV.png`} />
         </div>
       </div> */}
-      <div className={styles.work}>
+      {/* <div className={styles.work}>
         <h2>
           I <span>worked</span> with
         </h2>
         <SimpleCloud />
-      </div>
+      </div> */}
     </Container>
   );
 };
