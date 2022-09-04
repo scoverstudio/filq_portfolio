@@ -35,7 +35,7 @@ const Contact = () => {
   };
   return (
     <>
-      <section className={clsx("mb-4", styles.contactContainer)}>
+      <section className={clsx(styles.contactContainer)}>
         <h2 className="h1-responsive font-weight-bold text-center my-4">
           Contact me
         </h2>
@@ -191,13 +191,8 @@ const Contact = () => {
             <div className="status"></div>
           </div>
 
-          <div className="col-md-3 text-center">
+          <div className={clsx("col-md-3 text-center", styles.sideInfo)}>
             <ul className="list-unstyled mb-0">
-              <li>
-                <i className="fas fa-map-marker-alt fa-2x"></i>
-                <p>Strzegom, POLAND</p>
-              </li>
-
               <li>
                 <i className="fas fa-phone mt-4 fa-2x"></i>
                 <p>+48 783 824 172</p>

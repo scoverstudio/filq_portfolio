@@ -52,6 +52,9 @@
     row-gap: 15px;
     width: 85%;
     min-height: 800px;
+    max-height: fit-content;
+    height: 800px;
+    overflow: hidden;
 
     .movieBox {
       display: flex;
@@ -91,6 +94,19 @@
             margin-right: 5px;
           }
         }
+      }
+    }
+    .revealMore {
+      position: absolute;
+      bottom: 0px;
+      background-color: #292929;
+      padding: 5px;
+      width: 100%;
+      text-align: center;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #353535;
       }
     }
   }

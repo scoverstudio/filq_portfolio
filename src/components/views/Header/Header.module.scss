@@ -107,32 +107,26 @@
     justify-content: center;
     width: 30%;
     height: 100%;
-    // overflow: hidden;
 
     img {
       position: absolute;
-      background-color: $secondColor;
-      top: -100px;
+      // background: linear-gradient(
+      //   0deg,
+      //   #ff0000 ,
+      //   #760000 ,
+      //   #540000 ,
+      //   #000000 ,
+      // );
+      background: linear-gradient(0deg, #ff0000, #760000, #000000, #000000);
+      background-size: 400% 400%;
+
       width: 100%;
       z-index: 1;
+      padding-top: 320px;
       border-bottom-left-radius: 50px;
       border-bottom-right-radius: 50px;
-      transform: translateY(-1000px);
-      animation: scaleImage 1s forwards;
-      animation-delay: 1.6s;
-    }
-
-    &::after {
-      position: absolute;
-      content: "";
-      top: -300px;
-      left: 0;
-      height: 500px;
-      width: 100%;
-      transform: translateY(-1000px);
-      background-color: $secondColor;
-      z-index: 0;
-      animation: scaleImageAfter 1s forwards;
+      transform: translateY(-1200px);
+      animation: scaleImage 1s forwards, gradient 2s ease forwards;
       animation-delay: 1.6s;
     }
   }
@@ -431,19 +425,10 @@
 
 @keyframes scaleImage {
   0% {
-    transform: translateY(-1000px);
+    transform: translateY(-1200px);
   }
   100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes scaleImageAfter {
-  0% {
-    transform: translateY(-1000px);
-  }
-  100% {
-    transform: translateY(0);
+    transform: translateY(-400px);
   }
 }
 
@@ -491,5 +476,15 @@
     -webkit-transform: translateY(50px) translateX(-50%);
     transform: translateY(50px) translateX(-50%);
     opacity: 0;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 80%;
+  }
+
+  100% {
+    background-position: 0% 60%;
   }
 }

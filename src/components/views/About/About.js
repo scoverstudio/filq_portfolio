@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import TagCloud from "TagCloud";
 import styles from "./About.module.scss";
 import "./About.css";
 import { Container } from "react-bootstrap";
@@ -9,30 +8,21 @@ import { getClients } from "../../../redux/clients";
 
 const About = () => {
   const clients = useSelector(getClients);
-  console.log(clients);
-  const myTags = [
-    "HLTV.org",
-    "Dust2.dk",
-    "NadeKing",
-    "EsportalPolska",
-    "Svenska Elitserien",
-    "VALORANTPolska",
-    "Galaxy Racer",
-    "FABRYKA ESPORTU",
-    "ESL ",
-    "DreamHack",
-    "IEM",
-    "SCOVER",
-  ];
 
-  // eslint-disable-next-line no-unused-vars
-  var tagCloud = TagCloud(".content", myTags, {
-    radius: 300,
-    maxSpeed: "normal",
-    initSpeed: "normal",
-    direction: 135,
-    keep: true,
-  });
+  // const myTags = [
+  //   "HLTV.org",
+  //   "Dust2.dk",
+  //   "NadeKing",
+  //   "EsportalPolska",
+  //   "Svenska Elitserien",
+  //   "VALORANTPolska",
+  //   "Galaxy Racer",
+  //   "FABRYKA ESPORTU",
+  //   "ESL ",
+  //   "DreamHack",
+  //   "IEM",
+  //   "SCOVER",
+  // ];
 
   return (
     <Container className={clsx(styles.container)}>
@@ -62,7 +52,6 @@ const About = () => {
                 <a href={element.videos[0]}>
                   <i class="fa fa-link" aria-hidden="true" />
                 </a>
-                {/* <a href={element.videos[1]}>Example 2</a> */}
               </div>
             </div>
           </div>
@@ -101,7 +90,7 @@ const About = () => {
           <img
             alt="gamer"
             className="image"
-            src={`${process.env.PUBLIC_URL}/images/aboutImg.png`}
+            src={`${process.env.PUBLIC_URL}/images/filqLogo.png`}
           ></img>
         </Atropos>
       </div>

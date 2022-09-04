@@ -62,6 +62,12 @@ const Portfolio = ({
     setFade(true);
   };
 
+  const increaseDiv = () => {
+    var myDiv = document.querySelector(".moviesPanel");
+    var currWidth = myDiv.clientHeight;
+    myDiv.style.height = currWidth + 800 + "px";
+  };
+
   return (
     <div className={styles.portfolioContainer}>
       <h1>Here's my Portfolio!</h1>
@@ -70,7 +76,13 @@ const Portfolio = ({
         <button onClick={() => sortByRecent(videos)}>Recent</button>
         <button onClick={() => sortByViews(videos)}>Most Views</button>
       </div>
-      <div className={clsx(styles.moviesPanel, fade && styles.fadeIn)}>
+      <div
+        className={clsx(
+          "moviesPanel",
+          styles.moviesPanel,
+          fade && styles.fadeIn
+        )}
+      >
         {isLoading ? (
           <Spinner className="m-auto" animation="border" role="status">
             <span className="visually-hidden">Loading...</span>
@@ -100,8 +112,10 @@ const Portfolio = ({
             </div>
           ))
         )}
+        <div onClick={() => increaseDiv()} className={styles.revealMore}>
+          <i class="fa fa-arrow-down" aria-hidden="true" />
+        </div>
       </div>
-
       <div className={styles.restPortfolio}>
         <h3>For the rest of my work go here!</h3>
         <a href="https://www.youtube.com/playlist?list=PLEmxBs67yX1zyfrwEqikC-ZZ4T0DY672r">
