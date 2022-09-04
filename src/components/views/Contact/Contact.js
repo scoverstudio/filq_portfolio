@@ -194,13 +194,8 @@ const Contact = () => {
           <div className={clsx("col-md-3 text-center", styles.sideInfo)}>
             <ul className="list-unstyled mb-0">
               <li>
-                <i className="fas fa-phone mt-4 fa-2x"></i>
-                <p>+48 783 824 172</p>
-              </li>
-
-              <li>
                 <i className="fas fa-envelope mt-4 fa-2x"></i>
-                <p>filipsza@gmail.com</p>
+                <p>szatkowskifilip@filq.pl</p>
               </li>
             </ul>
           </div>
@@ -210,13 +205,13 @@ const Contact = () => {
         <h2>All my socials</h2>
         <div>
           <a href="https://twitter.com/filqqq">
-            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <i className="fa fa-twitter" aria-hidden="true"></i>
           </a>
-          <a href="https://steamcommunity.com/id/filqq/">
-            <i class="fa fa-steam" aria-hidden="true"></i>
-          </a>
+          {/* <a href="https://steamcommunity.com/id/filqq/">
+            <i className="fa fa-steam" aria-hidden="true"></i>
+          </a> */}
           <a href="https://www.youtube.com/c/filqTV">
-            <i class="fa fa-youtube" aria-hidden="true"></i>
+            <i className="fa fa-youtube" aria-hidden="true"></i>
           </a>
         </div>
       </section>

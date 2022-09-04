@@ -36,11 +36,17 @@ const Portfolio = ({
           const playlistOne = allData[0].data.items;
           const playlistTwo = allData[1].data.items;
           const playlistThree = allData[2].data.items;
-          setVideos([...playlistOne, ...playlistTwo, ...playlistThree]);
+          setVideos(
+            [...playlistOne, ...playlistTwo, ...playlistThree].sort((a, b) => {
+              return (
+                new Date(b.snippet.publishedAt) -
+                new Date(a.snippet.publishedAt)
+              );
+            })
+          );
         })
       );
     };
-
     (async () => await getVideosFromPlaylist())();
   }, [playlistOneIds, playlistThreeIds, playlistTwoIds]);
 
@@ -113,7 +119,7 @@ const Portfolio = ({
           ))
         )}
         <div onClick={() => increaseDiv()} className={styles.revealMore}>
-          <i class="fa fa-arrow-down" aria-hidden="true" />
+          <i className="fa fa-arrow-down" aria-hidden="true" />
         </div>
       </div>
       <div className={styles.restPortfolio}>
