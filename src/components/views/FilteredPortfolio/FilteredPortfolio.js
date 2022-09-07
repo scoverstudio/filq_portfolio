@@ -7,18 +7,17 @@ const FilteredPortfolio = ({
   playlistOneIds,
   playlistTwoIds,
   playlistThreeIds,
+  isLoading,
 }) => {
   const { id } = useParams();
   const [videos, setVideos] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchVideosFromPlaylist(
       playlistOneIds,
       playlistTwoIds,
       playlistThreeIds,
-      setVideos,
-      setIsLoading
+      setVideos
     );
   }, [playlistOneIds, playlistThreeIds, playlistTwoIds]);
 

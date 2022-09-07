@@ -16,6 +16,7 @@ function App() {
   const [playlistOneData, setPlaylistOneData] = useState(null);
   const [playlistTwoData, setPlaylistTwoData] = useState(null);
   const [playlistThreeData, setPlaylistThreeData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   const playlistOneIds = [];
   const playlistTwoIds = [];
@@ -28,6 +29,7 @@ function App() {
       );
       const data = await res.json();
       setPlaylistOneData(data.items);
+      setIsLoading(false);
     } catch (err) {
       console.log(err.stack);
     }
@@ -40,6 +42,7 @@ function App() {
       );
       const data = await res.json();
       setPlaylistTwoData(data.items);
+      setIsLoading(false);
     } catch (err) {
       console.log(err.stack);
     }
@@ -52,6 +55,7 @@ function App() {
       );
       const data = await res.json();
       setPlaylistThreeData(data.items);
+      setIsLoading(false);
     } catch (err) {
       console.log(err.stack);
     }
@@ -90,6 +94,7 @@ function App() {
                   playlistOneIds={playlistOneIds}
                   playlistTwoIds={playlistTwoIds}
                   playlistThreeIds={playlistThreeIds}
+                  isLoading={isLoading}
                 />
               }
             />
@@ -102,6 +107,7 @@ function App() {
                   playlistOneIds={playlistOneIds}
                   playlistTwoIds={playlistTwoIds}
                   playlistThreeIds={playlistThreeIds}
+                  isLoading={isLoading}
                 />
               }
             />

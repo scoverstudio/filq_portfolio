@@ -4,11 +4,9 @@ const fetchVideosFromPlaylist = (
   playlistOneIds,
   playlistTwoIds,
   playlistThreeIds,
-  setVideos,
-  setIsLoading
+  setVideos
 ) => {
   const YOUTUBE_VIDEO_API = "https://www.googleapis.com/youtube/v3/videos";
-  setIsLoading(true);
 
   const getPlaylistOne = axios.get(
     `${YOUTUBE_VIDEO_API}?part=snippet&part=statistics&id=${playlistOneIds.toString()}&key=${
@@ -37,7 +35,6 @@ const fetchVideosFromPlaylist = (
           );
         })
       );
-      setIsLoading(false);
     })
   );
 };

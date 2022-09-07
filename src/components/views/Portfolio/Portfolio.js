@@ -43,8 +43,6 @@ const Portfolio = ({
     myDiv.style.height = currWidth + 800 + "px";
   };
 
-  console.log(videos);
-
   return (
     <div className={styles.portfolioContainer}>
       <h1>Here's my Portfolio!</h1>
