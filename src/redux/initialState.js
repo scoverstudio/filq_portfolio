@@ -18,36 +18,28 @@ const initialState = {
       name: "NadeKing",
       image: `${process.env.PUBLIC_URL}/images/nadeking.png`,
       description: "Supergeneral guy with 1M+ subs.",
-      style: {
-        paddingBottom: "30px",
-      },
+
       channelName: "NadeKing",
     },
     {
       name: "Cloud9 CSGO",
-      image: `${process.env.PUBLIC_URL}/images/Cloud-9.png`,
+      image: `${process.env.PUBLIC_URL}/images/Cloud-9-v2.png`,
       description: "Cloud9 CSGO!",
-      style: {
-        paddingBottom: "15px",
-      },
+
       channelName: "Cloud9 CSGO",
     },
     {
       name: "DreamHack",
-      image: `${process.env.PUBLIC_URL}/images/DreamHack.png`,
+      image: `${process.env.PUBLIC_URL}/images/DreamHack-Logo.png`,
       description: "Supergeneral guy with 1M+ subs.",
-      style: {
-        paddingBottom: "30px",
-      },
+
       channelName: "HLTVorg",
     },
     {
       name: "Valorant Polska",
-      image: `${process.env.PUBLIC_URL}/images/Valorant_logo.png`,
+      image: `${process.env.PUBLIC_URL}/images/valorant.png`,
       description: "The biggest polish Valorant community!",
-      style: {
-        paddingBottom: "30px",
-      },
+
       channelName: "VALORANT",
     },
     {
@@ -55,9 +47,7 @@ const initialState = {
       image: `${process.env.PUBLIC_URL}/images/Dust2dk_Logo.png`,
       description:
         "Danish Counter-Strike coverage site with coverage of the Danish scene.",
-      style: {
-        paddingBottom: "30px",
-      },
+
       channelName: "Dust2.dk",
     },
     {
@@ -78,9 +68,7 @@ const initialState = {
     {
       name: "Galaxy Racer",
       image: `${process.env.PUBLIC_URL}/images/Galaxy_Racer_GXR.png`,
-      style: {
-        paddingBottom: "50px",
-      },
+
       description:
         "Galaxy Racer (GXR) is the largest esports, gaming and lifestyle organization in the world, with market presence in Middle East North Africa (MENA), North America, Southeast Asia (SEA), South Asia and Europe.",
 
