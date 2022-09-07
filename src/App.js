@@ -8,6 +8,7 @@ import About from "./components/views/About/About";
 import Contact from "./components/views/Contact/Contact";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
+import FilteredPortfolio from "./components/views/FilteredPortfolio/FilteredPortfolio";
 
 function App() {
   const YOUTUBE_PLAYLIST_ITEMS_API =
@@ -15,7 +16,6 @@ function App() {
   const [playlistOneData, setPlaylistOneData] = useState(null);
   const [playlistTwoData, setPlaylistTwoData] = useState(null);
   const [playlistThreeData, setPlaylistThreeData] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
 
   const playlistOneIds = [];
   const playlistTwoIds = [];
@@ -28,7 +28,6 @@ function App() {
       );
       const data = await res.json();
       setPlaylistOneData(data.items);
-      setIsLoading(false);
     } catch (err) {
       console.log(err.stack);
     }
@@ -41,7 +40,6 @@ function App() {
       );
       const data = await res.json();
       setPlaylistTwoData(data.items);
-      setIsLoading(false);
     } catch (err) {
       console.log(err.stack);
     }
@@ -54,7 +52,6 @@ function App() {
       );
       const data = await res.json();
       setPlaylistThreeData(data.items);
-      setIsLoading(false);
     } catch (err) {
       console.log(err.stack);
     }
@@ -93,12 +90,21 @@ function App() {
                   playlistOneIds={playlistOneIds}
                   playlistTwoIds={playlistTwoIds}
                   playlistThreeIds={playlistThreeIds}
-                  isLoading={isLoading}
                 />
               }
             />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route
+              path="/portfolio/:id"
+              element={
+                <FilteredPortfolio
+                  playlistOneIds={playlistOneIds}
+                  playlistTwoIds={playlistTwoIds}
+                  playlistThreeIds={playlistThreeIds}
+                />
+              }
+            />
           </Routes>
         </MainLayout>
       </Router>

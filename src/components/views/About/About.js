@@ -46,11 +46,11 @@ const About = () => {
               </div>
               <div className={styles.clientExamples}>
                 <div className={styles.exampleVideo}>
-                  Example video
-                  <i class="fa fa-arrow-right" aria-hidden="true" />
+                  Example videos
+                  <i className="fa fa-arrow-right" aria-hidden="true" />
                 </div>
-                <a href={element.videos[0]}>
-                  <i class="fa fa-link" aria-hidden="true" />
+                <a href={`/portfolio/${element.channelName}`}>
+                  <i className="fa fa-link" aria-hidden="true" />
                 </a>
               </div>
             </div>
