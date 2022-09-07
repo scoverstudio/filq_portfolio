@@ -74,24 +74,27 @@
         border-radius: 50px;
         border-right: 1px solid rgb(46, 46, 46);
 
-        img {
-          width: 100%;
-          margin: 0 auto;
-        }
+        .img {
+          position: relative;
+          img {
+            width: 100%;
+            margin: 0 auto;
+          }
 
-        // &::after {
-        //   content: "";
-        //   position: absolute;
-        //   width: 50%;
-        //   height: 12px;
-        //   left: 50%;
-        //   bottom: 70px;
-        //   border-radius: 50%;
-        //   box-shadow: 0px 0px 12px 5px rgb(255, 255, 255, 0.3);
-        //   transform: translateX(-50%);
-        //   background-color: rgba(255, 255, 255, 0.3);
-        //   z-index: 0;
-        // }
+          &::after {
+            content: "";
+            position: absolute;
+            width: 70%;
+            height: 12px;
+            left: 50%;
+            bottom: -20px;
+            border-radius: 50%;
+            box-shadow: 0px 0px 12px 5px rgb(255, 255, 255, 0.3);
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.3);
+            z-index: 0;
+          }
+        }
       }
 
       .clientContent {
