@@ -1,5 +1,5 @@
 import styles from "./HomeAbout.module.scss";
-import Atropos from "atropos/react";
+// import Atropos from "atropos/react";
 
 const HomeAbout = () => {
   return (
@@ -23,7 +23,7 @@ const HomeAbout = () => {
           years and look up at <span>About</span> section to know more details.
         </p>
       </div>
-      <Atropos
+      {/* <Atropos
         shadow={false}
         highlight={false}
         rotateXMax={25}
@@ -34,18 +34,18 @@ const HomeAbout = () => {
           alt="movieEditor"
           src={`${process.env.PUBLIC_URL}/images/gamer.png`}
         ></img>
-      </Atropos>
+      </Atropos> */}
       <div className={styles.findMe}>
         <h3>Find me on</h3>
         <p>
           Feel free to <span>contact</span> me!
         </p>
         <div className={styles.linksContainer}>
-          <a href="https://twitter.com/filqqq">
-            <i className="fa fa-twitter" aria-hidden="true" />
-          </a>
           <a href="https://www.youtube.com/c/filqTV">
             <i className="fa fa-youtube" aria-hidden="true" />
+          </a>
+          <a href="https://twitter.com/filqqq">
+            <i className="fa fa-twitter" aria-hidden="true" />
           </a>
         </div>
       </div>

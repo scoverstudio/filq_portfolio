@@ -40,9 +40,17 @@ const Navigation = () => {
             <Nav.Link href="/contact" className={styles.link}>
               Contact
             </Nav.Link>
-            <Nav.Link href="#link" className={styles.link}>
-              <i className="fa fa-youtube" aria-hidden="true"></i>
-            </Nav.Link>
+            <div className={styles.controlLinks}>
+              <Nav.Link href="#link" className={styles.link}>
+                <i className="fa fa-youtube" aria-hidden="true"></i>
+              </Nav.Link>
+              <Nav.Link
+                href="https://twitter.com/filqqq"
+                className={styles.link}
+              >
+                <i className="fa fa-twitter" aria-hidden="true" />
+              </Nav.Link>
+            </div>
           </Nav>
         </Navbar.Collapse>
       </Container>

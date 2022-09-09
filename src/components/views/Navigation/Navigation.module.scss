@@ -11,6 +11,18 @@
       width: 50px;
     }
   }
+  .controlLinks {
+    display: flex;
+    margin-left: 25px;
+
+    .link {
+      margin-right: 0;
+
+      &::after {
+        content: none;
+      }
+    }
+  }
   .link {
     display: flex;
     justify-content: center;
@@ -38,12 +50,6 @@
 
     &:focus {
       color: white;
-    }
-
-    &:last-child {
-      &::after {
-        content: none;
-      }
     }
 
     &::after {

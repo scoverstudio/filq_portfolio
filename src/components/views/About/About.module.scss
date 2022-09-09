@@ -261,6 +261,46 @@
           text-align: center;
           padding-bottom: 50px;
         }
+
+        .clientImage {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(26, 26, 26, 1) 100%
+          );
+          padding: 25px;
+          border-radius: 50px;
+          border-right: 1px solid rgb(46, 46, 46);
+
+          .img {
+            position: relative;
+            text-align: center;
+            width: 100%;
+            img {
+              width: 50%;
+              margin: 0 auto;
+            }
+
+            &::after {
+              content: "";
+              position: absolute;
+              width: 70%;
+              height: 12px;
+              left: 50%;
+              bottom: -20px;
+              border-radius: 50%;
+              box-shadow: 0px 0px 12px 5px rgb(255, 255, 255, 0.3);
+              transform: translateX(-50%);
+              background-color: rgba(255, 255, 255, 0.3);
+              z-index: 0;
+            }
+          }
+        }
       }
     }
   }
