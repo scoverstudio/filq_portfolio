@@ -58,8 +58,8 @@ const Header = () => {
               src="https://www.youtube.com/embed/hVp8HBxHhMQ"
               title="YouTube video player"
               frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullscreen
+              allow="accelerometer; fullscreen; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
             />
           </div>
         </div>
