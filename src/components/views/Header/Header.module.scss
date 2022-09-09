@@ -7,14 +7,51 @@
 
 .headerContainer {
   position: relative;
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
   height: 500px;
   background-color: transparent;
-  display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 100px;
-  margin-bottom: 550px;
+  // margin-top: 50px;
+  margin-bottom: 700px;
+
+  .showReel {
+    position: relative;
+    width: 80%;
+    transform: scale(0.5);
+    opacity: 0;
+    -webkit-animation: scale-up-center 0.4s ease-out 0.5s forwards;
+    animation: scale-up-center 0.4s ease-out 0.5s forwards;
+
+    h2 {
+      font-size: 50px;
+      // margin-bottom: 50px;
+      text-align: center;
+      height: 75px;
+
+      span {
+        text-transform: uppercase;
+        color: $redLight;
+      }
+    }
+
+    .iframeContainer {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+
+      & iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
 
   h1 {
     color: white;
@@ -29,7 +66,7 @@
     width: fit-content;
     height: 250px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-direction: column;
     z-index: 1;
     margin-bottom: 100px;
@@ -60,7 +97,7 @@
     }
     .role {
       position: relative;
-      height: 100px;
+      height: 50px;
       text-align: left;
 
       .block {
@@ -74,10 +111,11 @@
 
       .content {
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
         animation: secFadeIn 2s forwards;
         animation-delay: 1.6s;
         opacity: 0;
+        font-size: 30px;
 
         i {
           display: flex;
@@ -87,16 +125,16 @@
           font-size: 150px;
         }
 
-        span {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          color: #fff;
-          p {
-            font-size: 23px;
-            margin: 0;
-          }
-        }
+        // span {
+        //   display: flex;
+        //   flex-direction: column;
+        //   justify-content: center;
+        //   color: #fff;
+        //   p {
+        //     font-size: 23px;
+        //     margin: 0;
+        //   }
+        // }
       }
     }
   }
@@ -128,6 +166,99 @@
       transform: translateY(-1200px);
       animation: scaleImage 1s forwards, gradient 2s ease forwards;
       animation-delay: 1.6s;
+    }
+  }
+
+  .showReelContainer {
+    width: 100%;
+    padding: 100px;
+    text-align: center;
+    transition: 1s;
+
+    // &.show {
+    //   position: absolute;
+    //   width: 100%;
+    //   height: 100%;
+    //   background-color: black;
+    //   z-index: 5;
+    // }
+
+    .showReel {
+      opacity: 0;
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale(0%);
+      height: 1000px;
+      width: 100vh;
+      background-color: black;
+      z-index: 1;
+      transition: 0.3s;
+
+      &.show {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(100%);
+      }
+
+      i {
+        position: absolute;
+        font-size: 50px;
+        transform: rotate(45deg);
+        right: 25px;
+        top: 25px;
+        cursor: crosshair;
+      }
+
+      h2 {
+        padding-top: 60px;
+        text-transform: uppercase;
+        font-size: 50px;
+      }
+
+      iframe {
+        display: none;
+        transition: 1s;
+        &.show {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          display: block;
+        }
+      }
+    }
+
+    button {
+      position: relative;
+      padding: 25px 50px;
+      font-size: 100px;
+      border-radius: 30px;
+      background-image: url("../../../../public/images/Counter-Strike-Clobal-Offensive-CS-GO-wymagania-sprzętowe.jpg");
+      background-position: center;
+      background-size: cover;
+      text-transform: uppercase;
+      color: white;
+      z-index: 1;
+      transition: 0.3s;
+      opacity: 1;
+
+      &.show {
+        opacity: 0;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        border-radius: 30px;
+        border: none;
+        z-index: -1;
+        background-color: rgba($color: black, $alpha: 0.95);
+      }
     }
   }
 }
@@ -200,65 +331,22 @@
 
 @media (max-width: 991px) {
   .headerContainer {
-    justify-content: space-between;
     .box {
-      .title {
-        height: 20px;
-        .block {
-          position: absolute;
-          width: 0%;
-          height: 85px;
-          background-color: $redLight;
-          animation: mainBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
-        }
-
-        h1 {
-          font-family: "poppins";
-          color: #fff;
-          font-size: 70px;
-          animation: mainFadeIn 2s forwards;
-          text-transform: uppercase;
-          animation-delay: 1.6s;
-          opacity: 0;
-          margin: 0;
-        }
-      }
-      .role {
-        position: relative;
-        height: 100px;
-        text-align: left;
-
-        .block {
-          position: absolute;
-          width: 0%;
-          height: inherit;
-          background-color: #fff;
-          animation: secBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
-          // animation-delay: 2s;
-        }
-      }
-    }
-
-    .imageContainer {
-      width: 45%;
+      margin-bottom: 100px;
     }
   }
 }
 
 @media (max-width: 767px) {
   .headerContainer {
-    position: relative;
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: 0;
-    flex-wrap: wrap;
-    margin-top: 0px;
-    margin-bottom: 0;
+    align-content: flex-start;
     height: calc(100vh - 100px);
-
+    margin-bottom: 0;
     .box {
-      height: 40%;
-      justify-content: center;
+      height: 30%;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-bottom: 0;
       .title {
         height: 80px;
         .block {
@@ -270,6 +358,7 @@
         }
 
         h1 {
+          text-align: center;
           font-family: "poppins";
           color: #fff;
           font-size: 65px;
@@ -281,17 +370,10 @@
         }
       }
       .role {
-        position: relative;
-        height: 100px;
-        text-align: left;
+        height: 33px;
 
-        .block {
-          position: absolute;
-          width: 0%;
-          height: inherit;
-          background-color: #fff;
-          animation: secBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
-          // animation-delay: 2s;
+        .content {
+          font-size: 22px;
         }
       }
     }
@@ -323,6 +405,41 @@
         content: none;
       }
     }
+
+    .showReel {
+      position: relative;
+      width: 100vw;
+      transform: scale(0.5);
+      opacity: 0;
+      -webkit-animation: scale-up-center 0.4s ease-out 0.5s forwards;
+      animation: scale-up-center 0.4s ease-out 0.5s forwards;
+      h2 {
+        font-size: 50px;
+        // margin-bottom: 50px;
+        text-align: center;
+        height: 75px;
+
+        span {
+          text-transform: uppercase;
+          color: $redLight;
+        }
+      }
+
+      .iframeContainer {
+        position: relative;
+        width: calc(100vw - 5px);
+        padding-bottom: 56.25%;
+        height: 0;
+
+        & iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
   }
 
   .scrollContainer {
@@ -331,11 +448,11 @@
     justify-content: space-around;
     align-items: space-between;
     left: -5px;
-    bottom: 15px;
+    bottom: 100px;
     color: $colorText;
     margin-top: 0;
     opacity: 0;
-    height: 170px;
+    height: 150px;
     // z-index: 2;
 
     img {
@@ -344,6 +461,7 @@
     }
     h3 {
       writing-mode: vertical-rl;
+      font-size: 18px;
       text-orientation: mixed;
     }
 
@@ -486,5 +604,30 @@
 
   100% {
     background-position: 0% 60%;
+  }
+}
+
+@-webkit-keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
   }
 }

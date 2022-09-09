@@ -41,8 +41,12 @@ const HomeAbout = () => {
           Feel free to <span>contact</span> me!
         </p>
         <div className={styles.linksContainer}>
-          <i className="fa fa-twitter" aria-hidden="true"></i>
-          <i className="fa fa-youtube" aria-hidden="true"></i>
+          <a href="https://twitter.com/filqqq">
+            <i className="fa fa-twitter" aria-hidden="true" />
+          </a>
+          <a href="https://www.youtube.com/c/filqTV">
+            <i className="fa fa-youtube" aria-hidden="true" />
+          </a>
         </div>
       </div>
     </div>
