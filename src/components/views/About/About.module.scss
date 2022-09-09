@@ -242,7 +242,7 @@
           rgb(52, 52, 52) 0%,
           rgba(0, 0, 0, 1) 100%
         );
-        width: 100%;
+        width: 80%;
         .clientImage {
           width: 100%;
           min-height: 200px;
@@ -308,6 +308,11 @@
 
 @media (max-width: 767px) {
   .container {
+    .clients {
+      .client {
+        width: 100%;
+      }
+    }
     .contentAbout {
       flex-wrap: wrap;
       justify-content: center;
