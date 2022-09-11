@@ -79,6 +79,13 @@
 
 @media (max-width: 767px) {
   .Navigation {
+    background-color: rgba($color: black, $alpha: 0.98);
+    .controlLinks {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      gap: 15px;
+    }
     .link {
       font-size: 20px;
       margin-right: 25px;
