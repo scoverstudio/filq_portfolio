@@ -9,27 +9,15 @@ import { getClients } from "../../../redux/clients";
 const About = () => {
   const clients = useSelector(getClients);
 
-  // const myTags = [
-  //   "HLTV.org",
-  //   "Dust2.dk",
-  //   "NadeKing",
-  //   "EsportalPolska",
-  //   "Svenska Elitserien",
-  //   "VALORANTPolska",
-  //   "Galaxy Racer",
-  //   "FABRYKA ESPORTU",
-  //   "ESL ",
-  //   "DreamHack",
-  //   "IEM",
-  //   "SCOVER",
-  // ];
-
   return (
     <Container className={clsx(styles.container)}>
       <section className={styles.clients}>
         <h2>Clients!</h2>
         {clients.map((element) => (
-          <div className={styles.client}>
+          <a
+            href={`/portfolio/${element.channelName}`}
+            className={styles.client}
+          >
             <div className={styles.clientImage}>
               <div className={styles.img}>
                 <img
@@ -54,7 +42,7 @@ const About = () => {
                 </a>
               </div>
             </div>
-          </div>
+          </a>
         ))}
       </section>
       <div className={styles.contentAbout}>
@@ -94,42 +82,6 @@ const About = () => {
           ></img>
         </Atropos>
       </div>
-      {/* <div className={styles.cloudContainer}>
-        <h2>worked for</h2>
-        <div className={clsx("content", styles.cloud)}></div>
-      </div> */}
-      {/* <div className={styles.logos}>
-        <h1>
-          Biggest <span>Industries</span> I worked for
-        </h1>
-        <div className={styles.singleImg}>
-          <img alt="filq" src={`${process.env.PUBLIC_URL}/images/esl.png`} />
-        </div>
-        <div className={styles.singleImg}>
-          <img alt="filq" src={`${process.env.PUBLIC_URL}/images/iem.png`} />
-        </div>
-        <div className={styles.singleImg}>
-          <img
-            alt="filq"
-            src={`${process.env.PUBLIC_URL}/images/nadekingLogo.svg`}
-          />
-        </div>
-        <div className={styles.singleImg}>
-          <img
-            alt="filq"
-            src={`${process.env.PUBLIC_URL}/images/DreamHack-logo.png`}
-          />
-        </div>
-        <div className={styles.singleImg}>
-          <img alt="filq" src={`${process.env.PUBLIC_URL}/images/HLTV.png`} />
-        </div>
-      </div> */}
-      {/* <div className={styles.work}>
-        <h2>
-          I <span>worked</span> with
-        </h2>
-        <SimpleCloud />
-      </div> */}
     </Container>
   );
 };

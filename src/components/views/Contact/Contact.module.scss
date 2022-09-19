@@ -32,9 +32,15 @@
       }
     }
   }
+
+  @media (max-width: 768px) {
+    transform: translateY(-50px);
+
+  }
 }
 .contactContainer {
   margin-top: 200px;
+  max-height: 100vh;
   h2 {
     font-size: 45px;
   }

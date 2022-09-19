@@ -89,7 +89,8 @@
           width: 100%;
         }
         span {
-          display: block;
+          display: flex;
+          align-items: flex-end;
           width: 50%;
 
           i {

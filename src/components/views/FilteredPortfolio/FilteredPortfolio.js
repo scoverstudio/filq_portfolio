@@ -23,7 +23,13 @@ const FilteredPortfolio = ({
 
   return (
     <div className={styles.videosContainer}>
-      <h2>{id}</h2>
+      <h2>
+        <a href="/about">
+          <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        </a>
+        {id}
+      </h2>
+
       {videos && videos.find((video) => video.snippet.channelTitle === id) ? (
         videos.map((video) =>
           video.snippet.channelTitle === id ? (
