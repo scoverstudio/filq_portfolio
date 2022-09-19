@@ -204,14 +204,11 @@ const Contact = () => {
       <section className={styles.socials}>
         <h2>All my socials</h2>
         <div>
-          <a href="https://twitter.com/filqqq">
-            <i className="fa fa-twitter" aria-hidden="true"></i>
-          </a>
-          {/* <a href="https://steamcommunity.com/id/filqq/">
-            <i className="fa fa-steam" aria-hidden="true"></i>
-          </a> */}
           <a href="https://www.youtube.com/c/filqTV">
             <i className="fa fa-youtube" aria-hidden="true"></i>
+          </a>
+          <a href="https://twitter.com/filqqq">
+            <i className="fa fa-twitter" aria-hidden="true"></i>
           </a>
         </div>
       </section>

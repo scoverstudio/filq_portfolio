@@ -1,9 +1,9 @@
 @import "../../../styles/settings.scss";
 
 .socials {
-  padding-bottom: 208px;
   text-align: center;
-  height: 400px;
+  height: 199px;
+  transform: translateY(-150px);
 
   h2 {
     font-size: 45px;
@@ -148,7 +148,7 @@
         padding: 25px;
         transform: translateY(0);
         animation: none;
-        border-radius:100px;
+        border-radius: 100px;
       }
     }
   }
