@@ -41,7 +41,10 @@ const Navigation = () => {
               Contact
             </Nav.Link>
             <div className={styles.controlLinks}>
-              <Nav.Link href="#link" className={styles.link}>
+              <Nav.Link
+                href="https://www.youtube.com/c/filqTV"
+                className={styles.link}
+              >
                 <i className="fa fa-youtube" aria-hidden="true"></i>
               </Nav.Link>
               <Nav.Link

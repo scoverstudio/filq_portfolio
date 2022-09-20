@@ -9,6 +9,13 @@
 
     .logo {
       width: 50px;
+      transition: 0.3s;
+    }
+
+    &:hover {
+      .logo {
+        transform: scale(110%);
+      }
     }
   }
   .controlLinks {

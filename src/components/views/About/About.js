@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import styles from "./About.module.scss";
-import "./About.css";
 import { Container } from "react-bootstrap";
 import Atropos from "atropos/react";
 import { useSelector } from "react-redux";
