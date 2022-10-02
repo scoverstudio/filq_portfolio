@@ -11,6 +11,7 @@ const Portfolio = ({
   isLoading,
 }) => {
   const [videos, setVideos] = useState(null);
+  const [showScrollUp, setShowScrollUp] = useState(false);
 
   useEffect(() => {
     fetchVideosFromPlaylist(
@@ -37,10 +38,34 @@ const Portfolio = ({
     setVideos(sortByLikesArr);
   };
 
+  useEffect(() => {
+    window.onscroll = function () {
+      var myDiv = document.querySelector(".moviesPanel");
+      var currWidth = myDiv.clientHeight;
+      if (
+        window.innerHeight + window.scrollY >=
+        document.body.offsetHeight + 100
+      ) {
+        if (currWidth < myDiv.scrollHeight) {
+          increaseDiv();
+        }
+      }
+      if (window.innerHeight + window.scrollY >= 1500) {
+        setShowScrollUp(true);
+      } else {
+        setShowScrollUp(false);
+      }
+    };
+  }, []);
+
   const increaseDiv = () => {
     var myDiv = document.querySelector(".moviesPanel");
     var currWidth = myDiv.clientHeight;
     myDiv.style.height = currWidth + 800 + "px";
+  };
+
+  const scrollUp = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -60,8 +85,6 @@ const Portfolio = ({
           videos &&
           videos.map((movie) => (
             <div key={movie.id} className={styles.movieBox}>
-              {console.log(movie.snippet.channelTitle)}
-
               <div className={styles.movieImage}>
                 <a href={`https://www.youtube.com/watch?v=${movie.id}`}>
                   <img
@@ -92,6 +115,13 @@ const Portfolio = ({
         <a href="https://www.youtube.com/playlist?list=PLEmxBs67yX1zyfrwEqikC-ZZ4T0DY672r">
           <i className="fa fa-youtube" aria-hidden="true"></i>
         </a>
+      </div>
+
+      <div
+        onClick={() => scrollUp()}
+        className={clsx(styles.scrollUp, showScrollUp && styles.display)}
+      >
+        <i className="fa fa-arrow-up" aria-hidden="true" />
       </div>
     </div>
   );

@@ -55,6 +55,7 @@
     max-height: fit-content;
     height: 800px;
     overflow: hidden;
+    transition: 0.5s;
 
     .movieBox {
       display: flex;
@@ -147,6 +148,31 @@
           transform: scale(110%);
         }
       }
+    }
+  }
+
+  .scrollUp {
+    position: sticky;
+    left: 150px;
+    bottom: 100px;
+    background-color: $redDarker;
+    border-radius: 50%;
+    transition: 0.3s;
+    cursor: pointer;
+    opacity: 0;
+
+    &:hover {
+      background-color: $redLight;
+      transform: scale(105%);
+    }
+
+    i {
+      padding: 20px;
+      font-size: 20px;
+    }
+
+    &.display {
+      opacity: 1;
     }
   }
 }
