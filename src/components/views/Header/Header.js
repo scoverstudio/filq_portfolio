@@ -40,12 +40,6 @@ const Header = () => {
           <div className={styles.role}>
             <div className={styles.block}></div>
             <div className={styles.content}>
-              {/* <i className="fa fa-arrow-down" aria-hidden="true"></i>
-              <span>
-                <p>Profesional</p>
-                <p>Fragmovie</p>
-                <p>Editor</p>
-              </span> */}
               <p className={styles.profession}>Professional Fragmovie Editor</p>
             </div>
           </div>
@@ -55,7 +49,7 @@ const Header = () => {
             <iframe
               width="1120"
               height="315"
-              src="https://www.youtube.com/embed/hVp8HBxHhMQ"
+              src="https://www.youtube.com/embed/zAtTse9pKRs"
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; fullscreen; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -63,37 +57,6 @@ const Header = () => {
             />
           </div>
         </div>
-        {/* <div className={styles.imageContainer}>
-          <img
-            alt="filq"
-            src={`${process.env.PUBLIC_URL}/images/filqImage2.png`}
-          ></img>
-        </div>
-        <div
-          className={clsx(styles.showReelContainer, showReel && styles.show)}
-        >
-          <div className={clsx(styles.showReel, showReel && styles.show)}>
-            <h2>Best of Filq</h2>
-            <iframe
-              className={showReel && styles.show}
-              width="1000"
-              height="630"
-              title="rock"
-              src="https://www.youtube.com/embed/tgbNymZ7vqY"
-            ></iframe>
-            <i
-              class="fa fa-plus"
-              onClick={() => toogleShow()}
-              aria-hidden="true"
-            ></i>
-          </div>
-          <button
-            onClick={() => toogleShow()}
-            className={showReel && styles.show}
-          >
-            Showreel
-          </button>
-        </div> */}
         <div
           className={clsx(
             styles.scrollContainer,
