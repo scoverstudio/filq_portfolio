@@ -19,7 +19,8 @@
 
   .showReel {
     position: relative;
-    width: 80%;
+    width: 100%;
+    text-align: center;
     transform: scale(0.5);
     opacity: 0;
     -webkit-animation: scale-up-center 0.4s ease-out 0.5s forwards;
@@ -34,21 +35,6 @@
       span {
         text-transform: uppercase;
         color: $redLight;
-      }
-    }
-
-    .iframeContainer {
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%;
-      height: 0;
-
-      & iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
       }
     }
   }
@@ -69,7 +55,7 @@
     justify-content: center;
     flex-direction: column;
     z-index: 1;
-    margin-bottom: 100px;
+    margin-bottom: 150px;
 
     .title {
       width: 100%;

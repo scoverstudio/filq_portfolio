@@ -45,17 +45,17 @@ const Header = () => {
           </div>
         </div>
         <div className={styles.showReel}>
-          <div className={styles.iframeContainer}>
-            <iframe
-              width="1120"
-              height="315"
-              src="https://www.youtube.com/embed/zAtTse9pKRs"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; fullscreen; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
+          {/* <div className={styles.iframeContainer}> */}
+          <iframe
+            width="960"
+            height="408"
+            src="https://www.youtube.com/embed/zAtTse9pKRs"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; fullscreen; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+          {/* </div> */}
         </div>
         <div
           className={clsx(
