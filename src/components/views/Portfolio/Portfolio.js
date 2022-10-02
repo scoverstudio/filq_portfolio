@@ -12,6 +12,7 @@ const Portfolio = ({
 }) => {
   const [videos, setVideos] = useState(null);
   const [showScrollUp, setShowScrollUp] = useState(false);
+  const [allLoaded, setAllLoaded] = useState(false);
 
   useEffect(() => {
     fetchVideosFromPlaylist(
@@ -48,6 +49,12 @@ const Portfolio = ({
       ) {
         if (currWidth < myDiv.scrollHeight) {
           increaseDiv();
+          setAllLoaded(false);
+        } else if (
+          myDiv.scrollHeight > 1500 &&
+          currWidth === myDiv.scrollHeight
+        ) {
+          setAllLoaded(true);
         }
       }
       if (window.innerHeight + window.scrollY >= 1500) {
@@ -106,7 +113,10 @@ const Portfolio = ({
             </div>
           ))
         )}
-        <div onClick={() => increaseDiv()} className={styles.revealMore}>
+        <div
+          onClick={() => increaseDiv()}
+          className={clsx(styles.revealMore, allLoaded && styles.display)}
+        >
           <i className="fa fa-arrow-down" aria-hidden="true" />
         </div>
       </div>

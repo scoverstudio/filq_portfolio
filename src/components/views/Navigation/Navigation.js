@@ -44,7 +44,7 @@ const Navigation = () => {
               <Nav.Link
                 href="https://www.youtube.com/c/filqTV"
                 className={styles.link}
-              >
+              > 
                 <i className="fa fa-youtube" aria-hidden="true"></i>
               </Nav.Link>
               <Nav.Link
