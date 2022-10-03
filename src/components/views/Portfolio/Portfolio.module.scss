@@ -168,7 +168,7 @@
 
     &:hover {
       background-color: $redLight;
-      transform: scale(105%);
+      transform: scale(105%) translateX(-50%);
     }
 
     i {
@@ -178,6 +178,12 @@
 
     &.display {
       opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+      left: 50%;
+      bottom: 50px;
+      transform: translateX(-50%);
     }
   }
 }
