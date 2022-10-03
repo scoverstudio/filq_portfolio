@@ -574,7 +574,7 @@ const ParticleBackground = () => {
           interactivity: {
             events: {
               onClick: {
-                enable: true,
+                enable: false,
                 mode: "push",
               },
               onHover: {
@@ -585,7 +585,7 @@ const ParticleBackground = () => {
             },
             modes: {
               push: {
-                quantity: 4,
+                quantity: 1,
               },
               repulse: {
                 distance: 100,
@@ -618,14 +618,14 @@ const ParticleBackground = () => {
                 default: "bounce",
               },
               random: false,
-              speed: 1.5,
+              speed: 1,
               // 2.5
               straight: false,
             },
             number: {
               density: {
                 enable: true,
-                area: 800,
+                area: 1000,
               },
               value: 80,
             },
