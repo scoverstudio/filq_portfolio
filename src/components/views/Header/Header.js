@@ -47,8 +47,8 @@ const Header = () => {
         <div className={styles.showReel}>
           <div className={styles.iframeContainer}>
             <iframe
-              width="1440"
-              height="612"
+              width="1920"
+              height="1080"
               src="https://www.youtube.com/embed/zAtTse9pKRs"
               title="YouTube video player"
               frameBorder="0"

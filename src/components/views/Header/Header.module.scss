@@ -41,9 +41,10 @@
     .iframeContainer {
       height: 100%;
       overflow: hidden;
-      aspect-ratio: 2.35 / 1;
+      aspect-ratio: 2.34 / 1;
       background: white;
       position: relative;
+      transform: scale(140%);
 
       iframe {
         position: absolute;

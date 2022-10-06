@@ -31,11 +31,11 @@ const Navigation = () => {
             <Nav.Link href="/" className={styles.link}>
               Home
             </Nav.Link>
-            <Nav.Link href="/about" className={styles.link}>
-              About
-            </Nav.Link>
             <Nav.Link href="/portfolio" className={styles.link}>
               Portfolio
+            </Nav.Link>
+            <Nav.Link href="/about" className={styles.link}>
+              About
             </Nav.Link>
             <Nav.Link href="/contact" className={styles.link}>
               Contact
@@ -44,7 +44,7 @@ const Navigation = () => {
               <Nav.Link
                 href="https://www.youtube.com/c/filqTV"
                 className={styles.link}
-              > 
+              >
                 <i className="fa fa-youtube" aria-hidden="true"></i>
               </Nav.Link>
               <Nav.Link

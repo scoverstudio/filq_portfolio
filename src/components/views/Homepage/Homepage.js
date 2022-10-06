@@ -7,7 +7,7 @@ import Header from "../Header/Header";
 const Homepage = () => {
   return (
     <Container className={clsx("px-4", styles.container)}>
-      <Header/>
+      <Header />
       <HomeAbout />
     </Container>
   );

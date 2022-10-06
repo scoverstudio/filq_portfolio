@@ -23,18 +23,7 @@ const HomeAbout = () => {
           years and look up at <span>About</span> section to know more details.
         </p>
       </div>
-      {/* <Atropos
-        shadow={false}
-        highlight={false}
-        rotateXMax={25}
-        rotateYMax={25}
-        className={styles.imageContainer}
-      >
-        <img
-          alt="movieEditor"
-          src={`${process.env.PUBLIC_URL}/images/gamer.png`}
-        ></img>
-      </Atropos> */}
+
       <div className={styles.findMe}>
         <h3>Find me on</h3>
         <p>

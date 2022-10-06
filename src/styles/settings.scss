@@ -11,3 +11,12 @@ $colorText: #EEEEEE;
 $bgc: #111111;
 $redLight: #EE0000;
 $redDarker: #810708;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1700px,
+);

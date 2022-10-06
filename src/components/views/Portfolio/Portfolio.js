@@ -39,6 +39,15 @@ const Portfolio = ({
     setVideos(sortByLikesArr);
   };
 
+  const showAllVideos = () => {
+    fetchVideosFromPlaylist(
+      playlistOneIds,
+      playlistTwoIds,
+      playlistThreeIds,
+      setVideos
+    );
+  };
+
   useEffect(() => {
     window.onscroll = function () {
       var myDiv = document.querySelector(".moviesPanel");
@@ -80,6 +89,8 @@ const Portfolio = ({
       <h1>Here's my Portfolio!</h1>
       <div className={styles.control}>
         <p>sort by:</p>
+        <button onClick={() => sortByRecent(videos)}>Portfolio</button>
+        <button onClick={() => showAllVideos(videos)}>All videos</button>
         <button onClick={() => sortByRecent(videos)}>Recent</button>
         <button onClick={() => sortByViews(videos)}>Most Views</button>
       </div>
@@ -120,13 +131,12 @@ const Portfolio = ({
           <i className="fa fa-arrow-down" aria-hidden="true" />
         </div>
       </div>
-      <div className={styles.restPortfolio}>
+      {/* <div className={styles.restPortfolio}>
         <h3>For the rest of my work go here!</h3>
         <a href="https://www.youtube.com/playlist?list=PLEmxBs67yX1zyfrwEqikC-ZZ4T0DY672r">
           <i className="fa fa-youtube" aria-hidden="true"></i>
         </a>
-      </div>
-
+      </div> */}
       <div
         onClick={() => scrollUp()}
         className={clsx(styles.scrollUp, showScrollUp && styles.display)}

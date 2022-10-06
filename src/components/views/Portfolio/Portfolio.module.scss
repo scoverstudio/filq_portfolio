@@ -4,6 +4,7 @@
   position: relative;
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 30px;
 
   h1 {
     width: 100%;
@@ -53,7 +54,7 @@
     width: 85%;
     min-height: 800px;
     max-height: fit-content;
-    height: 800px;
+    height: 820px;
     overflow: hidden;
     transition: 0.5s;
 
@@ -163,6 +164,7 @@
     background-color: $redDarker;
     border-radius: 50%;
     transition: 0.3s;
+    transform: scale(100%) translateX(-50%);
     cursor: pointer;
     opacity: 0;
 
