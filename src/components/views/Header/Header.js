@@ -47,14 +47,13 @@ const Header = () => {
         <div className={styles.showReel}>
           <div className={styles.iframeContainer}>
             <iframe
-              width="1920"
-              height="1080"
-              src="https://www.youtube.com/embed/zAtTse9pKRs?autoplay=1"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="autoplay"
-              allowFullScreen
-            />
+              src="https://www.youtube.com/embed/zAtTse9pKRs?autoplay=1&mute=1&rel=0&cc_load_policy=1&iv_load_policy=3&color=white&disablekb=1"
+              width="1440"
+              height="618"
+              title="Nyan Cat [original]"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
           </div>
         </div>
         <div

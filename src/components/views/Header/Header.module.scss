@@ -40,11 +40,10 @@
 
     .iframeContainer {
       height: 100%;
-      overflow: hidden;
-      aspect-ratio: 2.34 / 1;
+      overflow: visible;
+      aspect-ratio: 2.36 / 1;
       background: white;
       position: relative;
-      transform: scale(140%);
 
       iframe {
         position: absolute;
@@ -52,17 +51,10 @@
         left: 0;
         width: 100%;
         height: 100%;
+        transform: scale(140%);
+        background-color: transparent;
       }
     }
-  }
-
-  h1 {
-    color: white;
-    font-size: 150px;
-    margin-bottom: 0;
-    opacity: 0;
-    animation: fadeIn 2s forwards;
-    animation-delay: 1.6s;
   }
 
   .box {
@@ -77,12 +69,13 @@
     .title {
       width: 100%;
       position: relative;
-      height: 150px;
+      height: 180px;
 
       .block {
         position: absolute;
         width: 0%;
         height: inherit;
+        z-index: 1;
         background-color: $redLight;
         animation: mainBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
       }
@@ -93,7 +86,8 @@
         font-size: 150px;
         animation: mainFadeIn 2s forwards;
         text-transform: uppercase;
-        animation-delay: 1.6s;
+        animation-delay: 1.2s;
+        z-index: -1;
         opacity: 0;
         margin: 0;
       }
@@ -116,7 +110,7 @@
         display: flex;
         justify-content: center;
         animation: secFadeIn 2s forwards;
-        animation-delay: 1.6s;
+        animation-delay: 1.2s;
         opacity: 0;
         font-size: 30px;
 
