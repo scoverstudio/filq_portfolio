@@ -49,10 +49,10 @@ const Header = () => {
             <iframe
               width="1920"
               height="1080"
-              src="https://www.youtube.com/embed/zAtTse9pKRs"
+              src="https://www.youtube.com/embed/zAtTse9pKRs?autoplay=1"
               title="YouTube video player"
               frameBorder="0"
-              allow="accelerometer; fullscreen; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allow="autoplay"
               allowFullScreen
             />
           </div>
