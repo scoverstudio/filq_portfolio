@@ -10,8 +10,9 @@
 
   .contentAbout {
     display: flex;
-    order: 1;
+    order: -1;
     width: 100%;
+    margin-top: 60px;
     margin-bottom: 120px;
     span {
       color: $secondColor;
@@ -29,7 +30,7 @@
     }
 
     .image {
-      width: 100%;
+      width: 80%;
 
       img {
         width: 100%;
