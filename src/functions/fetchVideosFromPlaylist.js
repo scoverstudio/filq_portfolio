@@ -13,6 +13,7 @@ const fetchVideosFromPlaylist = (
       process.env.REACT_APP_YOUTUBE_API_KEY
     }`
   );
+  console.log(getPlaylistOne);
   const getPlaylistTwo = axios.get(
     `${YOUTUBE_VIDEO_API}?part=snippet&part=statistics&id=${playlistTwoIds.toString()}&key=${
       process.env.REACT_APP_YOUTUBE_API_KEY

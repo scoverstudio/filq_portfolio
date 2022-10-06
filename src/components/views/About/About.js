@@ -11,7 +11,7 @@ const About = () => {
   return (
     <Container className={clsx(styles.container)}>
       <section className={styles.clients}>
-        <h2>Clients!</h2>
+        <h2>Worked with!</h2>
         {clients.map((element) => (
           <a
             href={`/portfolio/${element.channelName}`}

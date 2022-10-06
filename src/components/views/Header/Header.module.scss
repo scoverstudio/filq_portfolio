@@ -53,6 +53,10 @@
         height: 100%;
         transform: scale(140%);
         background-color: transparent;
+
+        @media (max-width: 1752px) {
+          transform: scale(100%);
+        }
       }
     }
   }

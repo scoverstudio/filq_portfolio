@@ -16,11 +16,13 @@ function App() {
   const [playlistOneData, setPlaylistOneData] = useState(null);
   const [playlistTwoData, setPlaylistTwoData] = useState(null);
   const [playlistThreeData, setPlaylistThreeData] = useState(null);
+  const [playlistPortfolio, setPlaylistPortfolio] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
   const playlistOneIds = [];
   const playlistTwoIds = [];
   const playlistThreeIds = [];
+  const playlistPortfolioIds = [];
 
   const getPlaylistOne = async () => {
     try {
@@ -61,10 +63,24 @@ function App() {
     }
   };
 
+  const getPortfolioPlaylist = async () => {
+    try {
+      const res = await fetch(
+        `${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&playlistId=PL7EmW2146A-R9HbXYJ92R367YrqCSm1EH&maxResults=50&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`
+      );
+      const data = await res.json();
+      setPlaylistPortfolio(data.items);
+      setIsLoading(false);
+    } catch (err) {
+      console.log(err.stack);
+    }
+  };
+
   useEffect(() => {
     (async () => await getPlaylistOne())();
     (async () => await getPlaylistTwo())();
     (async () => await getPlaylistThree())();
+    (async () => await getPortfolioPlaylist())();
   }, []);
 
   playlistOneData &&
@@ -80,6 +96,10 @@ function App() {
     playlistThreeData.forEach((item) =>
       playlistThreeIds.push(item.snippet.resourceId.videoId)
     );
+  playlistPortfolio &&
+    playlistPortfolio.forEach((item) =>
+      playlistPortfolioIds.push(item.snippet.resourceId.videoId)
+    );
 
   return (
     <Provider store={store}>
@@ -94,6 +114,7 @@ function App() {
                   playlistOneIds={playlistOneIds}
                   playlistTwoIds={playlistTwoIds}
                   playlistThreeIds={playlistThreeIds}
+                  playlistPortfolioIds={playlistPortfolioIds}
                   isLoading={isLoading}
                 />
               }

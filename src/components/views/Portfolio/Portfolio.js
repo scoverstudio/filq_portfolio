@@ -3,25 +3,25 @@ import styles from "./Portfolio.module.scss";
 import Spinner from "react-bootstrap/Spinner";
 import clsx from "clsx";
 import fetchVideosFromPlaylist from "../../../functions/fetchVideosFromPlaylist";
+import fetchVideosFromPortfolio from "../../../functions/fetchVideosFromPortfolio";
 
 const Portfolio = ({
   playlistOneIds,
   playlistTwoIds,
   playlistThreeIds,
+  playlistPortfolioIds,
   isLoading,
 }) => {
   const [videos, setVideos] = useState(null);
+  const [title, setTitle] = useState("portfolio");
+  const [sortBy, setSortBy] = useState("sorted by recent");
   const [showScrollUp, setShowScrollUp] = useState(false);
   const [allLoaded, setAllLoaded] = useState(false);
 
   useEffect(() => {
-    fetchVideosFromPlaylist(
-      playlistOneIds,
-      playlistTwoIds,
-      playlistThreeIds,
-      setVideos
-    );
-  }, [playlistOneIds, playlistThreeIds, playlistTwoIds]);
+    fetchVideosFromPortfolio(playlistPortfolioIds, setVideos);
+  }, [playlistPortfolioIds]);
+  console.log(videos);
 
   const sortByViews = (videos) => {
     const sortByViewsArr = [...videos];
@@ -29,6 +29,7 @@ const Portfolio = ({
       return b.statistics.viewCount - a.statistics.viewCount;
     });
     setVideos(sortByViewsArr);
+    setSortBy("sorted by most viewed");
   };
 
   const sortByRecent = (videos) => {
@@ -37,6 +38,7 @@ const Portfolio = ({
       return new Date(b.snippet.publishedAt) - new Date(a.snippet.publishedAt);
     });
     setVideos(sortByLikesArr);
+    setSortBy("sorted by recent");
   };
 
   const showAllVideos = () => {
@@ -46,6 +48,12 @@ const Portfolio = ({
       playlistThreeIds,
       setVideos
     );
+    setTitle("all videos");
+  };
+
+  const showPortfolio = () => {
+    fetchVideosFromPortfolio(playlistPortfolioIds, setVideos);
+    setTitle("porftolio");
   };
 
   useEffect(() => {
@@ -86,11 +94,15 @@ const Portfolio = ({
 
   return (
     <div className={styles.portfolioContainer}>
-      <h1>Here's my Portfolio!</h1>
+      <div className={styles.titleContainer}>
+        <h1>{title}</h1>
+        <h2>{sortBy}</h2>
+      </div>
+
       <div className={styles.control}>
         <p>sort by:</p>
-        <button onClick={() => sortByRecent(videos)}>Portfolio</button>
-        <button onClick={() => showAllVideos(videos)}>All videos</button>
+        <button onClick={() => showPortfolio()}>Portfolio</button>
+        <button onClick={() => showAllVideos()}>All videos</button>
         <button onClick={() => sortByRecent(videos)}>Recent</button>
         <button onClick={() => sortByViews(videos)}>Most Views</button>
       </div>
