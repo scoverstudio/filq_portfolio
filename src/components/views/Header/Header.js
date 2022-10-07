@@ -35,7 +35,9 @@ const Header = () => {
         <div className={styles.box}>
           <div className={styles.title}>
             <div className={styles.block}></div>
-            <h1>I am FILQ</h1>
+            <h1 data-text="I am FILQ">
+              <span>I am FILQ</span>
+            </h1>
           </div>
           <div className={styles.role}>
             <div className={styles.block}></div>
@@ -47,11 +49,12 @@ const Header = () => {
         <div className={styles.showReel}>
           <div className={styles.iframeContainer}>
             <iframe
-              src="https://www.youtube.com/embed/W-AxVT_pjhE?autoplay=1&mute=1&rel=0&cc_load_policy=1&iv_load_policy=3&color=white&disablekb=1"
+              src="https://www.youtube.com/embed/W-AxVT_pjhE?autoplay=1&mute=1&rel=0&cc_load_policy=1&iv_load_policy=3&color=white"
               width="1920"
               height="1080"
               title="FILQ SHOWREEL"
               frameborder="0"
+              allow="fullscreen"
               allowfullscreen
             ></iframe>
           </div>
