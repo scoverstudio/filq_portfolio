@@ -1,0 +1,5 @@
+.btn-danger {
+  background-color: rgb(80, 0, 0);
+  --bs-btn-active-bg: #ee0000;
+  --bs-btn-hover-bg: #ee0000;
+}
