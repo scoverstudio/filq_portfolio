@@ -33,7 +33,7 @@ const initialState = {
       image: `${process.env.PUBLIC_URL}/images/DreamHack-Logo.png`,
       description: "Supergeneral guy with 1M+ subs.",
 
-      channelName: "HLTVorg",
+      channelName: "DreamHack",
     },
     {
       name: "Valorant Polska",
