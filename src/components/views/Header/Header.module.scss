@@ -54,9 +54,10 @@
         transform: scale(140%);
         background-color: transparent;
 
-        @media (max-width: 1752px) {
+        @media (max-width: 1920px) {
           transform: scale(100%);
         }
+
       }
     }
   }
@@ -69,6 +70,10 @@
     flex-direction: column;
     z-index: 1;
     margin-bottom: 150px;
+
+    @media (max-width: 1920px) {
+      margin-bottom: 50px;
+    }
 
     .title {
       width: 100%;
