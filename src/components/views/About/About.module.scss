@@ -322,6 +322,7 @@
 
 @media (max-width: 767px) {
   .container {
+    margin-top: 0;
     .clients {
       .client {
         width: 100%;
@@ -330,6 +331,7 @@
     .contentAbout {
       flex-wrap: wrap;
       justify-content: center;
+      margin-top: 25px;
       .text {
         width: 100%;
       }

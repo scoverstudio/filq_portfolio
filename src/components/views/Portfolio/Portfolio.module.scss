@@ -264,6 +264,12 @@
     display: flex;
     flex-wrap: wrap;
 
+    .titleContainer {
+      h1 {
+        padding: 0;
+      }
+    }
+
     h1 {
       width: 100%;
       text-align: center;

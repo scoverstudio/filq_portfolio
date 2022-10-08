@@ -395,6 +395,10 @@
   .headerContainer {
     .box {
       margin-bottom: 100px;
+
+      h1 {
+        font-size: 60px;
+      }
     }
   }
 }
@@ -443,7 +447,7 @@
         height: 33px;
 
         .content {
-          font-size: 22px;
+          font-size: 18px;
         }
       }
     }
@@ -498,6 +502,7 @@
       .iframeContainer {
         position: relative;
         width: calc(100vw - 5px);
+        transform: scale(100%);
         padding-bottom: 56.25%;
         height: 0;
 
