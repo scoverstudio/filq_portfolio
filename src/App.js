@@ -66,7 +66,7 @@ function App() {
   const getPortfolioPlaylist = async () => {
     try {
       const res = await fetch(
-        `${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&playlistId=PL7EmW2146A-R9HbXYJ92R367YrqCSm1EH&maxResults=50&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`
+        `${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&playlistId=PLEmxBs67yX1xMJPrsKL2rehI9DMVA_96r&maxResults=50&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`
       );
       const data = await res.json();
       setPlaylistPortfolio(data.items);
