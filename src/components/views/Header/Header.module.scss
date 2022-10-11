@@ -53,10 +53,6 @@
         height: 100%;
         transform: scale(140%);
         background-color: transparent;
-
-        @media (max-width: 1920px) {
-          transform: scale(100%);
-        }
       }
     }
   }
@@ -324,6 +320,51 @@
     -webkit-animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
       forwards;
     animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+}
+
+@media (max-width: 1920px) {
+  .headerContainer {
+    margin-bottom: 320px;
+    .showReel {
+      .iframeContainer {
+        transform: scale(70%);
+      }
+    }
+
+    .box {
+      height: fit-content;
+      margin-bottom: 55px;
+
+      .title {
+        height: 105px;
+        h1 {
+          font-size: 105px;
+        }
+      }
+      .role {
+        .content {
+          i {
+            font-size: 125px;
+          }
+
+          span {
+            p {
+              font-size: 20px;
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .imageContainer {
+      position: relative;
+
+      img {
+        top: -80px;
+      }
+    }
   }
 }
 
