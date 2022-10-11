@@ -29,11 +29,11 @@ const initialState = {
       channelName: "Cloud9 CSGO",
     },
     {
-      name: "DreamHack",
-      image: `${process.env.PUBLIC_URL}/images/DreamHack-Logo.png`,
-      description: "Supergeneral guy with 1M+ subs.",
+      name: "ESEA",
+      image: `${process.env.PUBLIC_URL}/images/esea1.png`,
+      description: "ESEA lider of tortunamentus.",
 
-      channelName: "DreamHack",
+      channelName: "ESEA",
     },
     {
       name: "Valorant Polska",

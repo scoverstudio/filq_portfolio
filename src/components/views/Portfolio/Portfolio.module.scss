@@ -5,10 +5,12 @@
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 30px;
+  padding-bottom: 30px;
+  overflow: hidden;
 
   .titleContainer {
     width: 100%;
-    padding-bottom: 25px;
+    padding-bottom: 0px;
 
     h1 {
       width: 100%;
@@ -17,6 +19,7 @@
       padding-bottom: 0;
       font-size: 50px;
       text-transform: uppercase;
+      margin-left: 95px;
     }
 
     h2 {
@@ -24,6 +27,14 @@
       text-align: center;
       font-size: 20px;
       text-transform: uppercase;
+      margin-left: 95px;
+    }
+
+    @media (max-width: 991px) {
+      h1,
+      h2 {
+        margin-left: 0px;
+      }
     }
   }
 

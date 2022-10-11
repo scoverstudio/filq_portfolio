@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./Portfolio.module.scss";
 import Spinner from "react-bootstrap/Spinner";
 import clsx from "clsx";
@@ -22,7 +22,6 @@ const Portfolio = ({
   useEffect(() => {
     fetchVideosFromPortfolio(playlistPortfolioIds, setVideos);
   }, [playlistPortfolioIds]);
-  console.log(videos);
 
   const sortByViews = (videos) => {
     const sortByViewsArr = [...videos];
@@ -52,7 +51,7 @@ const Portfolio = ({
     setTitle("all videos");
   };
 
-  const showPortfolio = () => {
+  const showPortfolio = async () => {
     fetchVideosFromPortfolio(playlistPortfolioIds, setVideos);
     setTitle("porftolio");
   };
@@ -95,13 +94,6 @@ const Portfolio = ({
 
   return (
     <>
-      <style type="text/css">
-        {`
-    btn-danger {
-      background-color:black;
-    }
-    `}
-      </style>
       <div className={styles.portfolioContainer}>
         <div className={styles.titleContainer}>
           <h1>{title}</h1>
@@ -147,7 +139,9 @@ const Portfolio = ({
               value={1}
               id="sort1"
               variant="danger"
-              onClick={() => sortByRecent(videos)}
+              onClick={() => {
+                sortByRecent(videos);
+              }}
             >
               Recent
             </ToggleButton>
@@ -156,7 +150,9 @@ const Portfolio = ({
               value={2}
               id="sort2"
               variant="danger"
-              onClick={() => sortByViews(videos)}
+              onClick={() => {
+                sortByViews(videos);
+              }}
             >
               Most Views
             </ToggleButton>
