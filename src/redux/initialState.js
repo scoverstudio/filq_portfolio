@@ -16,7 +16,7 @@ const initialState = {
     },
     {
       name: "Valorant Polska",
-      image: `${process.env.PUBLIC_URL}/images/V_Lockup_Vertical_Red.png`,
+      image: `${process.env.PUBLIC_URL}/images/VALORANT.png`,
       description: "Official Polish channel of VALORANT video game.",
 
       channelName: "VALORANT",
