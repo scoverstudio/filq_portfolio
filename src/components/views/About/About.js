@@ -16,7 +16,7 @@ const About = () => {
   return (
     <Container className={clsx(styles.container)}>
       <section className={styles.clients}>
-        <h2>Worked with!</h2>
+        <h2>Worked with: </h2>
         {clients.map((element) => (
           <a
             href={`/portfolio/${element.channelName}`}
@@ -55,19 +55,23 @@ const About = () => {
             Get to know me <span>better!</span>
           </h2>
           <p>
-            My name is <span>Filip Szatkowski</span>, I am 20 years old Video
-            Editor from Strzegom in Poland, with over 5 years of experience in
-            the businness.
+            My name is Filip Szatkowski, I am 20 years old Video Editor from
+            Strzegom in Poland, with over 5 years of experience in the esports
+            industry. I provide quality ingame content, documentaries & vlogs.
           </p>
           <p>
             My moviemaking career started at the beginning of 2017 when I
-            started to upload fragmovies on <span>my channel</span>, and by the
-            end of the year I've joined <span>HLTV.org</span>, since then I have
-            managed to produce videos for Youtubers & companies like
-            <span>
-              ESL, VALORANTPolska, Cloud9, NadeKing, Snipe2DieTV, SzperoTV
-            </span>
-            and few more listed{" "}
+            started to upload fragmovies on{" "}
+            <a href="https://www.youtube.com/c/filqTV">my channel</a>, and by
+            the end of the year I've joined{" "}
+            <a href="/portfolio/HLTVorg">HLTV.org</a>, since then I have managed
+            to produce videos for Youtubers & companies like{" "}
+            <a href="/portfolio/ESL%20Counter-Strike">ESL</a>,{" "}
+            <a href="/portfolio/VALORANT">VALORANTPolska</a>,{" "}
+            <a href="/portfolio/Cloud9 CSGO">Cloud9</a>,{" "}
+            <a href="/portfolio/NadeKing">NadeKing</a>,{" "}
+            <a href="/portfolio/Snipe2DieTv">Snipe2DieTV</a>,{" "}
+            <a href="/portfolio/SzperoTv">SzperoTV</a> and few more listed{" "}
             <span
               data-text="below"
               onClick={() => scrollIntoClients()}
@@ -76,8 +80,7 @@ const About = () => {
             >
               below
             </span>{" "}
-            & in <span>PORTFOLIO</span>
-            section.
+            & in <a href="/portfolio">Portfolio</a> section.
           </p>
           <p>
             I've been into video games and esports since I was a kid, and it was

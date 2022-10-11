@@ -30,8 +30,20 @@
         }
       }
     }
+    a,
     span {
-      color: $secondColor;
+      display: inline-block;
+      color: #ff5252;
+      font-weight: 700;
+      pointer-events: stroke;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.1s;
+
+      &:hover {
+        color: #fd6d6d;
+        transform: scale(104%);
+      }
     }
 
     h2 {
