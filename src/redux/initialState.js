@@ -1,78 +1,80 @@
 const initialState = {
   clients: [
     {
-      name: "ESL",
-      image: `${process.env.PUBLIC_URL}/images/eslwhite.png`,
-      description:
-        "The world's largest esports organization. They are hosting esports tournaments all over the globe.",
-      channelName: "ESL Counter-Strike",
-    },
-    {
       name: "HLTV",
       image: `${process.env.PUBLIC_URL}/images/HLTV.png`,
       description:
-        "The home of competitive Counter-Strike. HLTV, formerly an acronym of Half-Life Television, is a news website and forum which covers professional Counter-Strike: Global Offensive esports news, tournaments and statistics.",
+        "News website and forum which covers professional Counter-Strike: Global Offensive esports news, tournaments and statistics.",
       channelName: "HLTVorg",
     },
     {
-      name: "NadeKing",
-      image: `${process.env.PUBLIC_URL}/images/nadeking.png`,
-      description: "Supergeneral guy with 1M+ subs.",
-
-      channelName: "NadeKing",
-    },
-    {
-      name: "Cloud9 CSGO",
-      image: `${process.env.PUBLIC_URL}/images/Cloud-9-v2.png`,
-      description: "Cloud9 CSGO!",
-
-      channelName: "Cloud9 CSGO",
-    },
-    {
-      name: "ESEA",
-      image: `${process.env.PUBLIC_URL}/images/esea1.png`,
-      description: "ESEA lider of tortunamentus.",
-
-      channelName: "ESEA",
+      name: "ESL",
+      image: `${process.env.PUBLIC_URL}/images/eslwhite.png`,
+      description:
+        "German esports organizer and production company that produces video game competitions worldwide, based in Cologne.",
+      channelName: "ESL Counter-Strike",
     },
     {
       name: "Valorant Polska",
       image: `${process.env.PUBLIC_URL}/images/valorant.png`,
-      description: "The biggest polish Valorant community!",
+      description: "Official Polish channel of VALORANT video game.",
 
       channelName: "VALORANT",
     },
     {
-      name: "Dust2.dk",
-      image: `${process.env.PUBLIC_URL}/images/Dust2dk_Logo.png`,
+      name: "ESEA",
+      image: `${process.env.PUBLIC_URL}/images/esea1.png`,
       description:
-        "Danish Counter-Strike coverage site with coverage of the Danish scene.",
+        "Esports competitive video gaming online league & community founded by E-Sports Entertainment Association.",
 
-      channelName: "Dust2.dk",
+      channelName: "ESEA",
     },
     {
-      name: "EsportalPolska",
-      image: `${process.env.PUBLIC_URL}/images/esportal.png`,
-      description: "Polish portal",
+      name: "Cloud9 CSGO",
+      image: `${process.env.PUBLIC_URL}/images/Cloud-9-Logo.png`,
+      description:
+        "American professional esports company based in Santa Monica, California.",
 
-      channelName: "EsportalPolska",
+      channelName: "Cloud9 CSGO",
     },
     {
-      name: "Fabryka Esportu",
-      image: `${process.env.PUBLIC_URL}/images/fabryka_logo.png`,
+      name: "HONORIS",
+      image: `${process.env.PUBLIC_URL}/images/HONORIS_allmode.png`,
       description:
-        "The mission of Fabryka Esportu is to introduce a new quality of service for professional esport  players. ",
+        "Polish professional esports organization established by Wiktor 'TaZ' Wojtas and Filip 'NEO' Kubski.",
 
-      channelName: "FABRYKA ESPORTU",
+      channelName: "HONORIS",
+    },
+    {
+      name: "NadeKing",
+      image: `${process.env.PUBLIC_URL}/images/nadeking.png`,
+      description:
+        "CS:GO YouTuber from New Zealand with over 1.25 millions subscriptions.",
+
+      channelName: "NadeKing",
     },
     {
       name: "Galaxy Racer",
       image: `${process.env.PUBLIC_URL}/images/Galaxy_Racer_GXR.png`,
 
-      description:
-        "Galaxy Racer (GXR) is the largest esports, gaming and lifestyle organization in the world, with market presence in Middle East North Africa (MENA), North America, Southeast Asia (SEA), South Asia and Europe.",
+      description: "Esports organization from the United Arab Emirates. ",
 
       channelName: "Galaxy Racer",
+    },
+    {
+      name: "Fabryka Esportu",
+      image: `${process.env.PUBLIC_URL}/images/fabryka_logo.png`,
+      description: "Polish Esports Management Agency.",
+
+      channelName: "FABRYKA ESPORTU",
+    },
+    {
+      name: "EsportalPolska",
+      image: `${process.env.PUBLIC_URL}/images/esportal.png`,
+      description:
+        "Official Polish channel of Swedish tournament organizer and competitive gaming platform founded in 2013. ",
+
+      channelName: "EsportalPolska",
     },
   ],
 };
