@@ -16,7 +16,7 @@ const initialState = {
     },
     {
       name: "Valorant Polska",
-      image: `${process.env.PUBLIC_URL}/images/valorant.png`,
+      image: `${process.env.PUBLIC_URL}/images/V_Lockup_Vertical_Red.png`,
       description: "Official Polish channel of VALORANT video game.",
 
       channelName: "VALORANT",
@@ -31,7 +31,7 @@ const initialState = {
     },
     {
       name: "Cloud9 CSGO",
-      image: `${process.env.PUBLIC_URL}/images/Cloud-9-Logo.png`,
+      image: `${process.env.PUBLIC_URL}/images/c9.png`,
       description:
         "American professional esports company based in Santa Monica, California.",
 
@@ -39,7 +39,7 @@ const initialState = {
     },
     {
       name: "HONORIS",
-      image: `${process.env.PUBLIC_URL}/images/HONORIS_allmode.png`,
+      image: `${process.env.PUBLIC_URL}/images/HONORIS.png`,
       description:
         "Polish professional esports organization established by Wiktor 'TaZ' Wojtas and Filip 'NEO' Kubski.",
 
@@ -55,7 +55,7 @@ const initialState = {
     },
     {
       name: "Galaxy Racer",
-      image: `${process.env.PUBLIC_URL}/images/Galaxy_Racer_GXR.png`,
+      image: `${process.env.PUBLIC_URL}/images/GALAXYRACER.png`,
 
       description: "Esports organization from the United Arab Emirates. ",
 
