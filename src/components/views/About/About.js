@@ -69,7 +69,7 @@ const About = () => {
             <a href="/portfolio/HLTVorg">HLTV.org</a>, since then I have managed
             to produce videos for Youtubers & companies like{" "}
             <a href="/portfolio/ESL%20Counter-Strike">ESL</a>,{" "}
-            <a href="/portfolio/VALORANT">VALORANTPolska</a>,{" "}
+            <a href="/portfolio/VALORANT // Polska">VALORANTPolska</a>,{" "}
             <a href="/portfolio/Cloud9 CSGO">Cloud9</a>,{" "}
             <a href="/portfolio/NadeKing">NadeKing</a>,{" "}
             <a
