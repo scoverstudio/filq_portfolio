@@ -42,7 +42,7 @@ const Header = () => {
           <div className={styles.role}>
             <div className={styles.block}></div>
             <div className={styles.content}>
-              <p className={styles.profession}>= Freelance Movie Editor =</p>
+              <p className={styles.profession}>Freelance Movie Editor</p>
             </div>
           </div>
         </div>
