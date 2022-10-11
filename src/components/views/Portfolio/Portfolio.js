@@ -14,7 +14,7 @@ const Portfolio = ({
   isLoading,
 }) => {
   const [videos, setVideos] = useState(null);
-  const [title, setTitle] = useState("portfolio");
+  const [title, setTitle] = useState("all videos");
   const [sortBy, setSortBy] = useState("sorted by recent");
   const [showScrollUp, setShowScrollUp] = useState(false);
   const [allLoaded, setAllLoaded] = useState(false);
