@@ -8,6 +8,11 @@ import { getClients } from "../../../redux/clients";
 const About = () => {
   const clients = useSelector(getClients);
 
+  const scrollIntoClients = () => {
+    const elementToView = document.getElementById("below");
+    elementToView.scrollIntoView();
+  };
+
   return (
     <Container className={clsx(styles.container)}>
       <section className={styles.clients}>
@@ -47,24 +52,39 @@ const About = () => {
       <div className={styles.contentAbout}>
         <div className={styles.text}>
           <h2>
-            Know me <span>better!</span>
+            Get to know me <span>better!</span>
           </h2>
           <p>
-            Hi! My name is <span>Filip Szatkowski</span> and I'm from Poland.
-            I'm 20 years old and I live in Strzegom.
+            My name is <span>Filip Szatkowski</span>, I am 20 years old Video
+            Editor from Strzegom in Poland, with over 5 years of experience in
+            the businness.
           </p>
           <p>
-            I`ve been editing CS:GO fragmovies for 5 years now, started at the
-            beginning of 2017, and by the end of the year I joined HLTV.org,
-            since then - i am still a part of it. During my career I have worked
-            with a lot of interesting names e.g.
-            <span> VALORANTPolska, ESL, DreamHack, IEM.</span>
+            My moviemaking career started at the beginning of 2017 when I
+            started to upload fragmovies on <span>my channel</span>, and by the
+            end of the year I've joined <span>HLTV.org</span>, since then I have
+            managed to produce videos for Youtubers & companies like
+            <span>
+              ESL, VALORANTPolska, Cloud9, NadeKing, Snipe2DieTV, SzperoTV
+            </span>
+            and few more listed{" "}
+            <span
+              data-text="below"
+              onClick={() => scrollIntoClients()}
+              className={styles.below}
+              id="below"
+            >
+              below
+            </span>{" "}
+            & in <span>PORTFOLIO</span>
+            section.
           </p>
           <p>
-            Hello am 48 year man from somalia. Srry for my bed england. I selled
-            my wife for internet connection for play "counter strirk" and i want
-            to become the goodest player like you I play with 400 ping on brazil
-            server and I am Global elite 2. pls no copy pasterino my story.
+            I've been into video games and esports since I was a kid, and it was
+            and always will be a huge part of my life. Besides that, I'm really
+            passionate about videography & photography, where I'm slowly
+            starting to look for some commissions, with few ones already booked
+            in.
           </p>
         </div>
         <Atropos

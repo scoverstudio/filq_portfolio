@@ -4,7 +4,7 @@ import styles from "./HomeAbout.module.scss";
 const HomeAbout = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.contentContainer}>
+      {/* <div className={styles.contentContainer}>
         <h3>
           More about my <span>Journey!</span>
         </h3>
@@ -22,7 +22,7 @@ const HomeAbout = () => {
           Check out my <span>portfolio</span> for work I gatherd over last 4
           years and look up at <span>About</span> section to know more details.
         </p>
-      </div>
+      </div> */}
 
       <div className={styles.findMe}>
         <h3>Find me on</h3>
