@@ -1,18 +1,18 @@
 const initialState = {
   clients: [
     {
-      name: "HLTV",
-      image: `${process.env.PUBLIC_URL}/images/HLTV.png`,
-      description:
-        "News website and forum which covers professional Counter-Strike: Global Offensive esports news, tournaments and statistics.",
-      channelName: "HLTVorg",
-    },
-    {
       name: "ESL",
       image: `${process.env.PUBLIC_URL}/images/eslwhite.png`,
       description:
         "German esports organizer and production company that produces video game competitions worldwide, based in Cologne.",
       channelName: "ESL Counter-Strike",
+    },
+    {
+      name: "HLTV",
+      image: `${process.env.PUBLIC_URL}/images/HLTV.png`,
+      description:
+        "News website and forum which covers professional Counter-Strike: Global Offensive esports news, tournaments and statistics.",
+      channelName: "HLTVorg",
     },
     {
       name: "Valorant Polska",

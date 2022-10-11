@@ -55,9 +55,11 @@ const About = () => {
             Get to know me <span>better!</span>
           </h2>
           <p>
-            My name is Filip Szatkowski, I am 20 years old Video Editor from
-            Strzegom in Poland, with over 5 years of experience in the esports
-            industry. I provide quality ingame content, documentaries & vlogs.
+            My name is Filip Szatkowski, I'm 20 years old and I live in
+            Strzegom, Poland. I am a professional Freelance Video Editor with
+            over 5 years of experience in the esports industry. I provide
+            quality ingame content, documentaries & vlogs. Currently available
+            for commisions.
           </p>
           <p>
             My moviemaking career started at the beginning of 2017 when I

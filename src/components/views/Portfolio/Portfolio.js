@@ -20,8 +20,13 @@ const Portfolio = ({
   const [allLoaded, setAllLoaded] = useState(false);
 
   useEffect(() => {
-    fetchVideosFromPortfolio(playlistPortfolioIds, setVideos);
-  }, [playlistPortfolioIds]);
+    fetchVideosFromPlaylist(
+      playlistOneIds,
+      playlistTwoIds,
+      playlistThreeIds,
+      setVideos
+    );
+  }, [playlistOneIds, playlistPortfolioIds, playlistThreeIds, playlistTwoIds]);
 
   const sortByViews = (videos) => {
     const sortByViewsArr = [...videos];
@@ -112,18 +117,18 @@ const Portfolio = ({
               id="option1"
               value={1}
               variant="danger"
-              onClick={() => showPortfolio()}
+              onClick={() => showAllVideos()}
             >
-              Portfolio
+              All videos
             </ToggleButton>
             <ToggleButton
               className={styles.button}
               id="option2"
               value={2}
               variant="danger"
-              onClick={() => showAllVideos()}
+              onClick={() => showPortfolio()}
             >
-              All videos
+              Portfolio
             </ToggleButton>
           </ToggleButtonGroup>
 
