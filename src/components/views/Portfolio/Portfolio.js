@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./Portfolio.module.scss";
 import Spinner from "react-bootstrap/Spinner";
 import clsx from "clsx";
