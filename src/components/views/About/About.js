@@ -72,8 +72,13 @@ const About = () => {
             <a href="/portfolio/VALORANT">VALORANTPolska</a>,{" "}
             <a href="/portfolio/Cloud9 CSGO">Cloud9</a>,{" "}
             <a href="/portfolio/NadeKing">NadeKing</a>,{" "}
-            <a href="/portfolio/Snipe2DieTv">Snipe2DieTV</a>, and few more
-            listed{" "}
+            <a
+              href="/portfolio/Snipe2DieTV - CS:GO Channel
+"
+            >
+              Snipe2DieTV
+            </a>{" "}
+            and few more listed{" "}
             <span
               data-text="below"
               onClick={() => scrollIntoClients()}
