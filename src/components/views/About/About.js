@@ -80,14 +80,17 @@ const About = () => {
             >
               below
             </span>{" "}
-            & in <a href="/portfolio">Portfolio</a> section.
+            & in <a href="/portfolio">portfolio</a> section.
           </p>
           <p>
             I've been into video games and esports since I was a kid, and it was
             and always will be a huge part of my life. Besides that, I'm really
             passionate about videography & photography, where I'm slowly
             starting to look for some commissions, with few ones already booked
-            in.
+            in. My portfolio bases mostly on Counter-Strike, but I am able to
+            provide some of the private videography stuff i've done, for the
+            possible clients. Check <a href="/contact">contact</a> section for
+            more informations.
           </p>
         </div>
         <Atropos
