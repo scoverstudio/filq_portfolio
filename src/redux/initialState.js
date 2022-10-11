@@ -55,7 +55,7 @@ const initialState = {
     },
     {
       name: "Galaxy Racer",
-      image: `${process.env.PUBLIC_URL}/images/GALAXYRACER.png`,
+      image: `${process.env.PUBLIC_URL}/images/gxr.png`,
 
       description: "Esports organization from the United Arab Emirates. ",
 
