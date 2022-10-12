@@ -20,7 +20,7 @@ const FilteredPortfolio = ({
       setVideos
     );
   }, [playlistOneIds, playlistThreeIds, playlistTwoIds]);
-
+  console.log(id.split(' ')[0]);
   return (
     <div className={styles.videosContainer}>
       <h2>

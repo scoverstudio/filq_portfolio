@@ -28,6 +28,7 @@ const Portfolio = ({
     );
   }, [playlistOneIds, playlistPortfolioIds, playlistThreeIds, playlistTwoIds]);
 
+  console.log(videos);
   const sortByViews = (videos) => {
     const sortByViewsArr = [...videos];
     sortByViewsArr.sort((a, b) => {

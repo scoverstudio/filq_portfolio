@@ -19,7 +19,7 @@ const initialState = {
       image: `${process.env.PUBLIC_URL}/images/VALORANT.png`,
       description: "Official Polish channel of VALORANT video game.",
 
-      channelName: "VALORANT",
+      channelName: "VALORANT // Polska",
     },
     {
       name: "ESEA",
@@ -36,6 +36,9 @@ const initialState = {
         "American professional esports company based in Santa Monica, California.",
 
       channelName: "Cloud9 CSGO",
+      style: {
+        transform: "scale(135%)",
+      },
     },
     {
       name: "HONORIS",
@@ -60,6 +63,9 @@ const initialState = {
       description: "Esports organization from the United Arab Emirates. ",
 
       channelName: "Galaxy Racer",
+      style: {
+        transform: "scale(135%)",
+      },
     },
     {
       name: "Fabryka Esportu",
