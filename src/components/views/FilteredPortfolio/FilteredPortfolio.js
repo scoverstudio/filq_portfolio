@@ -20,7 +20,7 @@ const FilteredPortfolio = ({
       setVideos
     );
   }, [playlistOneIds, playlistThreeIds, playlistTwoIds]);
-  console.log(id.split(' ')[0]);
+
   return (
     <div className={styles.videosContainer}>
       <h2>
@@ -30,9 +30,12 @@ const FilteredPortfolio = ({
         {id}
       </h2>
 
-      {videos && videos.find((video) => video.snippet.channelTitle === id) ? (
+      {videos &&
+      videos.find(
+        (video) => video.snippet.channelTitle.replaceAll("/", "") === id
+      ) ? (
         videos.map((video) =>
-          video.snippet.channelTitle === id ? (
+          video.snippet.channelTitle.replaceAll("/", "") === id ? (
             <div key={video.id} className={styles.videoBox}>
               <div className={styles.videoImage}>
                 <a href={`https://www.youtube.com/watch?v=${video.id}`}>

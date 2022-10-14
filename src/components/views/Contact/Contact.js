@@ -13,6 +13,7 @@ const Contact = () => {
     reset,
     formState: { errors },
   } = useForm();
+  console.log(process.env.REACT_APP_SERVICE_ID);
 
   const sendEmail = () => {
     emailjs
