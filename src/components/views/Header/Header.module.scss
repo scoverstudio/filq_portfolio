@@ -325,7 +325,7 @@
 
 @media (max-width: 1920px) {
   .headerContainer {
-    margin-bottom: 320px;
+    margin-bottom: 355px;
     .showReel {
       .iframeContainer {
         transform: scale(70%);
@@ -370,10 +370,10 @@
 
 @media (max-width: 1366px) {
   .headerContainer {
-    margin-bottom: 300px;
+    margin-bottom: 150px;
     .showReel {
       .iframeContainer {
-        transform: scale(80%);
+        transform: scale(60%);
 
         iframe {
           position: absolute;
@@ -507,7 +507,7 @@
       align-items: center;
       margin-bottom: 0;
       .title {
-        height: 80px;
+        height: 60px;
         .block {
           position: absolute;
           width: 0%;
@@ -520,7 +520,7 @@
           text-align: center;
           font-family: "poppins";
           color: #fff;
-          font-size: 46px;
+          font-size: 45px;
           animation: mainFadeIn 2s forwards;
           text-transform: uppercase;
           animation-delay: 1.6s;
@@ -540,7 +540,7 @@
         height: 33px;
 
         .content {
-          font-size: 18px;
+          font-size: 17px;
         }
       }
     }
@@ -595,7 +595,7 @@
       .iframeContainer {
         position: relative;
         width: calc(100vw - 5px);
-        transform: scale(72.3%);
+        transform: scale(71%);
         padding-bottom: 56.25%;
         height: 0;
 
