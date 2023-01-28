@@ -8,5 +8,4 @@ if Doorkeeper::Application.count.zero?
 end
 
 User.first_or_create!(email: 'admin@filq.com', password: 'test123', role: 'admin')
-Playlist.create!(name: 'pl1', link: 'www.link.pl')
 
