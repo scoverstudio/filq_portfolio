@@ -1,7 +1,7 @@
 import styles from "./AdminView.module.scss"
 import {useEffect, useState} from "react";
 import axios from "axios";
-import {API_URL} from "../../../config";
+import {API_URL} from "../../config";
 
 const AdminView = ({role}) => {
     const YOUTUBE_PLAYLIST_ITEMS_API =
