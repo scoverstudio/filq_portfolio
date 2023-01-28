@@ -15,7 +15,7 @@ const AdminView = ({role}) => {
 
     useEffect(() => {
         axios.request({
-            url: `API_URL/playlists`,
+            url: `${API_URL}/playlists`,
             method: "GET"
         }).then(res => setPlaylists(res.data))
     }, [role]);
