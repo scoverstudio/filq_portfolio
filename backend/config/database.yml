@@ -1,0 +1,17 @@
+\default: &default
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+  username: postgres
+  password: postgres
+  host: localhost
+development:
+  <<: *default
+  database: filq_developments
+production:
+  <<: *default
+  url: postgres://filq_site_user:ZVQ3sfh5Qdseo2D4d1h0KmnpFfCUZrHT@dpg-cfaj6dg2i3mjduiumb40-a/filq_site
+  database: filq_site
+  username: filq_site_user
+  password:  ZVQ3sfh5Qdseo2D4d1h0KmnpFfCUZrHT
+
