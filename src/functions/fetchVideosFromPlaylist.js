@@ -29,12 +29,12 @@ const fetchVideosFromPlaylist = (
         ).then(res => {
             arr.push(...res.data.items)
             if (arr.length === ids.length) {
-                {sortBy === "sorted by recent" ? sortByRecent(arr) : sortByViews(arr)}
-                // setVideos(arr.sort((a, b) => {
-                //     return (
-                //         new Date(b.snippet.publishedAt) - new Date(a.snippet.publishedAt)
-                //     );
-                // }))
+                // {sortBy === "sorted by recent" ? sortByRecent(arr) : sortByViews(arr)}
+                setVideos(arr.sort((a, b) => {
+                    return (
+                        new Date(b.snippet.publishedAt) - new Date(a.snippet.publishedAt)
+                    );
+                }))
             }
         })
 

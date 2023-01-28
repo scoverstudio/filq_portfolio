@@ -16,7 +16,6 @@ const Portfolio = ({
     const [sortBy, setSortBy] = useState("sorted by recent");
     const [showScrollUp, setShowScrollUp] = useState(false);
     const [allLoaded, setAllLoaded] = useState(false);
-
     const sortByViews = (videos) => {
         const sortByViewsArr = [...videos];
         sortByViewsArr.sort((a, b) => {
