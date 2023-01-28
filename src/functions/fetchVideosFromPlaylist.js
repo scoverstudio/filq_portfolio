@@ -3,6 +3,9 @@ import axios from "axios";
 const fetchVideosFromPlaylist = (
     ids,
     setVideos,
+    sortBy,
+    sortByRecent,
+    sortByViews,
 ) => {
     const YOUTUBE_VIDEO_API = "https://www.googleapis.com/youtube/v3/videos";
     let arr = []
@@ -26,11 +29,12 @@ const fetchVideosFromPlaylist = (
         ).then(res => {
             arr.push(...res.data.items)
             if (arr.length === ids.length) {
-                setVideos(arr.sort((a, b) => {
-                    return (
-                        new Date(b.snippet.publishedAt) - new Date(a.snippet.publishedAt)
-                    );
-                }))
+                {sortBy === "sorted by recent" ? sortByRecent(arr) : sortByViews(arr)}
+                // setVideos(arr.sort((a, b) => {
+                //     return (
+                //         new Date(b.snippet.publishedAt) - new Date(a.snippet.publishedAt)
+                //     );
+                // }))
             }
         })
 

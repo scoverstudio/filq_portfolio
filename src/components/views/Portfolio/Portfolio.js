@@ -3,7 +3,6 @@ import styles from "./Portfolio.module.scss";
 import Spinner from "react-bootstrap/Spinner";
 import clsx from "clsx";
 import fetchVideosFromPlaylist from "../../../functions/fetchVideosFromPlaylist";
-import fetchVideosFromPortfolio from "../../../functions/fetchVideosFromPortfolio";
 import {ToggleButton, ToggleButtonGroup} from "react-bootstrap";
 import "./Portfolio.css";
 
@@ -14,18 +13,9 @@ const Portfolio = ({
                        ids
                    }) => {
     const [videos, setVideos] = useState([]);
-    const [title, setTitle] = useState("all videos");
     const [sortBy, setSortBy] = useState("sorted by recent");
     const [showScrollUp, setShowScrollUp] = useState(false);
     const [allLoaded, setAllLoaded] = useState(false);
-
-    useEffect(() => {
-        fetchVideosFromPlaylist(
-            ids,
-            setVideos,
-            videos
-        );
-    }, [ids, filter]);
 
     const sortByViews = (videos) => {
         const sortByViewsArr = [...videos];
@@ -35,7 +25,7 @@ const Portfolio = ({
         setVideos(sortByViewsArr);
         setSortBy("sorted by most viewed");
     };
-
+    
     const sortByRecent = (videos) => {
         const sortByLikesArr = [...videos];
         sortByLikesArr.sort((a, b) => {
@@ -44,6 +34,18 @@ const Portfolio = ({
         setVideos(sortByLikesArr);
         setSortBy("sorted by recent");
     };
+
+    useEffect(() => {
+        fetchVideosFromPlaylist(
+            ids,
+            setVideos,
+            videos,
+            sortByViews,
+            sortByRecent,
+            sortBy,
+        );
+    }, [ids, filter]);
+
 
     // const showAllVideos = () => {
     //     fetchVideosFromPlaylist(
@@ -102,7 +104,7 @@ const Portfolio = ({
         <>
             <div className={styles.portfolioContainer}>
                 <div className={styles.titleContainer}>
-                    <h1>{title}</h1>
+                    <h1>{filter}</h1>
                     <h2>{sortBy}</h2>
                 </div>
                 <div className={styles.control}>
@@ -118,7 +120,7 @@ const Portfolio = ({
                             id="option1"
                             value={1}
                             variant="danger"
-                            onClick={() => setFilter("all")}
+                            onClick={() => setFilter("all videos")}
                         >
                             All videos
                         </ToggleButton>

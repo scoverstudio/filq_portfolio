@@ -14,14 +14,9 @@ import axios from "axios";
 
 function App() {
     const role = useSelector(state => state.users.role)
-    const [filter, setFilter] = useState("all")
+    const [filter, setFilter] = useState("all videos")
     const [isLoading, setIsLoading] = useState(true);
     const [ids, setIds] = useState([]);
-
-    const playlistOneIds = [];
-    const playlistTwoIds = [];
-    const playlistThreeIds = [];
-    const playlistPortfolioIds = [];
 
 
     const getPlaylists = async () => {
@@ -34,7 +29,7 @@ function App() {
         }).then(res => playlists = res.data)
 
         if (playlists.length > 0) {
-            await axios.all(playlists.filter(playlist => filter === "all" ? playlist : playlist.isPortfolio).map(playlist => axios.get(playlist.link))).then(res => {
+            await axios.all(playlists.filter(playlist => filter === "all videos" ? playlist : playlist.isPortfolio).map(playlist => axios.get(playlist.link))).then(res => {
                 res.forEach((item) => {
                     item.data.items.forEach(i => ids.push(i.snippet.resourceId.videoId))
                 })
