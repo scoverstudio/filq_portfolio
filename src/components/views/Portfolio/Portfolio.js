@@ -46,25 +46,6 @@ const Portfolio = ({
         );
     }, [ids, filter]);
 
-    console.log(videos)
-
-    // const showAllVideos = () => {
-    //     fetchVideosFromPlaylist(
-    //         playlistOneIds,
-    //         playlistTwoIds,
-    //         playlistThreeIds,
-    //         setVideos
-    //     );
-    //     setFilter("all")
-    //     setTitle("all videos");
-    // };
-    //
-    // const showPortfolio = async () => {
-    //     fetchVideosFromPortfolio(ids, setVideos);
-    //     setFilter("portfolio")
-    //     setTitle("portfolio");
-    // };
-
     useEffect(() => {
         window.onscroll = function () {
             var myDiv = document.querySelector(".moviesPanel");
