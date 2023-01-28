@@ -20,7 +20,6 @@ const fetchVideosFromPlaylist = (
 
         return resultArray
     }, [])
-
     results.forEach(result => {
         axios.get(
             `${YOUTUBE_VIDEO_API}?part=snippet&part=statistics&id=${result.toString()}&key=${
@@ -28,13 +27,8 @@ const fetchVideosFromPlaylist = (
             }`
         ).then(res => {
             arr.push(...res.data.items)
-            if (arr.length === ids.length) {
-                // {sortBy === "sorted by recent" ? sortByRecent(arr) : sortByViews(arr)}
-                setVideos(arr.sort((a, b) => {
-                    return (
-                        new Date(b.snippet.publishedAt) - new Date(a.snippet.publishedAt)
-                    );
-                }))
+            {
+                sortBy === "sorted by recent" ? sortByRecent(arr) : sortByViews(arr)
             }
         })
 

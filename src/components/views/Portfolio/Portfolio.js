@@ -46,6 +46,7 @@ const Portfolio = ({
         );
     }, [ids, filter]);
 
+    console.log(videos)
 
     // const showAllVideos = () => {
     //     fetchVideosFromPlaylist(

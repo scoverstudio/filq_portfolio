@@ -19,7 +19,6 @@ function App() {
     const [isLoading, setIsLoading] = useState(true);
     const [ids, setIds] = useState([]);
 
-
     const getPlaylists = async () => {
         setIsLoading(true)
         let playlists = []
