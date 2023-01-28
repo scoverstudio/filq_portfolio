@@ -11,4 +11,7 @@ development:
 production:
   <<: *default
   url: <%= ENV[DATABASE_URL] %>
+  database: filq_site
+  username: filq_site_user
+  password:  <%= ENV['DATABASE_PASSWORD'] %>
 
