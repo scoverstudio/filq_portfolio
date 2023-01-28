@@ -3,37 +3,39 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.6'
 
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.0.6', '>= 6.0.6.1'
-gem 'pg'
+# Use postgresql as the database for Active Record
+gem 'pg', '>= 0.18', '< 2.0'
+# Use Puma as the app server
 gem 'puma', '~> 4.1'
-gem 'httparty'
+# Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
-gem 'doorkeeper', '5.4.0'
+# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 4.0'
-gem 'rack-cors'
+# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
-gem 'rubyzip'
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
-gem 'whenever', require: false
-gem 'will_paginate', '~> 3.1.0'
-gem 'dotenv-rails'
-gem 'bcrypt', '~> 3.1.7'
+# Use Redis adapter to run Action Cable in production
+# gem 'redis', '~> 4.0'
+# Use Active Model has_secure_password
+# gem 'bcrypt', '~> 3.1.7'
+
+# Use Active Storage variant
+# gem 'image_processing', '~> 1.2'
+
+# Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
-  gem 'apipie-rails'
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'database_cleaner'
-  gem 'factory_bot_rails'
-  gem 'faker'
-  gem 'parallel_tests'
-  gem 'rubocop-rails', require: false
-  gem 'simplecov', require: false
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
 group :development do
-  gem 'annotate'
-  gem 'listen', '~> 3.2'
+  # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
+  gem 'web-console', '>= 3.3.0'
 end
 
 group :test do
