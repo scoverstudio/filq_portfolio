@@ -10,6 +10,10 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 5px;
+
+    em {
+      color: #ee0000;
+    }
     fieldset {
       display: flex;
       justify-content: center;

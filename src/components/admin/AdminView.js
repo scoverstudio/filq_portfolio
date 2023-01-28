@@ -46,14 +46,14 @@ const AdminView = ({role}) => {
         <>
             <h1>ADMIN</h1>
             <form onSubmit={(e) => handleSubmit(e)}>
-                <span>example of playlist id: <em>PLEmxBs67yX1yViKzCtXs0a4UxXO8I0oZ6</em></span>
+                <span>example of playlist id: https://www.youtube.com/playlist?list=<em>PLEmxBs67yX1yViKzCtXs0a4UxXO8I0oZ6</em></span>
                 <fieldset>
                     <label>Name</label>
                     <input onChange={(e) => setName(e.target.value)}/>
                 </fieldset>
                 <fieldset>
                     <label>Link</label>
-                    <input onChange={(e) => setLink(e.target.value)}/>
+                    <input onChange={(e) => setLink(e.target.value)} placeholder="Highlighted code"/>
                 </fieldset>
                 <fieldset>
                     <label>Portfolio: </label>
@@ -67,6 +67,11 @@ const AdminView = ({role}) => {
                     {playlists.filter(playlist => playlist.isPortfolio).map((playlist, index) => (
                         <div className={styles.singlePlaylist}>
                             <div>Title: {playlist.name}</div>
+                            <div className={styles.showLink}
+                                 onClick={() => showLink === playlist.id ? setShowLink(null) : setShowLink(playlist.id)}>show
+                                link
+                            </div>
+                            {showLink === playlist.id && <div className={styles.link}>{playlist.link}</div>}
                             <button onClick={(e) => handleDelete(e, playlist.id, index)}>delete</button>
                         </div>
 
@@ -78,7 +83,7 @@ const AdminView = ({role}) => {
                         <div className={styles.singlePlaylist}>
                             <div>Title: {playlist.name}</div>
                             <div className={styles.showLink}
-                                onClick={() => showLink === playlist.id ? setShowLink(null) : setShowLink(playlist.id)}>show
+                                 onClick={() => showLink === playlist.id ? setShowLink(null) : setShowLink(playlist.id)}>show
                                 link
                             </div>
                             {showLink === playlist.id && <div className={styles.link}>{playlist.link}</div>}
