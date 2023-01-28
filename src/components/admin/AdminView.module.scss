@@ -1,0 +1,31 @@
+.playlistsContainer {
+  display: flex;
+  gap: 5px;
+
+  div {
+    width: 50%;
+
+    span {
+      display: block;
+      text-align: center;
+      width: 100%;
+      text-transform: uppercase;
+    }
+
+    .singlePlaylist {
+      width: 100%;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.53);
+      margin-bottom: 5px;
+
+      .showLink {
+        width: fit-content;
+        cursor: pointer;
+
+        &:hover {
+          color: #CC0001;
+        }
+      }
+    }
+  }
+}

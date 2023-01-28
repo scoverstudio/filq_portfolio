@@ -7,9 +7,11 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 import { clientsReducer } from "./clients";
 import initialState from "./initialState";
+import {usersReducer} from "./users";
 
 const reducers = {
   clients: clientsReducer,
+  users: usersReducer,
 };
 const combinedReducers = combineReducers(reducers);
 
