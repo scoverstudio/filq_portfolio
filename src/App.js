@@ -11,6 +11,7 @@ import {store} from "./redux/store";
 import FilteredPortfolio from "./components/views/FilteredPortfolio/FilteredPortfolio";
 import LoginPage from "./components/admin/LoginPage";
 import axios from "axios";
+import {API_URL} from "./config";
 
 function App() {
     const role = useSelector(state => state.users.role)
@@ -24,7 +25,7 @@ function App() {
         let playlists = []
         let ids = []
         await axios.request({
-            url: "http://localhost:4000/api/playlists",
+            url: `${API_URL}/playlists`,
             method: "GET"
         }).then(res => playlists = res.data)
 

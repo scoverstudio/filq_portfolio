@@ -21,7 +21,7 @@ export const logout = () => {
 export const login = (dispatch) => async (email, password, errorCallback) => {
     try {
         const {data} = await axios.request({
-            url: `${API_URL}oauth/token`,
+            url: `${API_URL}/oauth/token`,
             method: "POST",
             data: {email, password, grant_type: "password"},
         });
