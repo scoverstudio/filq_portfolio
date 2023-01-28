@@ -1,4 +1,5 @@
 import axios from "axios";
+import {API_URL} from "../../config";
 
 const initialState = {
     access_token: null,
@@ -20,7 +21,7 @@ export const logout = () => {
 export const login = (dispatch) => async (email, password, errorCallback) => {
     try {
         const {data} = await axios.request({
-            url: "http://localhost:4000/api/oauth/token",
+            url: `${API_URL}oauth/token`,
             method: "POST",
             data: {email, password, grant_type: "password"},
         });
@@ -34,7 +35,7 @@ export const login = (dispatch) => async (email, password, errorCallback) => {
 
 export const reloadProfile = (dispatch) => () => {
     const profileConfig = {
-        url: 'http://localhost:4000/api/profile',
+        url: `${API_URL}/profile`,
     };
     axios.request(profileConfig).then(
         response =>

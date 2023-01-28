@@ -1,6 +1,7 @@
 import styles from "./AdminView.module.scss"
 import {useEffect, useState} from "react";
 import axios from "axios";
+import {API_URL} from "../../../config";
 
 const AdminView = ({role}) => {
     const YOUTUBE_PLAYLIST_ITEMS_API =
@@ -14,7 +15,7 @@ const AdminView = ({role}) => {
 
     useEffect(() => {
         axios.request({
-            url: "http://localhost:4000/api/playlists",
+            url: `API_URL/playlists`,
             method: "GET"
         }).then(res => setPlaylists(res.data))
     }, [role]);
@@ -22,7 +23,7 @@ const AdminView = ({role}) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         axios.request({
-            url: "http://localhost:4000/api/playlists",
+            url: `${API_URL}/playlists`,
             method: "POST",
             data: {
                 name,
@@ -37,7 +38,7 @@ const AdminView = ({role}) => {
         e.preventDefault()
         setPlaylists(playlists.filter((playlist, playlistIndex) => playlistIndex !== index))
         axios.request({
-            url: `http://localhost:4000/api/playlists/${id}`,
+            url: `${API_URL}/playlists/${id}`,
             method: "DELETE",
         })
     }

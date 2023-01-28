@@ -1,6 +1,6 @@
 import styles from "./LoginPage.module.scss"
 import {useState} from "react";
-import {login, reloadProfile} from "../../redux/users";
+import {login} from "../../redux/users";
 import {useDispatch, useSelector} from "react-redux";
 import AdminView from "./AdminView";
 
