@@ -35,6 +35,7 @@ const Portfolio = ({
     };
 
     useEffect(() => {
+        setVideos([])
         fetchVideosFromPlaylist(
             ids,
             setVideos,

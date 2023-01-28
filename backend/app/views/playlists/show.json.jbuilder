@@ -1,1 +1,1 @@
-json.extract! @playlist, :id, :name, :link
+json.extract! @playlist, :id, :name, :link, :isPortfolio

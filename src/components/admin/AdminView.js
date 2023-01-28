@@ -34,6 +34,14 @@ const AdminView = ({role}) => {
         setIsPortfolio(false)
     }
 
+    const handleDeletePortfolio = (e, id, index) => {
+        e.preventDefault()
+        setPlaylists(playlists.filter((playlist, playlistIndex) => playlistIndex !== index))
+        axios.request({
+            url: `${API_URL}/playlists/${id}`,
+            method: "DELETE",
+        })
+    }
     const handleDelete = (e, id, index) => {
         e.preventDefault()
         setPlaylists(playlists.filter((playlist, playlistIndex) => playlistIndex !== index))
@@ -42,7 +50,7 @@ const AdminView = ({role}) => {
             method: "DELETE",
         })
     }
-
+    console.log(playlists)
     return (
         <>
             <h1>ADMIN</h1>
@@ -73,7 +81,7 @@ const AdminView = ({role}) => {
                                 link
                             </div>
                             {showLink === playlist.id && <div className={styles.link}>{playlist.link}</div>}
-                            <button onClick={(e) => handleDelete(e, playlist.id, index)}>delete</button>
+                            <button onClick={(e) => handleDeletePortfolio(e, playlist.id, index)}>delete</button>
                         </div>
 
                     ))}

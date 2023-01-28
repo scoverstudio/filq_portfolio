@@ -22,6 +22,7 @@ function App() {
 
     const getPlaylists = async () => {
         setIsLoading(true)
+        setIds([])
         let playlists = []
         let ids = []
         await axios.request({
