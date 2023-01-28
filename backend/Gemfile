@@ -18,6 +18,7 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 gem 'rubyzip'
 gem 'whenever', require: false
 gem 'will_paginate', '~> 3.1.0'
+gem 'dotenv-rails'
 gem 'rails_12factor'
 gem 'foreman'
 
