@@ -4,7 +4,11 @@
   pool: 5
   username: postgres
   password: postgres
-  host:  localhost
+  host: localhost
 development:
   <<: *default
-  database: filq_development
+  database: filq_developments
+production:
+  <<: *default
+  url: <%= ENV[DATABASE_URL] %>
+
