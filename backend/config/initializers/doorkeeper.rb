@@ -121,7 +121,7 @@ Doorkeeper.configure do
   # +ActionController::API+. The return value of this option must be a stringified class name.
   # See https://doorkeeper.gitbook.io/guides/configuration/other-configurations#custom-base-controller
   #
-  base_controller 'ApplicationController::API'
+  # base_controller 'ApplicationController::API'
 
   # Reuse access token for the same resource owner within an application (disabled by default).
   #
