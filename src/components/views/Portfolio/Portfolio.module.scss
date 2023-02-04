@@ -1,16 +1,111 @@
 @import "../../../styles/settings.scss";
 
 .portfolioContainer {
-  position: relative;
+  position: absolute;
+  width: 100%;
+  top: 91px;
+  left: 0;
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 30px;
-  padding-bottom: 30px;
-  // overflow: hidden;
+
+  &.active {
+    position: relative;
+    top: -20px;
+    overflow: hidden;
+  }
+
+  .panels {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: calc(100vh - 200px);
+    width: 100%;
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      transition: .2s;
+      cursor: pointer;
+      text-transform: uppercase;
+      background-color: rgba(0,0,0,0.3);
+      border-right: 3px solid black;
+      height: 810px;
+
+      &:last-child {
+        border-right: none;
+      }
+
+      &:hover {
+        background-color: rgba(0,0,0,0.9);
+      }
+    }
+  }
+
+  .videoContainer {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+
+    .scrollUp {
+      position: sticky;
+      left: 150px;
+      top: 100px;
+      background-color: $redDarker;
+      border-radius: 50%;
+      transition: 0.3s;
+      transform: scale(100%) translateX(-50%);
+      cursor: pointer;
+      opacity: 0;
+
+      &:hover {
+        background-color: $redLight;
+        transform: scale(105%) translateX(-50%);
+      }
+
+      i {
+        padding: 20px;
+        font-size: 20px;
+      }
+
+      &.display {
+        opacity: 1;
+      }
+
+      @media (max-width: 768px) {
+        left: 50%;
+        bottom: 50px;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+
+  .photosContainer, .videoGraphicContainer {
+    height: calc(100vh - 200px);
+    width: 100%;
+    .titleContainer {
+      width: 100%;
+
+      span {
+        display: block;
+      }
+    }
+  }
 
   .titleContainer {
     width: 100%;
     padding-bottom: 0px;
+    position: relative;
+
+    span {
+      position: absolute;
+      font-size: 40px;
+      left: 0;
+      top: 50%;
+      cursor: pointer;
+    }
 
     h1 {
       width: 100%;
@@ -178,38 +273,6 @@
           transform: scale(110%);
         }
       }
-    }
-  }
-
-  .scrollUp {
-    position: sticky;
-    left: 150px;
-    bottom: 100px;
-    background-color: $redDarker;
-    border-radius: 50%;
-    transition: 0.3s;
-    transform: scale(100%) translateX(-50%);
-    cursor: pointer;
-    opacity: 0;
-
-    &:hover {
-      background-color: $redLight;
-      transform: scale(105%) translateX(-50%);
-    }
-
-    i {
-      padding: 20px;
-      font-size: 20px;
-    }
-
-    &.display {
-      opacity: 1;
-    }
-
-    @media (max-width: 768px) {
-      left: 50%;
-      bottom: 50px;
-      transform: translateX(-50%);
     }
   }
 }
