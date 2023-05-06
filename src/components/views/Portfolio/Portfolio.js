@@ -6,6 +6,9 @@ import fetchVideosFromPlaylist from "../../../functions/fetchVideosFromPlaylist"
 import fetchVideosFromPortfolio from "../../../functions/fetchVideosFromPortfolio";
 import {ToggleButton, ToggleButtonGroup} from "react-bootstrap";
 import "./Portfolio.css";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+import PhotoAlbum from "react-photo-album";
 
 const Portfolio = ({
                        playlistOneIds,
@@ -98,6 +101,12 @@ const Portfolio = ({
         myDiv.style.height = currWidth + 800 + "px";
     };
 
+    const resetDiv = () => {
+        var myDiv = document.querySelector(".moviesPanel");
+        var currWidth = myDiv.clientHeight;
+        myDiv.style.height = 800 + "px";
+    };
+
     const scrollUp = () => {
         window.scrollTo({top: 0, behavior: "smooth"});
     };
@@ -107,6 +116,33 @@ const Portfolio = ({
         setShowVideoEditing(false);
         setShowPhotos(false);
     }
+    const [index, setIndex] = useState(-1);
+
+    const images = [{
+        src: `https://lh3.googleusercontent.com/CSGKdYg9l7Udn_mDVTB2dd4YK8ou6fxg28PkxdDkOllMXkLCv3riB3Z3HUinCJjxSeeIVTh7-h30CnmwtrK08U4zZo4WLq6fzCU9b5wIIIzW6Ooe7d4AtsDzNjS3NXEDGfkPfjvNqw=w2219-h3328`,
+        width: 2219,
+        height: 3328
+    }, {
+        src: `https://lh3.googleusercontent.com/aC-Rjbm2nfU59BxvuScyjHy8GemxbgDr0V7XbeHgW4nDvGOcAlwGoR85d9oxcMXZ_3bex3P5TEK8bjEJV6zwO08uD9RDfTHV9Kcw8XU7Waem7rIBn8UbQD_VLWqwP-81n1pm2-OlHg=w7008-h4672`,
+        width: 7008,
+        height: 4672
+    }, {
+        src: `https://lh3.googleusercontent.com/vtMX6vs6eIUeGSxLxaPmPXqc4pBcjg7QVXcM6ZkVOAvM53SjaVvuJepukG_amwzPA3nEoWQ_KzUc_ss7bgSE5QhvEH2zNbtObCd5uvqKusux7w-06T2ABVHAfIsEOu93Brjb3HR6Hw=w7008-h4672`,
+        width: 7008,
+        height: 4672
+    }, {
+        src: "https://lh3.googleusercontent.com/UvWPd_wUM3JgPNJ2pW37GQxgQo4La7XZPEneznfUeCorQB9JSyOFKmtoLgbjw1SCjfpxXwdiWfk6CRA3_aSFM_8IXxE_FunSzOmUReomw5JvOaWqybA-__SM3b-k01ih_0BzHFqswA=w2400",
+        width: 3072,
+        height: 4672
+    }, {
+        src: "https://lh3.googleusercontent.com/YOuOMT4R84kKRxyqvjJwFFnicnNr9QsRowlMyqT7GNY5Hj86JuVuQDGG0KNY4wi1kU0fWCThN7TRs7_ZJ88etp545a_2poEVJjb3T7CKSD2AZj8LUsPA7ZJs2w2c08RSW6XfOOS40w=w2400",
+        width: 3072,
+        height: 4608
+    }, {
+        src: "https://lh3.googleusercontent.com/THYKTILxW49kb1_dj5OKFjDcpDD1RZ2qyMRn-1ez_hf5KPHW59V9Q3ldWLeSN42cWvJlEW1ArdNA-o7JVAERmsiGIN2h4wtgiG1d7f4VTbO7mJeqQGBKl7RhKYn5l8qcv6XMxBcaEg=w2400",
+        width: 6427,
+        height: 4285
+    }]
 
     return (
         <>
@@ -117,7 +153,6 @@ const Portfolio = ({
                         <div className={styles.panels}>
                             <div onClick={() => setShowPhotos(true)}>photos</div>
                             <div onClick={() => setShowVideoEditing(true)}>video editing</div>
-                            {/*<div onClick={() => setShowVideoGraphic(true)}>video graphic</div>*/}
                         </div>
                     )
                 }
@@ -125,9 +160,27 @@ const Portfolio = ({
                     showPhotos && (
                         <div className={styles.photosContainer}>
                             <div className={styles.titleContainer}>
-                                <h1>Photos</h1>
-                                <span onClick={() => backToPanels()}>{"<--"}</span>
+                                <h1 className={styles.photosTitle}><i onClick={() => backToPanels()}
+                                                                      className="fa fa-arrow-left"
+                                                                      aria-hidden="true"/>Photos</h1>
                             </div>
+                            <Lightbox
+                                open={index >= 0}
+                                close={() => {
+                                    setIndex(-1);
+                                }}
+                                slides={images}
+                                index={index}
+                            />
+                            <PhotoAlbum
+                                layout="rows"
+                                photos={images}
+                                onClick={({index}) => {
+                                    setIndex(index);
+                                }}
+                                targetRowHeight={150}
+                                rowConstraints={{maxPhotos: 5}}
+                            />
                         </div>
                     )
                 }
@@ -151,9 +204,9 @@ const Portfolio = ({
                             {/*    <i className="fa fa-arrow-up" aria-hidden="true"/>*/}
                             {/*</div>*/}
                             <div className={styles.titleContainer}>
-                                <h1>{title}</h1>
+                                <h1><i onClick={() => backToPanels()} className="fa fa-arrow-left"
+                                       aria-hidden="true"/>{title}</h1>
                                 <h2>{sortBy}</h2>
-                                <span onClick={() => backToPanels()}>{"<--"}</span>
                             </div>
                             <div className={styles.control}>
                                 <p>filter by:</p>
@@ -168,7 +221,10 @@ const Portfolio = ({
                                         id="option1"
                                         value={1}
                                         variant="danger"
-                                        onClick={() => showAllVideos()}
+                                        onClick={() => {
+                                            showAllVideos();
+                                            resetDiv();
+                                        }}
                                     >
                                         All videos
                                     </ToggleButton>
@@ -177,7 +233,10 @@ const Portfolio = ({
                                         id="option2"
                                         value={2}
                                         variant="danger"
-                                        onClick={() => showPortfolio()}
+                                        onClick={() => {
+                                            showPortfolio();
+                                            resetDiv();
+                                        }}
                                     >
                                         Portfolio
                                     </ToggleButton>
@@ -197,6 +256,7 @@ const Portfolio = ({
                                         variant="danger"
                                         onClick={() => {
                                             sortByRecent(videos);
+                                            resetDiv();
                                         }}
                                     >
                                         Recent
@@ -208,6 +268,7 @@ const Portfolio = ({
                                         variant="danger"
                                         onClick={() => {
                                             sortByViews(videos);
+                                            resetDiv();
                                         }}
                                     >
                                         Most Views
