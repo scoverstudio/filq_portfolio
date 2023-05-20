@@ -17,7 +17,6 @@ function App() {
   const [playlistTwoData, setPlaylistTwoData] = useState(null);
   const [playlistThreeData, setPlaylistThreeData] = useState(null);
   const [playlistFourData, setPlaylistFourData] = useState(null);
-  const [playlistFiveData, setPlaylistFiveData] = useState(null);
   const [playlistPortfolio, setPlaylistPortfolio] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -25,7 +24,6 @@ function App() {
   const playlistTwoIds = [];
   const playlistThreeIds = [];
   const playlistFourIds = [];
-  const playlistFiveIds = [];
   const playlistPortfolioIds = [];
 
   const getPlaylistOne = async () => {
@@ -70,23 +68,10 @@ function App() {
   const getPlaylistFour = async () => {
     try {
       const res = await fetch(
-          `${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&playlistId=PLc3zz9UrBZ7KFB84Bxr6vxwpVeWrBhrFo&maxResults=50&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`
+          `${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&playlistId=PLc3zz9UrBZ7LxhqpLjuChh1sbsilyLWsV&maxResults=50&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`
       );
       const data = await res.json();
       setPlaylistFourData(data.items);
-      setIsLoading(false);
-    } catch (err) {
-      console.log(err.stack);
-    }
-  };
-
-  const getPlaylistFive = async () => {
-    try {
-      const res = await fetch(
-          `${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&playlistId=PLEmxBs67yX1yXXEYfUsyu-J8sN_hcLzh8&maxResults=50&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`
-      );
-      const data = await res.json();
-      setPlaylistFiveData(data.items);
       setIsLoading(false);
     } catch (err) {
       console.log(err.stack);
@@ -111,7 +96,6 @@ function App() {
     (async () => await getPlaylistTwo())();
     (async () => await getPlaylistThree())();
     (async () => await getPlaylistFour())();
-    (async () => await getPlaylistFive())();
     (async () => await getPortfolioPlaylist())();
   }, []);
 
@@ -132,10 +116,6 @@ function App() {
   playlistFourData.forEach((item) =>
       playlistFourIds.push(item.snippet.resourceId.videoId)
   );
-  playlistFiveData &&
-  playlistFiveData.forEach((item) =>
-      playlistFiveIds.push(item.snippet.resourceId.videoId)
-  );
   playlistPortfolio &&
     playlistPortfolio.forEach((item) =>
       playlistPortfolioIds.push(item.snippet.resourceId.videoId)
@@ -155,7 +135,6 @@ function App() {
                   playlistTwoIds={playlistTwoIds}
                   playlistThreeIds={playlistThreeIds}
                   playlistFourIds={playlistFourIds}
-                  playlistFiveIds={playlistFiveIds}
                   playlistPortfolioIds={playlistPortfolioIds}
                   isLoading={isLoading}
                 />
@@ -171,7 +150,6 @@ function App() {
                   playlistTwoIds={playlistTwoIds}
                   playlistThreeIds={playlistThreeIds}
                   playlistFourIds={playlistFourIds}
-                  playlistFiveIds={playlistFiveIds}
                   isLoading={isLoading}
                 />
               }
