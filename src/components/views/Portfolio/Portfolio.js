@@ -6,6 +6,7 @@ import fetchVideosFromPlaylist from "../../../functions/fetchVideosFromPlaylist"
 import fetchVideosFromPortfolio from "../../../functions/fetchVideosFromPortfolio";
 import {ToggleButton, ToggleButtonGroup} from "react-bootstrap";
 import "./Portfolio.css";
+import { useTranslation } from "react-i18next";
 
 const Portfolio = ({
                        playlistOneIds,
@@ -17,9 +18,10 @@ const Portfolio = ({
                    }) => {
     const [videos, setVideos] = useState(null);
     const [title, setTitle] = useState("all videos");
-    const [sortBy, setSortBy] = useState("sorted by recent");
+    const [sortBy, setSortBy] = useState("recent");
     const [showScrollUp, setShowScrollUp] = useState(false);
     const [allLoaded, setAllLoaded] = useState(false);
+    const [t, i18n] = useTranslation("global");
 
     useEffect(() => {
         fetchVideosFromPlaylist(
@@ -32,21 +34,21 @@ const Portfolio = ({
     }, [playlistOneIds, playlistPortfolioIds, playlistThreeIds, playlistTwoIds, playlistFourIds]);
 
     const sortByViews = (videos) => {
+        setSortBy("most viewed");
         const sortByViewsArr = [...videos];
         sortByViewsArr.sort((a, b) => {
             return b.statistics.viewCount - a.statistics.viewCount;
         });
         setVideos(sortByViewsArr);
-        setSortBy("sorted by most viewed");
     };
 
     const sortByRecent = (videos) => {
+        setSortBy("recent");
         const sortByLikesArr = [...videos];
         sortByLikesArr.sort((a, b) => {
             return new Date(b.snippet.publishedAt) - new Date(a.snippet.publishedAt);
         });
         setVideos(sortByLikesArr);
-        setSortBy("sorted by recent");
     };
 
     const showAllVideos = () => {
@@ -105,11 +107,11 @@ const Portfolio = ({
         <>
             <div className={styles.portfolioContainer}>
                 <div className={styles.titleContainer}>
-                    <h1>{title}</h1>
-                    <h2>{sortBy}</h2>
+                    {title === 'all videos' ? <h1>{t('portfolio.all-videos')}</h1> : <h1>{t('portfolio.portfolio-message')}</h1>}
+                    {sortBy === 'recent' ? <h2>{t('portfolio.sorted-by')} {t('portfolio.recent')}</h2> : <h2>{t('portfolio.sorted-by')} {t('portfolio.most-viewed')}</h2>}
                 </div>
                 <div className={styles.control}>
-                    <p>filter by:</p>
+                    <p>{t("portfolio.filter-by")}:</p>
                     <ToggleButtonGroup
                         className={styles.filterGroup}
                         type="radio"
@@ -123,7 +125,7 @@ const Portfolio = ({
                             variant="danger"
                             onClick={() => showAllVideos()}
                         >
-                            All videos
+                            {t("portfolio.all-videos")}
                         </ToggleButton>
                         <ToggleButton
                             className={styles.button}
@@ -132,11 +134,11 @@ const Portfolio = ({
                             variant="danger"
                             onClick={() => showPortfolio()}
                         >
-                            Portfolio
+                            {t("portfolio.portfolio-message")}
                         </ToggleButton>
                     </ToggleButtonGroup>
 
-                    <p>sort by:</p>
+                    <p>{t("portfolio.sort-by")}:</p>
                     <ToggleButtonGroup
                         className={styles.filterGroup}
                         type="radio"
@@ -152,7 +154,7 @@ const Portfolio = ({
                                 sortByRecent(videos);
                             }}
                         >
-                            Recent
+                            {t("portfolio.recent")}
                         </ToggleButton>
                         <ToggleButton
                             className={styles.button}
@@ -163,7 +165,7 @@ const Portfolio = ({
                                 sortByViews(videos);
                             }}
                         >
-                            Most Views
+                            {t("portfolio.most-views")}
                         </ToggleButton>
                     </ToggleButtonGroup>
                 </div>
@@ -188,7 +190,7 @@ const Portfolio = ({
                                     <a href={`https://www.youtube.com/watch?v=${movie.id}`}>
                                         <h3>{movie.snippet.title}</h3>
                                     </a>
-                                    <span>Views: {movie.statistics.viewCount}</span>
+                                    <span>{t('portfolio.views')}: {movie.statistics.viewCount}</span>
                                     <span>
                     <i className="fa fa-thumbs-up" aria-hidden="true"/>
                                         {movie.statistics.likeCount}

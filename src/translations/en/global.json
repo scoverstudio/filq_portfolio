@@ -1,0 +1,21 @@
+{
+    "header": {
+        "message": "FIND ME ON"
+    },
+    "sub-header": {
+        "message-part-1": "Feel free to",
+        "message-contact-part-2": "contact",
+        "message-part-3": "me!"
+    },
+    "portfolio": {
+        "all-videos": "all videos",
+        "portfolio-message": "portfolio",
+        "filter-by": "filter by",
+        "sort-by": "sort by",
+        "sorted-by": "sorted by",
+        "recent": "recent",
+        "most-views": "most views",
+        "most-viewed": "most viewed",
+        "views": "Views"
+    }
+}

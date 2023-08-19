@@ -3,8 +3,15 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import styles from "./Navigation.module.scss";
+import { useTranslation } from "react-i18next";
 
 const Navigation = () => {
+  const [t, i18n] = useTranslation("global");
+
+  const handleChangeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+    localStorage.setItem('lang', lang)
+  };
   return (
     <Navbar
       expand="md"
@@ -27,7 +34,7 @@ const Navigation = () => {
           className="justify-content-end light"
           id="responsive-navbar-nav"
         >
-          <Nav className="">
+          <Nav>
             <Nav.Link href="/" className={styles.link}>
               Home
             </Nav.Link>
@@ -53,6 +60,21 @@ const Navigation = () => {
               >
                 <i className="fa fa-twitter" aria-hidden="true" />
               </Nav.Link>
+            </div>
+            <div
+              className={styles.flag}
+              onClick={() =>
+                handleChangeLanguage(i18n.language === "en" ? "pl" : "en")
+              }
+            >
+              <img
+                alt="language flag"
+                src={
+                  i18n.language === "en"
+                    ? `${process.env.PUBLIC_URL}/images/polish_flag.png`
+                    : `${process.env.PUBLIC_URL}/images/english_flag.png`
+                }
+              ></img>
             </div>
           </Nav>
         </Navbar.Collapse>

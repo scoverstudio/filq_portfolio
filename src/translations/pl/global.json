@@ -1,0 +1,19 @@
+{
+    "header": {
+        "message": "ZNAJDŹ MNIE NA"
+    },
+    "sub-header": {
+        "message": "Nie wahaj się ze mną skontaktować!"
+    },
+    "portfolio": {
+        "all-videos": "wszystkie filmy",
+        "portfolio-message": "portfolio",
+        "filter-by": "filtruj po",
+        "sort-by": "sortuj po",
+        "sorted-by": "sortowane po",
+        "recent": "najnowszych",
+        "most-views": "ilość wyświetleń",
+        "most-viewed": "ilości wyświetleń",
+        "views": "Wyświetlenia"
+    }
+}
