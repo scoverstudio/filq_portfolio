@@ -54,7 +54,7 @@ const About = () => {
           <h2>
             Get to know me <span>better!</span>
           </h2>
-          <p>
+          {/* <p>
             Hello! My name is Filip, I'm 21 years old, and I'm a freelance
             professional with extensive experience in film editing and
             photography. Over the past 6 years, I've had the pleasure of
@@ -95,8 +95,8 @@ const About = () => {
             the challenge. Together, we can craft stories that capture attention
             and evoke emotions. Feel free to contact me to learn more about how
             I can enhance your projects.
-          </p>
-          {/* <p>
+          </p> */}
+          <p>
             My moviemaking career started at the beginning of 2017 when I
             started to upload fragmovies on{" "}
             <a href="https://www.youtube.com/c/filqTV">my channel</a>, and by
@@ -133,7 +133,7 @@ const About = () => {
             provide some of the private videography stuff i've done, for the
             possible clients. Check <a href="/contact">contact</a> section for
             more informations.
-          </p> */}
+          </p>
         </div>
         <Atropos
           shadow={false}

@@ -15,5 +15,10 @@
         "most-views": "ilość wyświetleń",
         "most-viewed": "ilości wyświetleń",
         "views": "Wyświetlenia"
+    },
+    "navigation": {
+        "home": "strona główna",
+        "about-me": "o mnie",
+        "contact": "kontakt"
     }
 }

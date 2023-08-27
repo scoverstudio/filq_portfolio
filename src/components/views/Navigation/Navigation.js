@@ -36,16 +36,16 @@ const Navigation = () => {
         >
           <Nav>
             <Nav.Link href="/" className={styles.link}>
-              Home
+            {t("navigation.home")}
             </Nav.Link>
             <Nav.Link href="/portfolio" className={styles.link}>
               Portfolio
             </Nav.Link>
             <Nav.Link href="/about" className={styles.link}>
-              About
+            {t("navigation.about-me")}
             </Nav.Link>
             <Nav.Link href="/contact" className={styles.link}>
-              Contact
+            {t("navigation.contact")}
             </Nav.Link>
             <div className={styles.controlLinks}>
               <Nav.Link

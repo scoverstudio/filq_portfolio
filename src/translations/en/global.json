@@ -20,5 +20,10 @@
     },
     "about-me": {
         "first-part": ""
+    },
+    "navigation": {
+        "home": "home",
+        "about-me": "about me",
+        "contact": "contact"
     }
 }
