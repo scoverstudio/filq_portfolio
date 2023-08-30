@@ -158,8 +158,8 @@ const Portfolio = ({
                 {
                     !showVideoEditing && !showPhotos && !showVideoGraphic && (
                         <div className={styles.panels}>
-                            <div onClick={() => setShowPhotos(true)}>photos</div>
                             <div onClick={() => setShowVideoEditing(true)}>video editing</div>
+                            <div onClick={() => setShowPhotos(true)}>photos</div>
                         </div>
                     )
                 }
