@@ -9,11 +9,13 @@ import "./Portfolio.css";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import PhotoAlbum from "react-photo-album";
+import { useTranslation } from "react-i18next";
 
 const Portfolio = ({
                        playlistOneIds,
                        playlistTwoIds,
                        playlistThreeIds,
+                       playlistFourIds,
                        playlistPortfolioIds,
                        isLoading,
                    }) => {
@@ -22,6 +24,7 @@ const Portfolio = ({
     const [sortBy, setSortBy] = useState("sorted by recent");
     const [showScrollUp, setShowScrollUp] = useState(false);
     const [allLoaded, setAllLoaded] = useState(false);
+    const [t, i18n] = useTranslation("global");
 
     const [showVideoEditing, setShowVideoEditing] = useState(false)
     const [showPhotos, setShowPhotos] = useState(false)
@@ -32,11 +35,13 @@ const Portfolio = ({
             playlistOneIds,
             playlistTwoIds,
             playlistThreeIds,
+            playlistFourIds,
             setVideos
         );
-    }, [playlistOneIds, playlistPortfolioIds, playlistThreeIds, playlistTwoIds]);
+    }, [playlistOneIds, playlistPortfolioIds, playlistThreeIds, playlistTwoIds, playlistFourIds]);
 
     const sortByViews = (videos) => {
+        setSortBy("most viewed");
         const sortByViewsArr = [...videos];
         sortByViewsArr.sort((a, b) => {
             return b.statistics.viewCount - a.statistics.viewCount;
@@ -46,6 +51,7 @@ const Portfolio = ({
     };
 
     const sortByRecent = (videos) => {
+        setSortBy("recent");
         const sortByLikesArr = [...videos];
         sortByLikesArr.sort((a, b) => {
             return new Date(b.snippet.publishedAt) - new Date(a.snippet.publishedAt);
@@ -59,6 +65,7 @@ const Portfolio = ({
             playlistOneIds,
             playlistTwoIds,
             playlistThreeIds,
+            playlistFourIds,
             setVideos
         );
         setTitle("all videos");
@@ -146,7 +153,7 @@ const Portfolio = ({
 
     return (
         <>
-            <div
+            <div 
                 className={clsx(styles.portfolioContainer, (showVideoEditing || showPhotos || showVideoGraphic) && styles.active)}>
                 {
                     !showVideoEditing && !showPhotos && !showVideoGraphic && (
@@ -204,12 +211,11 @@ const Portfolio = ({
                             {/*    <i className="fa fa-arrow-up" aria-hidden="true"/>*/}
                             {/*</div>*/}
                             <div className={styles.titleContainer}>
-                                <h1><i onClick={() => backToPanels()} className="fa fa-arrow-left"
-                                       aria-hidden="true"/>{title}</h1>
-                                <h2>{sortBy}</h2>
+                            {title === 'all videos' ? <h1>{t('portfolio.all-videos')}</h1> : <h1>{t('portfolio.portfolio-message')}</h1>}
+                            {sortBy === 'recent' ? <h2>{t('portfolio.sorted-by')} {t('portfolio.recent')}</h2> : <h2>{t('portfolio.sorted-by')} {t('portfolio.most-viewed')}</h2>}
                             </div>
                             <div className={styles.control}>
-                                <p>filter by:</p>
+                            <p>{t("portfolio.filter-by")}:</p>
                                 <ToggleButtonGroup
                                     className={styles.filterGroup}
                                     type="radio"
@@ -226,7 +232,7 @@ const Portfolio = ({
                                             resetDiv();
                                         }}
                                     >
-                                        All videos
+                                                                    {t("portfolio.all-videos")}
                                     </ToggleButton>
                                     <ToggleButton
                                         className={styles.button}
@@ -238,11 +244,11 @@ const Portfolio = ({
                                             resetDiv();
                                         }}
                                     >
-                                        Portfolio
+                                        {t("portfolio.portfolio-message")}
                                     </ToggleButton>
                                 </ToggleButtonGroup>
 
-                                <p>sort by:</p>
+                                <p>{t("portfolio.sort-by")}:</p>
                                 <ToggleButtonGroup
                                     className={styles.filterGroup}
                                     type="radio"
@@ -259,7 +265,7 @@ const Portfolio = ({
                                             resetDiv();
                                         }}
                                     >
-                                        Recent
+                                        {t("portfolio.recent")}
                                     </ToggleButton>
                                     <ToggleButton
                                         className={styles.button}
@@ -271,7 +277,7 @@ const Portfolio = ({
                                             resetDiv();
                                         }}
                                     >
-                                        Most Views
+                                        {t("portfolio.most-views")}
                                     </ToggleButton>
                                 </ToggleButtonGroup>
                             </div>
@@ -296,11 +302,11 @@ const Portfolio = ({
                                                 <a href={`https://www.youtube.com/watch?v=${movie.id}`}>
                                                     <h3>{movie.snippet.title}</h3>
                                                 </a>
-                                                <span>Views: {movie.statistics.viewCount}</span>
+                                                <span>{t('portfolio.views')}: {movie.statistics.viewCount}</span>
                                                 <span>
-                    <i className="fa fa-thumbs-up" aria-hidden="true"/>
+                                                <i className="fa fa-thumbs-up" aria-hidden="true"/>
                                                     {movie.statistics.likeCount}
-                  </span>
+                                                </span>
                                             </div>
                                         </div>
                                     ))
@@ -313,12 +319,11 @@ const Portfolio = ({
                                 </div>
                             </div>
                         </div>
-                    )
-                }
-
+                        )
+                    }
             </div>
         </>
-    );
-};
+    )
+}
 
 export default Portfolio;
