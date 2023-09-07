@@ -18,12 +18,18 @@
         "most-viewed": "most viewed",
         "views": "Views"
     },
-    "about-me": {
-        "first-part": ""
-    },
     "navigation": {
         "home": "home",
         "about-me": "about me",
         "contact": "contact"
+    },
+    "about-me": {
+        "title-1": "Get to know me",
+        "title-2": "better!",
+        "worked-with": "Worked with:",
+        "1-part": "Hello! My name is Filip, I'm 21 years old, and I'm a freelance professional with extensive experience in film editing and photography. Over the past 6 years, I've had the pleasure of collaborating with leading esports companies such as",
+        "2-part": ", creating hundreds of films for them. My specialization lies in producing various types of content, including vlogs, documentaries, trailers, and fragmovies.",
+        "3-part": "Dodatkowo, od 1.5 roku rozwijam swoje umiejętności w dziedzinie fotografii i filmowania. Miałem okazję szlifować swoje umiejętności podczas IEM Katowice 2023, pashagamingcamp18+, bootcamp 9INE, czy lokalnych imprezach. Moje usługi obejmują fotografię oraz produkcję i montaż filmów najwyższej jakości, wraz z zastosowaniem efektów specjalnych, motion designu oraz korekcji kolorów. Potrafię pracować nad kilkoma projektami jednocześnie, nawet pod presją czasu, zarówno samodzielnie, jak i w zespole. Moje doświadczenie pozwala mi efektywnie zarządzać zadaniami, a także wnosić własne pomysły i kreatywność do tworzonego contentu. Posiadam biegłość w obsłudze programów takich jak Sony Vegas oraz narzędzi Adobe.",
+        "4-part": "I come from Strzegom, a small town near Wrocław in Poland, and I've been dedicated to film editing since the age of 15. My journey began in 2017 when I started creating fragmovies for my own channel. Soon, my dedication was recognized, and I joined the HLTV team. Video games have always been my passion and an integral part of my life, so working in the esports industry is a dream come true for me. Besides my professional pursuits, I love traveling, and I hope that in the future, these two passions will converge, allowing me to travel the world and create content from esports tournaments. If you're seeking a professional who combines creativity, technical skills, and a passion for film and photography, I'm ready to take on the challenge. Together, we can craft stories that capture attention and evoke emotions. Feel free to contact me to learn more about how I can enhance your projects."
     }
 }

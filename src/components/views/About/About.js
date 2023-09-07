@@ -4,9 +4,11 @@ import { Container } from "react-bootstrap";
 import Atropos from "atropos/react";
 import { useSelector } from "react-redux";
 import { getClients } from "../../../redux/clients";
+import { useTranslation } from "react-i18next";
 
 const About = () => {
   const clients = useSelector(getClients);
+  const [t, i18n] = useTranslation("global");
 
   const scrollIntoClients = () => {
     const elementToView = document.getElementById("below");
@@ -16,7 +18,7 @@ const About = () => {
   return (
     <Container className={clsx(styles.container)}>
       <section className={styles.clients}>
-        <h2>Worked with: </h2>
+        <h2>{t('about-me.worked-with')} </h2>
         {clients.map((element) => (
           <a
             href={`/portfolio/${element.channelName}`}
@@ -52,49 +54,20 @@ const About = () => {
       <div className={styles.contentAbout}>
         <div className={styles.text}>
           <h2>
-            Get to know me <span>better!</span>
+          {t('about-me.title-1')} <span>{t('about-me.title-2')}</span>
           </h2>
           <p>
-            Hello! My name is Filip, I'm 21 years old, and I'm a freelance
-            professional with extensive experience in film editing and
-            photography. Over the past 6 years, I've had the pleasure of
-            collaborating with leading esports companies such as{" "}
+          {t('about-me.1-part')}{" "}
             <a href="/portfolio/ESL%20Counter-Strike">ESL</a>,{" "}
             <a href="/portfolio/Cloud9 CSGO">Cloud9</a>,{" "}
             <a href="/portfolio/HLTVorg">HLTV.org</a>, and{" "}
-            <a href="/portfolio/VALORANT // Polska">VALORANTPolska</a>, creating
-            hundreds of films for them. My specialization lies in producing
-            various types of content, including vlogs, documentaries, trailers,
-            and fragmovies.
+            <a href="/portfolio/VALORANT // Polska">VALORANTPolska</a>{t('about-me.2-part')}
           </p>
           <p>
-            Additionally, for the past 1.5 years, I've been honing my skills in
-            photography and videography. I've had the opportunity to refine my
-            craft at events like IEM Katowice 2023, pashagamingcamp18+, 9INE
-            bootcamp, local gatherings, and personal travels. My services
-            encompass high-quality photograhy & film production and editing,
-            utilizing special effects, motion design, and color correction. I'm
-            adept at managing multiple projects simultaneously, even under time
-            pressure, both independently and as part of a team. My experience
-            allows me to efficiently handle tasks and contribute my own ideas
-            and creativity to the content creation process. I'm proficient in
-            using software such as Sony Vegas and Adobe tools.
+          {t('about-me.3-part')}
           </p>
           <p>
-            I come from Strzegom, a small town near Wrocław in Poland, and I've
-            been dedicated to film editing since the age of 15. My journey began
-            in 2017 when I started creating fragmovies for my own channel. Soon,
-            my dedication was recognized, and I joined the HLTV team. Video
-            games have always been my passion and an integral part of my life,
-            so working in the esports industry is a dream come true for me.
-            Besides my professional pursuits, I love traveling, and I hope that
-            in the future, these two passions will converge, allowing me to
-            travel the world and create content from esports tournaments. If
-            you're seeking a professional who combines creativity, technical
-            skills, and a passion for film and photography, I'm ready to take on
-            the challenge. Together, we can craft stories that capture attention
-            and evoke emotions. Feel free to contact me to learn more about how
-            I can enhance your projects.
+          {t('about-me.4-part')}
           </p>
           {/* <p>
             My moviemaking career started at the beginning of 2017 when I
