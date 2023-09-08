@@ -133,26 +133,6 @@ const Portfolio = ({
 
   const images = [
     {
-      src: `https://lh3.googleusercontent.com/CSGKdYg9l7Udn_mDVTB2dd4YK8ou6fxg28PkxdDkOllMXkLCv3riB3Z3HUinCJjxSeeIVTh7-h30CnmwtrK08U4zZo4WLq6fzCU9b5wIIIzW6Ooe7d4AtsDzNjS3NXEDGfkPfjvNqw=w2219-h3328`,
-      width: 2219,
-      height: 3328,
-    },
-    {
-      src: `https://lh3.googleusercontent.com/aC-Rjbm2nfU59BxvuScyjHy8GemxbgDr0V7XbeHgW4nDvGOcAlwGoR85d9oxcMXZ_3bex3P5TEK8bjEJV6zwO08uD9RDfTHV9Kcw8XU7Waem7rIBn8UbQD_VLWqwP-81n1pm2-OlHg=w7008-h4672`,
-      width: 7008,
-      height: 4672,
-    },
-    {
-      src: `https://lh3.googleusercontent.com/vtMX6vs6eIUeGSxLxaPmPXqc4pBcjg7QVXcM6ZkVOAvM53SjaVvuJepukG_amwzPA3nEoWQ_KzUc_ss7bgSE5QhvEH2zNbtObCd5uvqKusux7w-06T2ABVHAfIsEOu93Brjb3HR6Hw=w7008-h4672`,
-      width: 7008,
-      height: 4672,
-    },
-    {
-      src: "https://lh3.googleusercontent.com/UvWPd_wUM3JgPNJ2pW37GQxgQo4La7XZPEneznfUeCorQB9JSyOFKmtoLgbjw1SCjfpxXwdiWfk6CRA3_aSFM_8IXxE_FunSzOmUReomw5JvOaWqybA-__SM3b-k01ih_0BzHFqswA=w2400-h4672",
-      width: 3072,
-      height: 4672,
-    },
-    {
       src: "https://lh3.googleusercontent.com/YOuOMT4R84kKRxyqvjJwFFnicnNr9QsRowlMyqT7GNY5Hj86JuVuQDGG0KNY4wi1kU0fWCThN7TRs7_ZJ88etp545a_2poEVJjb3T7CKSD2AZj8LUsPA7ZJs2w2c08RSW6XfOOS40w=w2400",
       width: 3072,
       height: 4608,
@@ -288,12 +268,6 @@ const Portfolio = ({
     },
 
     {
-      src: "https://lh3.googleusercontent.com/pw/AIL4fc9v4L5quvZWV4wy1BTMQXlw6TbNIdzsLI-JFMAbuwkJJTl4SpTcQuW6fZ-kns_Cf4Lyj0E_g8d6uOnCTUyLWGnjUVvDB-1ROy13VuzQPFrMhs34P6I=w2400",
-      width: 7008,
-      height: 4672,
-    },
-
-    {
       src: "https://lh3.googleusercontent.com/pw/AIL4fc8VbaoCJm45MLMdAsT-aOvAy6y6kuKICrhcGjr6rJ7CgzRImcNBjiTw0FTYxRMyMzG1jU_8erQfX7fdACgiqyhSq-OUYahOTsWfFhXOGngO3zfzk58=w2400",
       width: 4165,
       height: 2777,
@@ -318,18 +292,6 @@ const Portfolio = ({
     },
 
     {
-      src: "https://lh3.googleusercontent.com/pw/AIL4fc97mD77U8hMBuSUW7gJbg1eBgugKk38tNPb60xZ-Uh1MctiF6kvl4Rurf7KlCzWKfghL2ZA3luxgMEf2DuzlHmzJJPYhZVzPLl4cJN0zHC7tkFCIqc=w2400",
-      width: 4070,
-      height: 2713,
-    },
-
-    {
-      src: "https://lh3.googleusercontent.com/pw/AIL4fc-oQyjNldr4WwNXYPjks6jAP4PBKPkZafs1HlEPv-5C1qsRs3Io4Mt6rRhhD_zn4Z2RdrSrMLyUW4Dn-GRpgTTONmpRiUmPYKuKYLf6TtyYLZxEDxk=w2400",
-      width: 6770,
-      height: 4513,
-    },
-
-    {
       src: "https://lh3.googleusercontent.com/pw/AIL4fc-oQyjNldr4WwNXYPjks6jAP4PBKPkZafs1HlEPv-5C1qsRs3Io4Mt6rRhhD_zn4Z2RdrSrMLyUW4Dn-GRpgTTONmpRiUmPYKuKYLf6TtyYLZxEDxk=w2400",
       width: 6770,
       height: 4513,
@@ -349,12 +311,6 @@ const Portfolio = ({
 
     {
       src: "https://lh3.googleusercontent.com/pw/AIL4fc82UY6blJKM2_7MhLQCrFdGCG7hIVQGcfaOlzMcRPrO7_Wwe7OIevtiqde_HvLWqvYBFMvlpZmDbrr-VXOcQkDX7McMLPQJPEjYEWP4_YYwF7c3iHA=w2400",
-      width: 7008,
-      height: 4672,
-    },
-
-    {
-      src: "https://lh3.googleusercontent.com/pw/AIL4fc82UY6blJKM2_7MhLQCrFdGCG7hIVQGcfaOlzMcRPrO7_Wwe7OIevtiqde_HvLWqvYBFMvlpZmDbrr-VXOcQkDX7McMLPQJPEjYEWP4_YYwF7c3iHA=w2400",
       width: 6422,
       height: 4281,
     },
@@ -363,18 +319,6 @@ const Portfolio = ({
       src: "https://lh3.googleusercontent.com/pw/AIL4fc98bIIdgIk0x4F3bhqfw9i4IRmSeWTcs8Rx6E_axiu-EEvemBWO63y_PfpeFz5DkXLULI3d3qRt2zazPpccG3pGBvnTyx35PsNhEzrk21vt6XaYSMA=w2400",
       width: 6455,
       height: 4303,
-    },
-
-    {
-      src: "https://lh3.googleusercontent.com/pw/AIL4fc98bIIdgIk0x4F3bhqfw9i4IRmSeWTcs8Rx6E_axiu-EEvemBWO63y_PfpeFz5DkXLULI3d3qRt2zazPpccG3pGBvnTyx35PsNhEzrk21vt6XaYSMA=w2400",
-      width: 6455,
-      height: 4303,
-    },
-
-    {
-      src: "https://lh3.googleusercontent.com/pw/AIL4fc9_URBxDdYqtBlkMAxpwQJaC-4EhKkVzw4isEHkUqNcxP8Muf1IZZMIaPi8dVRTT2YUsKNFnG3sK088-I-fy8qSaz45T20o0baA5GMkyCk4UpJGW5c=w2400",
-      width: 4586,
-      height: 3057,
     },
 
     {
@@ -393,18 +337,6 @@ const Portfolio = ({
       src: "https://lh3.googleusercontent.com/pw/AIL4fc8NH-IGp1F6jCBbzHOUkQGDPBrgymMhKyj9peXXQXN6wbJwEtUQLj8Wyds0V6ZWoXX4K10U-0ubfgTrxs7QV9Z8NwaBhYsfsVjHuPQB54hANhpRESQ=w2400",
       width: 6527,
       height: 4351,
-    },
-
-    {
-      src: "https://lh3.googleusercontent.com/pw/AIL4fc8NH-IGp1F6jCBbzHOUkQGDPBrgymMhKyj9peXXQXN6wbJwEtUQLj8Wyds0V6ZWoXX4K10U-0ubfgTrxs7QV9Z8NwaBhYsfsVjHuPQB54hANhpRESQ=w2400",
-      width: 6527,
-      height: 4351,
-    },
-
-    {
-      src: "https://lh3.googleusercontent.com/pw/AIL4fc-Cy-HEUtQQX-qOiP7M2ZBdkeuAWczaUnVY_u4ClHMQvo2vK3ld6X7Hi4AX5zhIVlZMMXyapIesDJWyNH5Q-PbXlc8bwUz5bwPwuEIebvZNCcxWWEo=w2400",
-      width: 6160,
-      height: 4107,
     },
 
     {
@@ -474,18 +406,6 @@ const Portfolio = ({
     },
 
     {
-      src: "https://lh3.googleusercontent.com/pw/AIL4fc9xiNtjD41LHeaf1SJ6uBgN9tkoab5AfRWiOZDhWAxyydUT6Ybi3CLZnSskvjJksBOQwCqdfZ0j9A-99f_2dV2OjMbBsoTqKuhvylMBcH8qiK4DBgQ=w2400",
-      width: 6000,
-      height: 4000,
-    },
-
-    {
-      src: "https://lh3.googleusercontent.com/pw/AIL4fc-OsYiYID3YvwZxCwR3w5V8s1xsx2no4dxzMHIywumSvmwehh8tJtYLDrUKzqOtZ0A8poXbd39s9JCi6VIQACfMMADqkCqa2ZnFFle7vQtA44Ic_8w=w2400",
-      width: 6000,
-      height: 4000,
-    },
-
-    {
       src: "https://lh3.googleusercontent.com/pw/AIL4fc-OsYiYID3YvwZxCwR3w5V8s1xsx2no4dxzMHIywumSvmwehh8tJtYLDrUKzqOtZ0A8poXbd39s9JCi6VIQACfMMADqkCqa2ZnFFle7vQtA44Ic_8w=w2400",
       width: 6000,
       height: 4000,
@@ -522,12 +442,6 @@ const Portfolio = ({
     },
 
     {
-      src: "https://lh3.googleusercontent.com/pw/AIL4fc9D3XFTUDfDVmSfI5_KwxOwtkF1MWiNyzOzrRlRv_dvGZL1aM9eq3fpt-80ZuYE2ts4s0dgBrZcucMyD7zeiD0k2QWLPq2xgwFv6OsV-yGi4jZb0Zk=w2400",
-      width: 6000,
-      height: 4000,
-    },
-
-    {
       src: "https://lh3.googleusercontent.com/pw/AIL4fc9bfKxAxyaoye-RsqW31N-Pykx4oHOjaF4I1YCAvOFeDIblETY0I8Z5iiy9NyaCxYCXqxvGLp65tYVqyrQc1kptg1Ydeo9II0xT5mKCrI488sOzMcU=w2400",
       width: 6000,
       height: 4000,
@@ -540,19 +454,7 @@ const Portfolio = ({
     },
 
     {
-      src: "https://lh3.googleusercontent.com/pw/AIL4fc9oCbTxnfFRqDQCL-i0iTruT__WFTUTBOF8oGv4QYmiupY2uP1RxdcVQlkNq_NMNYgjGXPpaUF_LsJbxzenj0imZG78UdyRqGc1JirZayj5L6LRQbw=w2400",
-      width: 6000,
-      height: 4000,
-    },
-
-    {
       src: "https://lh3.googleusercontent.com/pw/AIL4fc8wtX3Hx31dSm_SC7bgNidI78_p5QkrLm7AvHpZRk0DhlGLnfXqr2Bi3eWimKbQq74fme6d3Y-13-MdhqYBAYyW9nALaoLVYdidB0vpZWV4_JwA7Zo=w2400",
-      width: 6000,
-      height: 4000,
-    },
-
-    {
-      src: "https://lh3.googleusercontent.com/pw/AIL4fc80cKzQ4KMEi_jElsfLteoPvv3nUUyNS9zwKOmd_CB82dMKT044ejsb-oNGw70AOOWZPoV8n1J-PrIPi3zh3GU6iZ2rgBGGRJjJKB5zBWFY3z38-Gg=w2400",
       width: 6000,
       height: 4000,
     },
