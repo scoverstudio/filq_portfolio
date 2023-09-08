@@ -26,7 +26,7 @@
       justify-content: center;
       align-items: center;
       width: 100%;
-      transition: .2s;
+      transition: 0.2s;
       cursor: pointer;
       text-transform: uppercase;
       background-color: rgba(0, 0, 0, 0.3);
@@ -82,8 +82,8 @@
     }
   }
 
-
-  .photosContainer, .videoGraphicContainer {
+  .photosContainer,
+  .videoGraphicContainer {
     height: calc(100vh - 200px);
     width: 100%;
 
@@ -370,11 +370,27 @@
 
 @media (max-width: 767px) {
   .portfolioContainer {
-    padding-top: 50px;
+    top: 70px;
     display: flex;
     flex-wrap: wrap;
 
+    .panels {
+      height: calc(100vh - 134px);
+      div {
+        font-size: 20px;
+      }
+    }
+
+    &.active {
+      padding-top: 45px;
+    }
+
     .titleContainer {
+      .photosTitle {
+        i {
+          left: 15px;
+        }
+      }
       h1 {
         padding: 0;
       }

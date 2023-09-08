@@ -3,6 +3,7 @@ import styles from "./Contact.module.scss";
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
   const form = useRef();
@@ -13,7 +14,8 @@ const Contact = () => {
     reset,
     formState: { errors },
   } = useForm();
-  console.log(process.env.REACT_APP_SERVICE_ID);
+  const [t, i18n] = useTranslation("global");
+
 
   const sendEmail = () => {
     emailjs
@@ -38,10 +40,10 @@ const Contact = () => {
     <>
       <section className={clsx(styles.contactContainer)}>
         <h2 className="h1-responsive font-weight-bold text-center my-4">
-          Contact me
+        {t("contact.contact-me")}
         </h2>
         <p className="text-center w-responsive mx-auto mb-5">
-          Do you have any questions? Drop me a message!
+        {t("contact.sub-title")}
         </p>
 
         <div className="row">
@@ -75,7 +77,7 @@ const Contact = () => {
                       autoComplete="nope"
                     />
                     <label htmlFor="name" className="">
-                      Name
+                    {t("contact.name")}
                     </label>
                     {errors.email && (
                       <div className={styles.error}>{errors.name?.message}</div>
@@ -138,7 +140,7 @@ const Contact = () => {
                       autoComplete="off"
                     />
                     <label htmlFor="subject" className="">
-                      Subject
+                    {t("contact.subject")}
                     </label>
                     {errors.subject && (
                       <div className={styles.error}>
@@ -175,7 +177,7 @@ const Contact = () => {
                       className="form-control md-textarea"
                       autoComplete="off"
                     ></textarea>
-                    <label htmlFor="message">Message</label>
+                    <label htmlFor="message">{t("contact.message")}</label>
                     {errors.message && (
                       <div className={styles.error}>
                         {errors.message?.message}
@@ -184,7 +186,7 @@ const Contact = () => {
                   </fieldset>
                 </div>
               </div>
-              <input type="submit" value="Send" className={styles.sendButton} />
+              <input type="submit" value={t("contact.send")} className={styles.sendButton} />
               {success && <div className={styles.success}>Success!</div>}
             </form>
 
@@ -203,7 +205,7 @@ const Contact = () => {
         </div>
       </section>
       <section className={styles.socials}>
-        <h2>All my socials</h2>
+        <h2>{t("contact.all-socials")}</h2>
         <div>
           <a href="https://www.youtube.com/c/filqTV">
             <i className="fa fa-youtube" aria-hidden="true"></i>
