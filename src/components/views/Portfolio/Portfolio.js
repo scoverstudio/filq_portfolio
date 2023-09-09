@@ -133,16 +133,6 @@ const Portfolio = ({
 
   const images = [
     {
-      src: "https://lh3.googleusercontent.com/YOuOMT4R84kKRxyqvjJwFFnicnNr9QsRowlMyqT7GNY5Hj86JuVuQDGG0KNY4wi1kU0fWCThN7TRs7_ZJ88etp545a_2poEVJjb3T7CKSD2AZj8LUsPA7ZJs2w2c08RSW6XfOOS40w=w2400",
-      width: 3072,
-      height: 4608,
-    },
-    {
-      src: "https://lh3.googleusercontent.com/THYKTILxW49kb1_dj5OKFjDcpDD1RZ2qyMRn-1ez_hf5KPHW59V9Q3ldWLeSN42cWvJlEW1ArdNA-o7JVAERmsiGIN2h4wtgiG1d7f4VTbO7mJeqQGBKl7RhKYn5l8qcv6XMxBcaEg=w2400",
-      width: 6427,
-      height: 4285,
-    },
-    {
       src: "https://lh3.googleusercontent.com/pw/AIL4fc-njGV2FeRZYms2y7lT7MFSfr0Uk33nbFebcJ4-R5raY1xg6K9pGVLQiRMRxNTJ1f8Xm8zJeA9bicFVPfpWxKQpcFe-vZigTNL04lkJszEYfZ1Tip8=w2400",
       width: 3736,
       height: 2490,
