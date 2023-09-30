@@ -16,6 +16,9 @@ const HomeAbout = () => {
           <a href="https://twitter.com/filqqq">
             <i className="fa fa-twitter" aria-hidden="true" />
           </a>
+          <a href="https://www.instagram.com/filkoooo">
+            <i className="fa fa-instagram" aria-hidden="true" />
+          </a>
         </div>
       </div>
     </div>

@@ -506,8 +506,8 @@ const Portfolio = ({
       >
         {!showVideoEditing && !showPhotos && !showVideoGraphic && (
           <div className={styles.panels}>
-            <div onClick={() => setShowVideoEditing(true)}>video editing</div>
-            <div onClick={() => setShowPhotos(true)}>photos</div>
+            <div onClick={() => setShowVideoEditing(true)}>{t("portfolio.video-editing")}</div>
+            <div onClick={() => setShowPhotos(true)}>{t("portfolio.photos")}</div>
           </div>
         )}
         {showPhotos && (
@@ -519,7 +519,7 @@ const Portfolio = ({
                   className="fa fa-arrow-left"
                   aria-hidden="true"
                 />
-                Photos
+                {t("portfolio.photos")}
               </h1>
             </div>
             <Lightbox

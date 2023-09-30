@@ -60,6 +60,12 @@ const Navigation = () => {
               >
                 <i className="fa fa-twitter" aria-hidden="true" />
               </Nav.Link>
+              <Nav.Link
+                href="https://www.instagram.com/filkoooo"
+                className={styles.link}
+              >
+                <i className="fa fa-instagram" aria-hidden="true"></i>
+              </Nav.Link>
             </div>
             <div
               className={styles.flag}

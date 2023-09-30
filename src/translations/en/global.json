@@ -16,7 +16,9 @@
         "recent": "recent",
         "most-views": "most views",
         "most-viewed": "most viewed",
-        "views": "Views"
+        "views": "Views",
+        "video-editing": "Video Editing",
+        "photos": "Photos"
     },
     "navigation": {
         "home": "home",
