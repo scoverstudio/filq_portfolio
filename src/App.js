@@ -9,6 +9,7 @@ import Contact from "./components/views/Contact/Contact";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import FilteredPortfolio from "./components/views/FilteredPortfolio/FilteredPortfolio";
+import LoginPage from "./components/admin/LoginPage";
 
 function App() {
   const YOUTUBE_PLAYLIST_ITEMS_API =
@@ -154,6 +155,7 @@ function App() {
                 />
               }
             />
+            <Route path="/login" element={<LoginPage/>}/>
           </Routes>
         </MainLayout>
       </Router>
