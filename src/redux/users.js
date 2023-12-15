@@ -8,9 +8,9 @@ const initialState = {
     profile: null,
 };
 
-const LOGOUT = "LOGOUT"
-const LOGIN = "LOGIN"
-const PROFILE_LOAD = "PROFILE_LOAD"
+export const LOGOUT = "LOGOUT"
+export const LOGIN = "LOGIN"
+export const PROFILE_LOAD = "PROFILE_LOAD"
 
 export const logout = () => {
     return {

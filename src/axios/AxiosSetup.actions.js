@@ -1,10 +1,10 @@
 import axios from "axios"
-import {store} from "../index";
-import {LOGIN, LOGOUT} from "../reducers/PersistentReducer";
+import {LOGIN, LOGOUT} from "../redux/users";
+import {store} from "../redux/store";
 
 export const setupAxios = () => async (dispatch) => {
     axios.interceptors.request.use(function (config) {
-        const token = store.getState().persistentState.access_token;
+        const token = store.getState().users.access_token;
 
         if (token != null && !config.forceHeaders) {
             config.headers.authorization = `Bearer ${token}`;
