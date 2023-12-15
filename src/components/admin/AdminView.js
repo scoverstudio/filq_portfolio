@@ -56,8 +56,8 @@ const AdminView = ({role}) => {
         <>
             <h1>ADMIN</h1>
             <div className={styles.adminButtons}>
-                <button>PLAYLISTS</button>
-                <button>PHOTOS</button>
+                <button onClick={() => setSectionName('playlists')}>PLAYLISTS</button>
+                <button onClick={() => setSectionName('photos')}>PHOTOS</button>
             </div>
             {sectionName === 'playlists' ? (
                 <>
