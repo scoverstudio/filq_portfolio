@@ -29,3 +29,13 @@
     }
   }
 }
+
+.adminButtons {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+
+  button {
+    padding: 5px;
+  }
+}

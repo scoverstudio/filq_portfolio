@@ -4,6 +4,7 @@ import axios from "axios";
 import {API_URL} from "../../config";
 
 const AdminView = ({role}) => {
+    const [sectionName, setSectionName] = useState('playlists')
     const YOUTUBE_PLAYLIST_ITEMS_API =
         "https://www.googleapis.com/youtube/v3/playlistItems";
     const [playlists, setPlaylists] = useState([])
@@ -50,58 +51,68 @@ const AdminView = ({role}) => {
             method: "DELETE",
         })
     }
-    console.log(playlists)
+
     return (
         <>
             <h1>ADMIN</h1>
-            <form onSubmit={(e) => handleSubmit(e)}>
-                <span>example of playlist id: https://www.youtube.com/playlist?list=<em>PLEmxBs67yX1yViKzCtXs0a4UxXO8I0oZ6</em></span>
-                <fieldset>
-                    <label>Name</label>
-                    <input onChange={(e) => setName(e.target.value)}/>
-                </fieldset>
-                <fieldset>
-                    <label>Link</label>
-                    <input onChange={(e) => setLink(e.target.value)} placeholder="Highlighted code"/>
-                </fieldset>
-                <fieldset>
-                    <label>Portfolio: </label>
-                    <input type="checkbox" onChange={() => setIsPortfolio(!isPortfolio)}/>
-                </fieldset>
-                <button type="submit">Add</button>
-            </form>
-            <div className={styles.playlistsContainer}>
-                <div className={styles.portfolioPlaylists}>
-                    <span>Portfolio playlist</span>
-                    {playlists.filter(playlist => playlist.isPortfolio).map((playlist, index) => (
-                        <div className={styles.singlePlaylist}>
-                            <div>Title: {playlist.name}</div>
-                            <div className={styles.showLink}
-                                 onClick={() => showLink === playlist.id ? setShowLink(null) : setShowLink(playlist.id)}>show
-                                link
-                            </div>
-                            {showLink === playlist.id && <div className={styles.link}>{playlist.link}</div>}
-                            <button onClick={(e) => handleDeletePortfolio(e, playlist.id, index)}>delete</button>
-                        </div>
-
-                    ))}
-                </div>
-                <div className={styles.generalPlaylists}>
-                    <span>General playlist</span>
-                    {playlists.filter(playlist => !playlist.isPortfolio).map((playlist, index) => (
-                        <div className={styles.singlePlaylist}>
-                            <div>Title: {playlist.name}</div>
-                            <div className={styles.showLink}
-                                 onClick={() => showLink === playlist.id ? setShowLink(null) : setShowLink(playlist.id)}>show
-                                link
-                            </div>
-                            {showLink === playlist.id && <div className={styles.link}>{playlist.link}</div>}
-                            <button onClick={(e) => handleDelete(e, playlist.id, index)}>delete</button>
-                        </div>
-
-                    ))}
-                </div>
+            <div className={styles.adminButtons}>
+                <button>PLAYLISTS</button>
+                <button>PHOTOS</button>
             </div>
+            {sectionName === 'playlists' ? (
+                <>
+                    <form onSubmit={(e) => handleSubmit(e)}>
+                        <span>example of playlist id: https://www.youtube.com/playlist?list=<em>PLEmxBs67yX1yViKzCtXs0a4UxXO8I0oZ6</em></span>
+                        <fieldset>
+                            <label>Name</label>
+                            <input onChange={(e) => setName(e.target.value)}/>
+                        </fieldset>
+                        <fieldset>
+                            <label>Link</label>
+                            <input onChange={(e) => setLink(e.target.value)} placeholder="Highlighted code"/>
+                        </fieldset>
+                        <fieldset>
+                            <label>Portfolio: </label>
+                            <input type="checkbox" onChange={() => setIsPortfolio(!isPortfolio)}/>
+                        </fieldset>
+                        <button type="submit">Add</button>
+                    </form>
+                    <div className={styles.playlistsContainer}>
+                        <div className={styles.portfolioPlaylists}>
+                            <span>Portfolio playlist</span>
+                            {playlists.filter(playlist => playlist.isPortfolio).map((playlist, index) => (
+                                <div className={styles.singlePlaylist}>
+                                    <div>Title: {playlist.name}</div>
+                                    <div className={styles.showLink}
+                                         onClick={() => showLink === playlist.id ? setShowLink(null) : setShowLink(playlist.id)}>show
+                                        link
+                                    </div>
+                                    {showLink === playlist.id && <div className={styles.link}>{playlist.link}</div>}
+                                    <button onClick={(e) => handleDeletePortfolio(e, playlist.id, index)}>delete</button>
+                                </div>
+
+                            ))}
+                        </div>
+                        <div className={styles.generalPlaylists}>
+                            <span>General playlist</span>
+                            {playlists.filter(playlist => !playlist.isPortfolio).map((playlist, index) => (
+                                <div className={styles.singlePlaylist}>
+                                    <div>Title: {playlist.name}</div>
+                                    <div className={styles.showLink}
+                                         onClick={() => showLink === playlist.id ? setShowLink(null) : setShowLink(playlist.id)}>show
+                                        link
+                                    </div>
+                                    {showLink === playlist.id && <div className={styles.link}>{playlist.link}</div>}
+                                    <button onClick={(e) => handleDelete(e, playlist.id, index)}>delete</button>
+                                </div>
+
+                            ))}
+                        </div>
+                    </div>
+                </>
+            ) : (
+                <div>photos</div>
+                )}
         </>
     )
 }
