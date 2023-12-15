@@ -5,7 +5,7 @@ import {store} from "../redux/store";
 export const setupAxios = () => async (dispatch) => {
     axios.interceptors.request.use(function (config) {
         const token = store.getState().users.access_token;
-
+        console.log(token)
         if (token != null && !config.forceHeaders) {
             config.headers.authorization = `Bearer ${token}`;
         }
