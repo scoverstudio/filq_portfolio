@@ -53,7 +53,7 @@ const AdminView = ({role}) => {
     }
 
     return (
-        <>
+        <div className={styles.adminPanel}>
             <h1>ADMIN</h1>
             <div className={styles.adminButtons}>
                 <button onClick={() => setSectionName('playlists')}>PLAYLISTS</button>
@@ -113,7 +113,7 @@ const AdminView = ({role}) => {
             ) : (
                 <div>photos</div>
                 )}
-        </>
+        </div>
     )
 }
 
