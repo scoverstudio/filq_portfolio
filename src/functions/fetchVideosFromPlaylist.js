@@ -1,51 +1,56 @@
 import axios from "axios";
 
 const fetchVideosFromPlaylist = (
-    playlistOneIds,
-    playlistTwoIds,
-    playlistThreeIds,
-    playlistFourIds,
+    allVideosIds,
     setVideos
 ) => {
     const YOUTUBE_VIDEO_API = "https://www.googleapis.com/youtube/v3/videos";
 
-    const getPlaylistOne = axios.get(
-        `${YOUTUBE_VIDEO_API}?part=snippet&part=statistics&id=${playlistOneIds.toString()}&key=${
-            process.env.REACT_APP_YOUTUBE_API_KEY
-        }`
-    );
-    const getPlaylistTwo = axios.get(
-        `${YOUTUBE_VIDEO_API}?part=snippet&part=statistics&id=${playlistTwoIds.toString()}&key=${
-            process.env.REACT_APP_YOUTUBE_API_KEY
-        }`
-    );
-    const getPlaylistThree = axios.get(
-        `${YOUTUBE_VIDEO_API}?part=snippet&part=statistics&id=${playlistThreeIds.toString()}&key=${
-            process.env.REACT_APP_YOUTUBE_API_KEY
-        }`
-    );
-    const getPlaylistFour = axios.get(
-        `${YOUTUBE_VIDEO_API}?part=snippet&part=statistics&id=${playlistFourIds.toString()}&key=${
-            process.env.REACT_APP_YOUTUBE_API_KEY
-        }`
-    );
+    const splitArrayIntoChunks = (array, chunkSize) => {
+        const result = [];
+        for (let i = 0; i < array.length; i += chunkSize) {
+            result.push(array.slice(i, i + chunkSize));
+        }
+        return result;
+    };
 
-    axios.all([getPlaylistOne, getPlaylistTwo, getPlaylistThree, getPlaylistFour]).then(
-        axios.spread((...allData) => {
-            const playlistOne = allData[0].data.items;
-            const playlistTwo = allData[1].data.items;
-            const playlistThree = allData[2].data.items;
-            const playlistFour = allData[3].data.items;
+    const fetchVideoDetails = async () => {
+        const chunks = splitArrayIntoChunks(allVideosIds, 50);
 
-            setVideos(
-                [...playlistOne, ...playlistTwo, ...playlistThree, ...playlistFour].sort((a, b) => {
-                    return (
-                        new Date(b.snippet.publishedAt) - new Date(a.snippet.publishedAt)
-                    );
-                })
-            );
-        })
-    );
+        const resultObject = {};
+        await chunks.forEach((chunk, index) => {
+            resultObject[index] = chunk;
+        });
+
+        const videosFinal = {};
+        for (const [index, videoIdsChunk] of Object.entries(resultObject)) {
+            try {
+                const response = await axios.get(
+                    `${YOUTUBE_VIDEO_API}?part=snippet,statistics&id=${videoIdsChunk.toString()}&key=${
+                        process.env.REACT_APP_YOUTUBE_API_KEY || 'AIzaSyDwO7RYU1dD3wgRA7PS03lv-5K3Wx5Irg4'
+                    }`
+                );
+
+                videosFinal[index] = response.data.items;
+            } catch (error) {
+                console.error('Error fetching video details:', error);
+            }
+        }
+
+        return videosFinal;
+    };
+    fetchVideoDetails(allVideosIds).then((videos) => {
+        const arrayOfArrays = Object.values(videos);
+        const mergedArray = [].concat(...arrayOfArrays);
+
+        setVideos(
+            mergedArray.sort((a, b) => {
+                return (
+                    new Date(b.snippet.publishedAt) - new Date(a.snippet.publishedAt)
+                );
+            })
+        );
+    });
 };
 
 export default fetchVideosFromPlaylist;

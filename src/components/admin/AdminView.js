@@ -28,7 +28,7 @@ const AdminView = ({role}) => {
             method: "POST",
             data: {
                 name,
-                link: `${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&playlistId=${link}&maxResults=50&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`,
+                link: `${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&playlistId=${link}&maxResults=50&key=${process.env.REACT_APP_YOUTUBE_API_KEY || 'AIzaSyDwO7RYU1dD3wgRA7PS03lv-5K3Wx5Irg4'}`,
                 isPortfolio: isPortfolio
             }
         }).then(res => setPlaylists([...playlists, res.data]))

@@ -18,7 +18,6 @@ const About = () => {
   };
 
   const clients = i18n.language === "en" ? clientsEN : clientsPL;
-  console.log(clientsEN, clientsPL);
 
   return (
     <Container className={clsx(styles.container)}>

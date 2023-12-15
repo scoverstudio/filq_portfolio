@@ -3,7 +3,7 @@ import styles from "./HomeAbout.module.scss";
 
 const HomeAbout = () => {
   const [t, i18n] = useTranslation("global");
-  console.log(i18n)
+
   return (
     <div className={styles.container}>
       <div className={styles.findMe}>

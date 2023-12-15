@@ -5,24 +5,18 @@ import fetchVideosFromPlaylist from "../../../functions/fetchVideosFromPlaylist"
 import styles from "./FilteredPortfolio.module.scss";
 
 const FilteredPortfolio = ({
-                               playlistOneIds,
-                               playlistTwoIds,
-                               playlistThreeIds,
-                               playlistFourIds,
                                isLoading,
+                               allVideosIds
                            }) => {
     const {id} = useParams();
     const [videos, setVideos] = useState(null);
 
     useEffect(() => {
         fetchVideosFromPlaylist(
-            playlistOneIds,
-            playlistTwoIds,
-            playlistThreeIds,
-            playlistFourIds,
+            allVideosIds,
             setVideos
         );
-    }, [playlistOneIds, playlistTwoIds, playlistThreeIds, playlistFourIds]);
+    }, [allVideosIds]);
 
     return (
         <div className={styles.videosContainer}>
