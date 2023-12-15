@@ -3,12 +3,14 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import {Provider} from "react-redux";
 import {store} from "./redux/store";
+import AxiosSetup from "./axios/AxiosSetup";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
     <Provider store={store}>
         <React.StrictMode>
+            <AxiosSetup/>
             <App/>
         </React.StrictMode>
     </Provider>
