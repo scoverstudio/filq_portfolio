@@ -3,20 +3,27 @@ import styles from "./About.module.scss";
 import { Container } from "react-bootstrap";
 import Atropos from "atropos/react";
 import { useSelector } from "react-redux";
-import { getClients } from "../../../redux/clients";
+import { getClients, getClientsPL } from "../../../redux/clients";
+import { useTranslation } from "react-i18next";
 
 const About = () => {
-  const clients = useSelector(getClients);
+  const clientsEN = useSelector(getClients);
+  const clientsPL = useSelector(getClientsPL);
+
+  const [t, i18n] = useTranslation("global");
 
   const scrollIntoClients = () => {
     const elementToView = document.getElementById("below");
     elementToView.scrollIntoView();
   };
 
+  const clients = i18n.language === "en" ? clientsEN : clientsPL;
+  console.log(clientsEN, clientsPL);
+
   return (
     <Container className={clsx(styles.container)}>
       <section className={styles.clients}>
-        <h2>Worked with: </h2>
+        <h2>{t("about-me.worked-with")} </h2>
         {clients.map((element) => (
           <a
             href={`/portfolio/${element.channelName}`}
@@ -52,16 +59,19 @@ const About = () => {
       <div className={styles.contentAbout}>
         <div className={styles.text}>
           <h2>
-            Get to know me <span>better!</span>
+            {t("about-me.title-1")} <span>{t("about-me.title-2")}</span>
           </h2>
           <p>
-            My name is Filip Szatkowski, I'm 20 years old and I live in
-            Strzegom, Poland. I am a professional Freelance Video Editor with
-            over 5 years of experience in the esports industry. I provide
-            quality ingame content, documentaries & vlogs. Currently available
-            for commisions.
+            {t("about-me.1-part")}{" "}
+            <a href="/portfolio/ESL%20Counter-Strike">ESL</a>,{" "}
+            <a href="/portfolio/Cloud9 CSGO">Cloud9</a>,{" "}
+            <a href="/portfolio/HLTVorg">HLTV.org</a>, and{" "}
+            <a href="/portfolio/VALORANT // Polska">VALORANTPolska</a>
+            {t("about-me.2-part")}
           </p>
-          <p>
+          <p>{t("about-me.3-part")}</p>
+          <p>{t("about-me.4-part")}</p>
+          {/* <p>
             My moviemaking career started at the beginning of 2017 when I
             started to upload fragmovies on{" "}
             <a href="https://www.youtube.com/c/filqTV">my channel</a>, and by
@@ -98,7 +108,7 @@ const About = () => {
             provide some of the private videography stuff i've done, for the
             possible clients. Check <a href="/contact">contact</a> section for
             more informations.
-          </p>
+          </p> */}
         </div>
         <Atropos
           shadow={false}

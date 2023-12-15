@@ -1,38 +1,51 @@
 import axios from "axios";
 
 const fetchVideosFromPlaylist = (
-    ids,
-    setVideos,
-    sortBy,
-    sortByRecent,
-    sortByViews,
+    playlistOneIds,
+    playlistTwoIds,
+    playlistThreeIds,
+    playlistFourIds,
+    setVideos
 ) => {
     const YOUTUBE_VIDEO_API = "https://www.googleapis.com/youtube/v3/videos";
-    let arr = []
-    const results = ids.reduce((resultArray, item, index) => {
-        const chunkIndex = Math.floor(index / 50)
 
-        if (!resultArray[chunkIndex]) {
-            resultArray[chunkIndex] = []
-        }
+    const getPlaylistOne = axios.get(
+        `${YOUTUBE_VIDEO_API}?part=snippet&part=statistics&id=${playlistOneIds.toString()}&key=${
+            process.env.REACT_APP_YOUTUBE_API_KEY
+        }`
+    );
+    const getPlaylistTwo = axios.get(
+        `${YOUTUBE_VIDEO_API}?part=snippet&part=statistics&id=${playlistTwoIds.toString()}&key=${
+            process.env.REACT_APP_YOUTUBE_API_KEY
+        }`
+    );
+    const getPlaylistThree = axios.get(
+        `${YOUTUBE_VIDEO_API}?part=snippet&part=statistics&id=${playlistThreeIds.toString()}&key=${
+            process.env.REACT_APP_YOUTUBE_API_KEY
+        }`
+    );
+    const getPlaylistFour = axios.get(
+        `${YOUTUBE_VIDEO_API}?part=snippet&part=statistics&id=${playlistFourIds.toString()}&key=${
+            process.env.REACT_APP_YOUTUBE_API_KEY
+        }`
+    );
 
-        resultArray[chunkIndex].push(item)
+    axios.all([getPlaylistOne, getPlaylistTwo, getPlaylistThree, getPlaylistFour]).then(
+        axios.spread((...allData) => {
+            const playlistOne = allData[0].data.items;
+            const playlistTwo = allData[1].data.items;
+            const playlistThree = allData[2].data.items;
+            const playlistFour = allData[3].data.items;
 
-        return resultArray
-    }, [])
-    results.forEach(result => {
-        axios.get(
-            `${YOUTUBE_VIDEO_API}?part=snippet&part=statistics&id=${result.toString()}&key=${
-                process.env.REACT_APP_YOUTUBE_API_KEY
-            }`
-        ).then(res => {
-            arr.push(...res.data.items)
-            {
-                sortBy === "sorted by recent" ? sortByRecent(arr) : sortByViews(arr)
-            }
+            setVideos(
+                [...playlistOne, ...playlistTwo, ...playlistThree, ...playlistFour].sort((a, b) => {
+                    return (
+                        new Date(b.snippet.publishedAt) - new Date(a.snippet.publishedAt)
+                    );
+                })
+            );
         })
-
-    })
+    );
 };
 
 export default fetchVideosFromPlaylist;
