@@ -5,7 +5,6 @@ import HomeAbout from "../HomeAbout/HomeAbout";
 import Header from "../Header/Header";
 
 const Homepage = () => {
-    console.log('test')
   return (
     <Container className={clsx("px-4", styles.container)}>
       <Header />

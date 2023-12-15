@@ -1,18 +1,18 @@
 databases:
-  - name: filq_site
-    databaseName: filq_site
-    user: filq_site_user
+  - name: filq-sql
+    databaseName: filq_sql
+    user: filq_sql_user
 
 services:
   - type: web
-    name: FILQ-backend
+    name: filq-be-2
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: filq_site
+          name: filq-sql
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
