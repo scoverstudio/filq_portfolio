@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     use_doorkeeper
     resources :users, only: %i[index show create update destroy]
     resources :playlists
+    resources :photos
     get '/profile', to: 'profile#show'
     put '/profile', to: 'profile#update'
   end

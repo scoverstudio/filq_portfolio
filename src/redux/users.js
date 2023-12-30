@@ -25,7 +25,6 @@ export const login = (dispatch) => async (email, password, errorCallback) => {
             method: "POST",
             data: {email, password, grant_type: "password"},
         });
-        console.log(data)
         dispatch({type: LOGIN, tokens: data});
         reloadProfile(dispatch)();
     } catch (e) {

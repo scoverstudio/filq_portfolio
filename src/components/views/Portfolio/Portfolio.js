@@ -121,6 +121,11 @@ const Portfolio = ({
 
     const images = [
         {
+            src: "https://lh3.googleusercontent.com/pw/ABLVV86SLqTmefwigC2LFS9LjMAQYcfQ8PrKOXBV3nfDoHRsSFZ4_ptxZ7pkuk4s4KQbwagCQTlXN0Ta_JRVHO1R_clML4qDXqhcrCh7lB18HyjyPFOb3Is=w2400",
+            width: 6786,
+            height: 4524,
+        },
+        {
             src: "https://lh3.googleusercontent.com/pw/AIL4fc-njGV2FeRZYms2y7lT7MFSfr0Uk33nbFebcJ4-R5raY1xg6K9pGVLQiRMRxNTJ1f8Xm8zJeA9bicFVPfpWxKQpcFe-vZigTNL04lkJszEYfZ1Tip8=w2400",
             width: 3736,
             height: 2490,

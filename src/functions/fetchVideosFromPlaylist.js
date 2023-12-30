@@ -27,7 +27,7 @@ const fetchVideosFromPlaylist = (
             try {
                 const response = await axios.get(
                     `${YOUTUBE_VIDEO_API}?part=snippet,statistics&id=${videoIdsChunk.toString()}&key=${
-                        process.env.REACT_APP_YOUTUBE_API_KEY || 'AIzaSyDwO7RYU1dD3wgRA7PS03lv-5K3Wx5Irg4'
+                        process.env.REACT_APP_YOUTUBE_API_KEY
                     }`
                 );
 
