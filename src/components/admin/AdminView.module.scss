@@ -30,6 +30,14 @@
   }
 }
 
+.photosContainer {
+  display: flex;
+  width: fit-content;
+  height: 100px;
+  background-color: rgba(255,255,255,0.3);
+  padding: 5px;
+}
+
 .adminButtons {
   display: flex;
   justify-content: center;

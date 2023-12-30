@@ -10,6 +10,8 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import PhotoAlbum from "react-photo-album";
 import {useTranslation} from "react-i18next";
+import axios from "axios";
+import {API_URL} from "../../../config";
 
 const Portfolio = ({
                        playlistPortfolioIds,
@@ -17,6 +19,7 @@ const Portfolio = ({
                        isLoading,
                    }) => {
     const [videos, setVideos] = useState(null);
+    const [photos, setPhotos] = useState(null);
     const [title, setTitle] = useState("all videos");
     const [sortBy, setSortBy] = useState("sorted by recent");
     const [showScrollUp, setShowScrollUp] = useState(false);
@@ -36,6 +39,13 @@ const Portfolio = ({
     }, [
         allVideosIds
     ]);
+
+    useEffect(() => {
+        axios.request({
+            url: `${API_URL}/photos`,
+            method: "GET"
+        }).then(res => setPhotos(res.data))
+    }, []);
 
     const sortByViews = (videos) => {
         setSortBy("most viewed");
@@ -488,6 +498,9 @@ const Portfolio = ({
             height: 3765,
         },
     ];
+
+    console.log(photos, images)
+
 
     return (
         <>

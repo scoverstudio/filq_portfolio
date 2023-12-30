@@ -35,7 +35,8 @@ const AdminPhotosView = ({role}) => {
     return (
         <div>
             <form onSubmit={(e) => handleSubmit(e)}>
-                <span>Use this site to generate photo link: <a onClick={() => window.open('https://www.labnol.org/embed/google/photos/#google_vignette', '_blank')}>click!</a></span>
+                <span>Use this site to generate photo link: <a
+                    onClick={() => window.open('https://www.labnol.org/embed/google/photos/#google_vignette', '_blank')}>click!</a></span>
                 <fieldset>
                     <label>Name</label>
                     <input onChange={(e) => setName(e.target.value)}/>
@@ -54,11 +55,13 @@ const AdminPhotosView = ({role}) => {
                 </fieldset>
                 <button type="submit">Add</button>
             </form>
-            <div className={styles.photosContainer}>
-                {photos.map(photo => (
+            {photos.map(photo => (
+                <div className={styles.photosContainer}>
                     <div>{photo.name}</div>
-                ))}
-            </div>
+                    <img alt={photo.name} src={photo.link}/>
+                </div>
+
+            ))}
         </div>
     );
 };
