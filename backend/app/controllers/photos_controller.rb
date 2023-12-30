@@ -32,6 +32,6 @@ class PhotosController < ApplicationController
   end
 
   def photo_params
-    params.require(:playlist).permit(:name, :link, :height, :width)
+    params.require(:photo).permit(:name, :link, :height, :width)
   end
 end
