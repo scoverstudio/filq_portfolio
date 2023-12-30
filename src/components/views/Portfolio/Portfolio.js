@@ -19,10 +19,11 @@ const Portfolio = ({
                        isLoading,
                    }) => {
     const [videos, setVideos] = useState(null);
-    const [photos, setPhotos] = useState(null);
+    const [photos, setPhotos] = useState([]);
     const [title, setTitle] = useState("all videos");
     const [sortBy, setSortBy] = useState("sorted by recent");
     const [showScrollUp, setShowScrollUp] = useState(false);
+    const [ready, setPhotosReady] = useState(false);
     const [allLoaded, setAllLoaded] = useState(false);
     const [t, i18n] = useTranslation("global");
 
@@ -44,7 +45,10 @@ const Portfolio = ({
         axios.request({
             url: `${API_URL}/photos`,
             method: "GET"
-        }).then(res => setPhotos(res.data))
+        }).then(res => {
+            setPhotos(res.data);
+            setPhotosReady(true);
+        })
     }, []);
 
     const sortByViews = (videos) => {
@@ -132,8 +136,8 @@ const Portfolio = ({
     const images = [
         {
             src: "https://lh3.googleusercontent.com/pw/ABLVV86SLqTmefwigC2LFS9LjMAQYcfQ8PrKOXBV3nfDoHRsSFZ4_ptxZ7pkuk4s4KQbwagCQTlXN0Ta_JRVHO1R_clML4qDXqhcrCh7lB18HyjyPFOb3Is=w2400",
-            width: 6786,
             height: 4524,
+            width: 6786,
         },
         {
             src: "https://lh3.googleusercontent.com/pw/AIL4fc-njGV2FeRZYms2y7lT7MFSfr0Uk33nbFebcJ4-R5raY1xg6K9pGVLQiRMRxNTJ1f8Xm8zJeA9bicFVPfpWxKQpcFe-vZigTNL04lkJszEYfZ1Tip8=w2400",
@@ -498,10 +502,7 @@ const Portfolio = ({
             height: 3765,
         },
     ];
-
     console.log(photos, images)
-
-
     return (
         <>
             <div
@@ -516,7 +517,7 @@ const Portfolio = ({
                         <div onClick={() => setShowPhotos(true)}>{t("portfolio.photos")}</div>
                     </div>
                 )}
-                {showPhotos && (
+                {showPhotos && ready && (
                     <div className={styles.photosContainer}>
                         <div className={styles.titleContainer}>
                             <h1 className={styles.photosTitle}>
@@ -533,12 +534,12 @@ const Portfolio = ({
                             close={() => {
                                 setIndex(-1);
                             }}
-                            slides={images}
+                            slides={photos}
                             index={index}
                         />
                         <PhotoAlbum
                             layout="rows"
-                            photos={images}
+                            photos={photos}
                             onClick={({index}) => {
                                 setIndex(index);
                             }}
