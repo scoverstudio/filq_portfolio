@@ -2,7 +2,7 @@ class PhotosController < ApplicationController
   before_action :set_photo, only: %i[ show update destroy ]
 
   def index
-    @photos = Playlist.all
+    @photos = Photo.all
   end
 
   def show
